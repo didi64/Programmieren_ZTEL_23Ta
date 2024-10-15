@@ -5,7 +5,7 @@ import subprocess
 
 ROOT = '/home/studi/work'
 DATA = '/home/studi/work/.src/data'
-SHARE_DIR = '/home/studi/work/notebooks/share'
+SHARE_DIR = '/home/studi/work/share'
 
 
 def get_prefixes(fn):
