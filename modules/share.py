@@ -35,7 +35,7 @@ def init_share(user):
     with open(DATA + '/coordinates.txt') as f:
         coords = f.read()
     tok = decode(coords, 123456)
-    print(tok)
+    # print(tok)
     if tok[-3:] != '95F':
         print('Ungueltiger Pin!', file=sys.stderr)
         return

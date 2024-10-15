@@ -15,31 +15,31 @@ HELP=$(cat <<EOF
 
 usage:
 ======
-1) update <number>
-   updates src and copies files of lesson <number> to  work/notebooks
+1) update <Nummer der Lektion>
+   kopiert die Files der Lektion <Nummer der Lektion> nach  work/notebooks
        
-2) update
-   updates src
- 
-3) update <file1> [<file2> ...]
-   updates and copies files to work/notebooks
- 
-in case of errors: try       
-       
-4) update -f
-   forces updates of src       
 
-if this fails, type call
-get_src
+2) update <file1> [<file2> ...]
+   Kopiere, falls vorhanden, die FIles oder Ordner <file1>,... nach work/notebooks
 
+Beispiele:
+==========
+studi@jlab:~/work$ update 1
+studi@jlab:~/work$ update some_notebook.ipynb
+studi@jlab:~/work$ update some_folder\n
+ 
 EOF
 )
 
-printf "$HELP"
+if [[ $# -eq 0 ]]; then 
+    printf "$HELP"
+    exit 1
+fi
 
 process_file () {
-    find "$repo_url" -type d -name $1 -exec cp -ri {} "$nb_dir" \;
-    find "$repo_url" -type f -name $1 -exec cp -i {} "$nb_dir" \;
+    echo "target: $nb_dir"
+    find "$repo_url" -type d -name $1 -exec cp -ri {} "$nb_dir" \; -exec echo "adding folder {}" \;
+    find "$repo_url" -type f -name $1 -exec cp -i {} "$nb_dir" \; -exec echo "adding file {}" \;
 }
 
 pull () {
@@ -49,6 +49,7 @@ pull () {
 
 if [[ $# -ge 1 ]] && [[ "$1" == "-f" ]]; then
     git -C "$repo_url"  reset --hard HEAD
+    set -- "${@:2}"
 fi
 
 pull
@@ -56,7 +57,7 @@ pull
 # echo "args: $@"
 for item in "$@"; do
     if [[ $item =~ $is_number ]] ; then
-        files=$(sed -n "s/^${item}:\(.*\)/\1/p" "$CONTENTS")
+        files=$(sed -n "s/^${item}:\(.*\)/\1/p" "$contents")
         for file in $files; do
             process_file $file
         done
