@@ -1,0 +1,7 @@
+#!/usr/bin/bash 
+
+set -euo pipefail
+
+root="${HOME}/work"
+repo_dir="$root/.src"
+cp -i "$repo_dir/bin"/* "$root/bin"

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euox pipefail
+
+share_dir="${HOME}/work/share"
+
+share_dir="${HOME}/tmp/zh3/share"
+
+git -C "$share_dir" add .
+git -C "$share_dir" commit . -m "$(date)" || true
+git -C "$share_dir" push -f
+
+git -C "${share_dir}/response" add .
+git -C "${share_dir}/response" commit -m "$(date)" || true
+git -C "${share_dir}/response" fetch
+git -C "${share_dir}/response" merge -s ort -Xtheirs -m "theirs merge: $(date)"

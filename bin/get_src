@@ -1,0 +1,36 @@
+#!/bin/bash 
+
+set -euo pipefail
+
+repo_url="https://github.com/didi64/Programmieren_ZTel_23Ta"
+
+root="${HOME}/work"
+repo_dir="$root/.src"
+nb_dir="${root}/notebooks"
+bin_dir="$root/bin"
+module_dir="$root/modules"
+
+if [[ -d $repo_dir ]]; then
+    while true; do
+        read -r -p "reinitialize notebook? (Y/N): " answer
+        case $answer in
+            [Yy]* ) break;;
+            [Nn]* ) exit;;
+            * ) echo "Please answer Y or N.";;
+        esac
+    done
+
+    rm -rf "$repo_dir"
+fi
+
+git clone "$repo_url" "$repo_dir"
+#find "$repo_dir" -type f -name "*.ipynb" -exec  chmod 444 {} \;
+
+for folder in "$nb_dir" "$module_dir" "$bin_dir"; do
+    if [[ ! -d "${folder}" ]]; then
+        mkdir "${folder}"
+    fi    
+done
+
+cp "$repo_dir"/bin/* "$bin_dir"
+#cp "$repo_dir"/module_search_path "$root"
