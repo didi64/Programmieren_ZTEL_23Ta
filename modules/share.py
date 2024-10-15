@@ -42,13 +42,14 @@ def init_share(user):
     if user not in email_prefixes:
         print('Unbekannter Email-Prefix!', file=sys.stderr)
         return
-    os.makedirs(SHARE_DIR)
-    with open(SHARE_DIR + '/.user', 'w') as f:
+  
+    with open(ROOT + '/.user', 'w') as f:
         f.write(user)
 
-    with open(SHARE_DIR + '/.token_share', 'w') as f:
+    with open(ROOT + '/.token_share', 'w') as f:
         f.write(tok)
-
+        
+    print('share folder initialized, cloning repos ...')
     res = subprocess.call(ROOT + '/bin/init_share')
     if res == 0:
         print('Share-Folder fuer User {} eingerichtet.'.format(user))
