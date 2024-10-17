@@ -1,0 +1,7 @@
+Jupyterlab_Intro
+Unterhaltung
+Variabelverzeichnis: Variabelnamen, wie weiss der Interpreter welche Namen definiert sind.
+Reservierte Woerter
+Minipython_I: Ausdruck, Wet eines Ausdrucks
+Minipython_II: ZUweisugen, print For-Loop
+Kontrollfragen
