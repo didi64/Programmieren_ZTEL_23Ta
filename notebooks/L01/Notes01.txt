@@ -1,7 +1,43 @@
 Jupyterlab_Intro
 Unterhaltung
+
 Variabelverzeichnis: Variabelnamen, wie weiss der Interpreter welche Namen definiert sind.
-Reservierte Woerter
+  verschmutzung des Namenraums (=Variabelverzeichnis)
+  wenn man sich bei Varname vertippt, sollte die Variabele nicht gefundenwerdn, und nciht eine
+  zufaellig noch im vars()  liegende Variable statt dessen verwendet werden.
+  
+
+Ausdruck und Anweisung, versuchen dies praezise zu machen, nicht mit ganz Python, sondern einem ganz kleinen Teil davon.
+Um zu zeigen, wie man sachen ganz praezises definieren koennen.
+Zu aufwaendig fuer ganz Python.
+
+vorab:
+2
+2 + 3*5
+
+'foo' + 'bar'
+80 * '-'
+
+2 == 2
+
+x = 2
+x == 2
+
+10 * True
+10 * False
+
+
+print(2*4)
+
+for x in 'abc':
+    print(a)
+
+for buchstabe in 'abc':
+    print(buchstabe)
+
+
+
 Minipython_I: Ausdruck, Wet eines Ausdrucks
-Minipython_II: ZUweisugen, print For-Loop
+Minipython_II: Zuweisugen, print For-Loop
+
 Kontrollfragen

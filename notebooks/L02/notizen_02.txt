@@ -8,6 +8,10 @@ print und input
 
 basic types I
 basic types II
-Umgebung/exec
+
+Funktionen_0: erstellt File in Modules, wo ihr eure Funtionen speichert! Mit DocStrings!
+
+Builtins: gewisse Woerter duerfen nicht als Variabelnamen verwendet werden, weil es Python-Anweisungen sind.
+Kontext
 Funktion_I
 
