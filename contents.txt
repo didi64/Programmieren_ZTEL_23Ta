@@ -1,1 +1,1 @@
-1:Web_Ressourcen.ipynb Jupyterlab_Intro.ipynb Unterhaltung_mit_dem_Interpreter.ipynb Variabelverzeichnis.ipynb Reservierte_Woerter Mini_Python_I.ipynb Mini_Python_II.ipynb
+1:Web_Ressourcen.ipynb Jupyterlab_Intro.ipynb Unterhaltung_mit_dem_Interpreter.ipynb Mini_Python_I.ipynb Mini_Python_II.ipynb Kontrollfragen_01.ipynb

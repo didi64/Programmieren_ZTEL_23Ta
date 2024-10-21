@@ -1,1 +1,0 @@
-Line- und Cell-Magic Befehle sind Anweisungen für Jupyterlab.
