@@ -1,1 +1,1 @@
-1:Web_Ressourcen.ipynb Jupyterlab_Intro.ipynb Unterhaltung_mit_dem_Interpreter.ipynb MiniPython_I.ipynb MiniPython_II.ipynb Kontrollfragen_01.ipynb
+1:foo Web_Ressourcen.ipynb Jupyterlab_Intro.ipynb Unterhaltung_mit_dem_Interpreter.ipynb MiniPython_I.ipynb MiniPython_II.ipynb Kontrollfragen_01.ipynb
