@@ -2,16 +2,103 @@ Workflow
 Share Folder
 aus L01 Kontrollfragen
 Errors
-
+Variabelverzeichnie + Var_Konventions
 Stringliterale
-print und input
+Funtionen_I
+Funtionen_schreiben
+NIM
 
-basic types I
-basic types II
+Thema fuer heute: Funktionen
 
-Funktionen_0: erstellt File in Modules, wo ihr eure Funtionen speichert! Mit DocStrings!
+Wir werden einen ersten Blick auf Funktionen werfen und
+dann Dinge besprechen, die fuer ein besseres Verstaendnis von Funktionen noetige
+sind. Anschliessend werden wir Funktionen etwas genauer anschauen.
 
-Builtins: gewisse Woerter duerfen nicht als Variabelnamen verwendet werden, weil es Python-Anweisungen sind.
-Kontext
-Funktion_I
+---
+Besprechung Kontrollfragen:
 
+# Code Analysieren:
+# Hypothese formulieren und dann teseten.
+
+7) Erlaeutere, Wert von c am Schluss?
+Schreibe Programm und erklaere Anatomie.
+word = '123' # String, joennte auch 123, oder _123 zuweisen
+             # Programm macht genau was man im sagt!
+for c in word:
+    word = '456'
+    print(c)
+print(c)
+
+ersetzte FOr-Loop durch aep Programm
+
+# 8 Lenge Wort, len(word)
+word = 'test'
+length = 0
+for i in word: # i typischer Name fuer For-Loop Variable, oder
+               # oder c fuer character
+               # in diesem speciellen Fall _ 
+    length = length + 1
+length
+
+#9
+word = 'test'
+drow = ''  # word umgedreht: reversed_word =
+           # started mit leerem Word, haengt jeweils auf
+           # der linken Seite neuen Buchstaben an
+for c in word:
+    drow = c + drow
+    print('c:', c, 'drow:', drow)
+drow
+
+# 10
+word = 'ROTOR'
+drow = ''
+for c in word:
+    drow = c + drow # fuege nun Test hinzu, word == drow
+
+Falluneterscheidung
+x = 5
+y = 4
+
+#  Fallunterscheidung
+x_equals_y = x == y
+for _ in ' ' * x_equals_y:
+    print(x, 'ist gleich', y)
+x_not_equals_y = x != y
+for _ in ' ' * x_not_equals_y:
+    print(x, 'ist ungleich', y)
+
+Funktion
+kann einem Codeblock einen einen Namen
+zuweisen,
+Variabeln initialisiere, Codeblock ausf&uuml;hern und
+optional einen Wert zur&uuml;ckgeben.
+
+Funktionen haben ihre eigenen Variabeln:
+koennen ausserhalb der Funktion definierte Variabeln lesen
+innerhalb der Funktion definierte Variabeln sind 
+nur innerhalb der Funktion sichtbar.
+
+#%%file my_functions.py
+def reverse_word(word):
+    '''gibt word umgedreht zurueck
+       word: str
+    '''
+    drow = ''
+    for c in word:
+        drow = c + drow
+    return drow
+
+# ungetesteter Code funktioniert nicht!
+word = 'Ab cdE@!12'
+reverse_word(word)
+
+--------------------
+schreibt Funktion, testet Funktion.
+
+def is_palimdrom(word):
+    '''gibt True zurueck falls word in Palindrom ist, sonst False
+       word: str
+    '''    
+
+-----------------------------------
