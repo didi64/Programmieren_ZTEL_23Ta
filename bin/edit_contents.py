@@ -22,7 +22,8 @@ REPODIR = '/home/studi/work/.src/'
 CONTENTS = REPODIR + 'contents.txt'
 PUSHDIRNAME = 'live_pushes'
 NOTEBOOKS = REPODIR + 'notebooks/'
-PUSHDIR = REPODIR + NOTEBOOKS + PUSHDIRNAME + '/'
+PUSHDIR = NOTEBOOKS + PUSHDIRNAME + '/'
+
 
 def get_contents():
     with open(CONTENTS) as f:
@@ -44,11 +45,21 @@ def write_contents(contents):
             f.write(line + '\n')
 
 
+def missing_files(files):
+    missing = False
+    for file in files:
+        if not os.path.isfile(file):
+            missing = True
+            print(f'No file {file} found!')
+    return missing
+
+
 def find_find(name, path, exclude_dirs=()):
     results = []
     for root, dirs, files in os.walk(path):
-        if path in exclude_dirs:
-            continue
+        for d in exclude_dirs:
+            if d in dirs:
+                dirs.remove(d)
         if name in files:
             results.append(os.path.join(root, name))
     return results
@@ -59,6 +70,9 @@ def push_files(files):
     files = tuple(files)
     pushfiles = tuple(PUSHDIR + file for file in files)
     pushfiles += (CONTENTS,)
+    print(files)
+    print(pushfiles)
+    print(PUSHDIR)
     commit_msg = f'live pushed {pushfiles}'
     cmds = [('cp', '-i') + files + (PUSHDIR,),
             ('git', '-C', REPODIR, 'add') + pushfiles,
@@ -76,31 +90,21 @@ p.add_argument('-l', '--lesson', type=str, default='3141')
 p.add_argument('files', nargs='+')
 
 args = p.parse_args()
-# print(args)
+args.add = not args.remove
 
 if not args.lesson.isdecimal():
     print(f'Lesson must be a decimal, got {args.lesson}!')
     sys.exit(1)
-# test if CONTENTS exists
 if not os.path.isfile(CONTENTS):
     print(f'No file {CONTENTS} found!')
     sys.exit(1)
-
-
-# test if files in args.files are files that exist
-for file in args.files:
-    is_file = os.path.isfile(file)
-    # is_dir = os.path.isdir(file)
-    if is_file:
-        continue
-    print(f'No file {file} found!')
-    sys.exit(1)
-
 
 contents = get_contents()
 key = args.lesson
 
 if args.add:
+    if missing_files(args.files):
+        sys.exit(1)
     items = contents.setdefault(key, set())
     new_files = set()
     for file in args.files:
@@ -122,5 +126,5 @@ elif args.remove:
     if not contents[key]:
         del contents[key]
 
-print(f'{key}: {' '.join(sorted(contents[key]))}')
+print(f'{key}: {' '.join(sorted(contents.get(key, ())))}')
 write_contents(contents)
