@@ -1,4 +1,4 @@
 1:foo Web_Ressourcen.ipynb Jupyterlab_Intro.ipynb Unterhaltung_mit_dem_Interpreter.ipynb MiniPython_I.ipynb MiniPython_II.ipynb Kontrollfragen_01.ipynb
-01: Workflow.ipynb, Kontrollfragen_01A.ipynb
+01: Workflow.ipynb Kontrollfragen_01A.ipynb
 2:ShareFolder.ipynb Errors.ipynb Variabelverzeichnis.ipynb Var_Konventionen.ipynb Stringliterale.ipynb
 3:Builtins.ipynb Basic_Types_I.ipynb Basic_Types_II.ipynb
