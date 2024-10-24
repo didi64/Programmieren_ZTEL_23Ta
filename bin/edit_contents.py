@@ -31,7 +31,7 @@ def get_contents():
         for line in f:
             line = line.strip()
             idx = line.index(':')
-            key = int(line[:idx])
+            key = line[:idx]
             values = line[idx+1:].strip().split()
             contents[key] = set(values)
         return contents
@@ -72,12 +72,15 @@ def push_files(files):
 p = argparse.ArgumentParser()
 p.add_argument('-a', '--add', action='store_true')
 p.add_argument('-r', '--remove', action='store_true')
-p.add_argument('-l', '--lesson', type=int, default=3141)
+p.add_argument('-l', '--lesson', type=str, default='3141')
 p.add_argument('files', nargs='+')
 
 args = p.parse_args()
 # print(args)
 
+if args.lesson.isdecimal():
+    print(f'Lesson must be a decimal, got {args.lesson}!')
+    sys.exit(1)
 # test if CONTENTS exists
 if not os.path.isfile(CONTENTS):
     print(f'No file {CONTENTS} found!')
@@ -108,6 +111,7 @@ if args.add:
             continue
         items.add(file)
         new_files.add(file)
+    write_contents(contents)
     push_files(new_files)
 
 elif args.remove:
