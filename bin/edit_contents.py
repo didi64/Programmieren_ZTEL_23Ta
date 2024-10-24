@@ -21,9 +21,8 @@ import sys
 REPODIR = '/home/studi/work/.src/'
 CONTENTS = REPODIR + 'contents.txt'
 PUSHDIRNAME = 'live_pushes'
-PUSHDIR = REPODIR + PUSHDIRNAME + '/'
 NOTEBOOKS = REPODIR + 'notebooks/'
-
+PUSHDIR = REPODIR + NOTEBOOKS + PUSHDIRNAME + '/'
 
 def get_contents():
     with open(CONTENTS) as f:
@@ -59,6 +58,7 @@ def push_files(files):
     '''add, commit and push files'''
     files = tuple(files)
     pushfiles = tuple(PUSHDIR + file for file in files)
+    pushfiles += (CONTENTS,)
     commit_msg = f'live pushed {pushfiles}'
     cmds = [('cp', '-i') + files + (PUSHDIR,),
             ('git', '-C', REPODIR, 'add') + pushfiles,
