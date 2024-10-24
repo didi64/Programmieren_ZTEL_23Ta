@@ -78,7 +78,7 @@ p.add_argument('files', nargs='+')
 args = p.parse_args()
 # print(args)
 
-if args.lesson.isdecimal():
+if not args.lesson.isdecimal():
     print(f'Lesson must be a decimal, got {args.lesson}!')
     sys.exit(1)
 # test if CONTENTS exists
