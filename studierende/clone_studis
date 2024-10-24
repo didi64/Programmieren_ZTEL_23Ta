@@ -1,0 +1,12 @@
+#! /bin/bash
+
+set -euo pipefail
+token=$(cat .token_dpro)
+owner="dpro-prog2425zh"
+base_url="https://${owner}:${token}@github.com/${owner}"
+initials=$(cat initials)
+
+for i in $initials; do
+    git clone "${base_url}/share_${i}" ${i}_share
+    git clone "${base_url}/response_${i}" ${i}_response
+done

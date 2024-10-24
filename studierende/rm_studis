@@ -1,0 +1,9 @@
+#! /bin/bash
+
+set -euo pipefail
+initials=$(cat initials)
+
+for i in $initials; do
+    rm -rf "${i}_share"
+    rm -rf "${i}_response"
+done

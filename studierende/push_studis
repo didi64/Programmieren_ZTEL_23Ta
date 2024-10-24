@@ -1,0 +1,10 @@
+#! /bin/bash
+
+set -euo pipefail
+initials=$(cat initials)
+
+for i in $initials; do
+    git -C "${i}_response" add .
+    git -C "${i}_response" commit -m "answered $(date)" || true
+    git -C "${i}_response" push
+done

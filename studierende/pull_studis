@@ -1,0 +1,9 @@
+#! /bin/bash
+
+set -euo pipefail
+initials=$(cat initials)
+
+for i in $initials; do
+    git -C "${i}_share" pull
+    git -C "${i}_response" pull
+done
