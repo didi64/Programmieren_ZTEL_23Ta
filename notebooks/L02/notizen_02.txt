@@ -10,13 +10,33 @@ NIM
 
 Thema fuer heute: Funktionen
 
+Liebe Studierende,
+
+am Montag Abend findet der Unterricht vor Ort statt.
+Ich freue mich, euch alle persoenlich kennenlernen zu duerfen.
+
 Wir werden einen ersten Blick auf Funktionen werfen und
-dann Dinge besprechen, die fuer ein besseres Verstaendnis von Funktionen noetige
-sind. Anschliessend werden wir Funktionen etwas genauer anschauen.
+zusammen einige einfache Funktionen schreiben.
 
+Beste Gruesse,
+Dieter
 ---
-Besprechung Kontrollfragen:
+Workflow: L01 erstellen, alles ausser Kontrollfragen dortin ziehen.
+update 01: ->sharefolder einrichten 
 
+Besprechung Kontrollfragen:
+macht Notizen direkt im Notebook Kontrollfragen_01
+1)Einruecken
+2) reset nicht besprochen: loescht Variabeln
+x=hallo, aenere spaeter auf msg
+-
+print(x)
+3) Zahlen, Strings, True, False, None (Literale) formen dann daraus Ausdrucke
+alles ist syntaktich korreter Ausdruck:
+kann aber nicht jeden Ausdruck auswerten.
+kann Stings addieren und mult.
+True/False verhalten sich wie 0 und 1.
+4)
 # Code Analysieren:
 # Hypothese formulieren und dann teseten.
 
@@ -39,8 +59,28 @@ for i in word: # i typischer Name fuer For-Loop Variable, oder
                # in diesem speciellen Fall _ 
     length = length + 1
 length
+--------------
+
+
 
 #9
+----
+word = 'abc'
+
+
+
+drow = ''  # reverse word
+drow
+--
+drow = word[0] + drow
+drow
+--
+drow = word[1] + drow
+drow
+--
+drow = word[2] + drow
+drow
+-- dann For-Schleife
 word = 'test'
 drow = ''  # word umgedreht: reversed_word =
            # started mit leerem Word, haengt jeweils auf
@@ -56,7 +96,8 @@ drow = ''
 for c in word:
     drow = c + drow # fuege nun Test hinzu, word == drow
 
-Falluneterscheidung
+--skip
+Falluneterscheidung, MiniPython hat kein if
 x = 5
 y = 4
 
@@ -67,17 +108,21 @@ for _ in ' ' * x_equals_y:
 x_not_equals_y = x != y
 for _ in ' ' * x_not_equals_y:
     print(x, 'ist ungleich', y)
+---
+alles in L01 schieben
+update 2
 
-Funktion
-kann einem Codeblock einen einen Namen
-zuweisen,
-Variabeln initialisiere, Codeblock ausf&uuml;hern und
-optional einen Wert zur&uuml;ckgeben.
 
-Funktionen haben ihre eigenen Variabeln:
-koennen ausserhalb der Funktion definierte Variabeln lesen
-innerhalb der Funktion definierte Variabeln sind 
-nur innerhalb der Funktion sichtbar.
+show: 1. Paragraph con Funktionen_I
+open new notebook (Funktion_schreiben. Theorie spaeter)
+----
+word = 'foobar'
+
+drow = ''
+for c in word:
+    drow = c + drow
+drow
+--
 
 #%%file my_functions.py
 def reverse_word(word):
@@ -94,11 +139,62 @@ word = 'Ab cdE@!12'
 reverse_word(word)
 
 --------------------
-schreibt Funktion, testet Funktion.
+schreibt Funktion, oeffne File, testet import spaeter
 
 def is_palimdrom(word):
     '''gibt True zurueck falls word in Palindrom ist, sonst False
        word: str
     '''    
-
+    ...
+def draw_stars(n):
+    '''gibt n Sterne auf einer Zeile aus: *...*
+        n: int    
+    '''
+    ...
 -----------------------------------
+
+Was heisst Funktionen haben ihre eigenen Variabeln?
+Wie verwaltet der Interpreter Variabeln?
+Wie kann man definierte Variabeln wieder loeschen?
+Was hat es mit dem DocString auf sich?
+
+Zuerst nochmals zu etwas ganz anderem: Errors
+Fehlermeldungen, denen ihr begegnen werden!
+Errors: 15'
+
+Stringliterale: play for 10'
+
+
+Konventionen zu Variabelnamen (Konventionen, gibt viele Ausnahmen!)
+Konventionen variieren von Programmiersprache zu Programmiersprache,
+sind also python-spezifisch!)
+
+Var_Konv: 5' + 10'
+Variabelverz: 10 + 10'
+
+Funktionen_I: 15 ' : 15' zum Spielen, break it and fix it again!
+Funktionen_schreiben.
+
+Kontrollfragen_02
+
+--------------
+Falls noch Zeit:
+
+Funktion, die diesen Output produzirt.
+a4b4c4d4
+a3b3c3d3
+a2b2c2d2
+a1b1c1d1
+
+Tuple/ List nbrs = (1,2,3)
+nbrs[0]
+
+numbers = [1, 2, 3]
+numbers[1] = 4
+
+heaps = (3,4,5,6)
+schreibe show_heaps(3,4,5,6)
+
+print_ind_input.ipynb
+Builtins.ipynb
+MiniPython_III?
