@@ -10,25 +10,22 @@ NIM
 
 Thema fuer heute: Funktionen
 
-Liebe Studierende,
+Workflow
+=========
 
-am Montag Abend findet der Unterricht vor Ort statt.
-Ich freue mich, euch alle persoenlich kennenlernen zu duerfen.
-
-Wir werden einen ersten Blick auf Funktionen werfen und
-zusammen einige einfache Funktionen schreiben.
-
-Beste Gruesse,
-Dieter
----
 Workflow: L01 erstellen, alles ausser Kontrollfragen dortin ziehen.
+zeige Notebook spaeter
+
+Sharefolder
 update 01: ->sharefolder einrichten 
+try: msg_studis "Ja habe ich, LG Dieter"
 
 Besprechung Kontrollfragen:
+===========================
 macht Notizen direkt im Notebook Kontrollfragen_01
-1)Einruecken
+1) Einruecken
 2) reset nicht besprochen: loescht Variabeln
-x=hallo, aenere spaeter auf msg
+x=hallo, aednere spaeter auf Varname zu msg
 -
 print(x)
 3) Zahlen, Strings, True, False, None (Literale) formen dann daraus Ausdrucke
@@ -49,7 +46,7 @@ for c in word:
     print(c)
 print(c)
 
-ersetzte FOr-Loop durch aep Programm
+ersetzte FOr-Loop durch aequiv. Programm
 
 # 8 Lenge Wort, len(word)
 word = 'test'
@@ -146,22 +143,54 @@ def is_palimdrom(word):
        word: str
     '''    
     ...
+
+Ex:
+einma mit und einmal ohne StringmultipliKation
 def draw_stars(n):
     '''gibt n Sterne auf einer Zeile aus: *...*
         n: int    
     '''
-    ...
------------------------------------
+    line = ...
+    print(line)
 
-Was heisst Funktionen haben ihre eigenen Variabeln?
+    line = ''
+    for 
+
+    print(line)
+-------
+def draw_stars(n):
+    line = '*' * n
+    print(line)
+
+
+def draw_stars(n):
+    line = ''
+    for _ in ' ' * n:
+        line = line + '*'
+    print(line)
+----------------------------
+
+
+
+Ueberleitung Funktionen:
+========================
+werden spaeter noch folgende Fragen beantworten:
+Was genau heisst, Funktionen haben ihre eigenen Variabeln?
 Wie verwaltet der Interpreter Variabeln?
 Wie kann man definierte Variabeln wieder loeschen?
 Was hat es mit dem DocString auf sich?
 
+Errors
+======
 Zuerst nochmals zu etwas ganz anderem: Errors
 Fehlermeldungen, denen ihr begegnen werden!
 Errors: 15'
 
+Stringliterale
+==============
+Strings haben einige Eigenheiten.
+Anfuehrungszeichen im String \', aber wie stellt man dann \ dar? \\
+Multilie Strings, wie zeigt man Zeilenwechsel an? /
 Stringliterale: play for 10'
 
 
@@ -169,9 +198,14 @@ Konventionen zu Variabelnamen (Konventionen, gibt viele Ausnahmen!)
 Konventionen variieren von Programmiersprache zu Programmiersprache,
 sind also python-spezifisch!)
 
-Var_Konv: 5' + 10'
-Variabelverz: 10 + 10'
+Var_Konv 5' + 10'
+========
 
+Variabelverz: 10 + 10'
+======================
+
+Funktionen
+==========
 Funktionen_I: 15 ' : 15' zum Spielen, break it and fix it again!
 Funktionen_schreiben.
 
@@ -180,7 +214,8 @@ Kontrollfragen_02
 --------------
 Falls noch Zeit:
 
-Funktion, die diesen Output produzirt.
+Funktion, die diesen Output produziert.
+(no)
 a4b4c4d4
 a3b3c3d3
 a2b2c2d2
@@ -194,7 +229,24 @@ numbers[1] = 4
 
 heaps = (3,4,5,6)
 schreibe show_heaps(3,4,5,6)
+def show(heaps):
+    i = 0
+    for head in heaps:
+        i = i + 1
+        line = '*' * head
+        mark = str(i) + ') '
+        print(mark + line)
 
-print_ind_input.ipynb
+print_and_input.ipynb
 Builtins.ipynb
 MiniPython_III?
+
+def f(n):
+    i = 0
+    for _ in ' ' * n:
+        i = i + 1
+        stars = 'O' * i
+        pluses = 'X' * (n + 1 - i)
+        line = stars + pluses
+        print(line)
+
