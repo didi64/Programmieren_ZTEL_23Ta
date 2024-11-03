@@ -1,1 +1,269 @@
-notebook finder
+Kontrollfragen02A
+print und input 
+    Alter ausrechnen
+Booleans and the Operators not, and, or
+Basic_Types 1,2
+- Vergleichs, is , in, not in, opertoren
+if-then-else
+Modules
+While
+NIM
+Kontrollfragen03
+
+Mache Gruppen:
+Marco + Steve
+Mike + Eric
+Antonio
+=============
+Tiago 
+Jean?
+
+
+Kontrollfragen: revisite Strings, Funktionen, For-Loops, 
+-> Fuer Funktionen siehe notizen_02.ipynb
+Umwandeln in int und str.
+
+x = 123
+x + x
+s = str(x)
+s + s
+
+y = int(s)
+y == x
+
+
+print und input 
+==============
+Aufgabe:
+Frage nach Jahrgang und rechne alter aus
+def compute_age(year=2024):
+    name = input('Dein Name:')
+    jahrgang = int(input('Dein Jahrgang:'))
+    alter = year - jahrgang
+    msg = 'Hallo ' + name + ', du bist ' + str(alter) + ' Jahre alt.'
+    print(msg)
+    
+compute_age()
+
+def get_age(year=2024):
+    jahrgang = int(input('Dein Jahrgang:'))
+    alter = year - jahrgang
+    return alter
+    
+age = get_age()
+print('Du bist' , age, 'Jare alt')
+-----------------------------------------------------------
+
+Basic_Types I:
+
+tuples and lists: kurze Vorschau auf die Type tuple und list
+Loesung Aufgabe
+
+s = 'abcd'
+items = ('Alice', 3, True)
+things = ['Alice', 3, True]
+--
+for c in s:
+    print(c, end=', ')
+for item in items:
+    print(item, end=', ')
+for thing in things:
+    print(thing, end=', ')
+---
+Zugriff auf Elemente
+s[0]
+items[1]
+things[2]
+------------
+Nur Listen sind modifizierbar:
+things[2] = 'a new thing'
+items[0] = 2
+s[0] = 'a'
+------------------
+n = 2
+type(2)
+type(2) is int
+
+
+type(s) is str
+type(items) is tuple
+type(things) is list
+---------------------
+
+s = 'abcd'
+chars = tuple(s)
+chars
+
+letters = list(chars)
+letters
+
+s1 = str(letters)
+s1
+
+def lst2str(letters):
+    s = ''
+    for c in letters:
+        s = s + c
+    return s
+
+word = 'asfasdf'
+word == lst2str(list(word))
+
+Basic_Types_II
+stelle Aufgaben dazu!
+
+
+easy interlude:
+if-then-else + While
+=============
+
+
+While
+=====
+# direkte Bedinung
+
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+z = int(input(question))
+
+while x * y != z:
+    print('falsch')
+    z = int(input(question))
+print('korrekt')
+
+# Hilfsvariable
+
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+done = False
+
+while not done:
+    z = int(input(question))
+    if z == x * y:
+        print('korrekt')
+        done = True
+    else:
+        print('falsch')
+
+# Ausbrechen
+
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+
+while True:
+    z = int(input(question))
+    if z == x * y:
+        break
+    print('falsch')
+print('korrekt')    
+
+Module
+======
+zuerst: jeder schreibt eine Funktionen und definiert eine Variable
+in einem File my_things.py
+
+PIN = 123
+
+def reverse_number(n):
+    drow = ''
+    for c in str(n):
+        drow = c + drow
+    return int(drow)
+
+
+Definiere auch Einige Konstanten.
+Bed.: Verursachen keine Fehler.
+schreibe diese in ein file my_functions.py
+
+%%file my_functions.py
+def hello_world():
+    print('Hello, World!')
+
+%%writefile -a
+def length(s):
+    i = 0
+    for _ in s:
+        i = i + 1
+    return i
+
+MYPIN = 1234
+EMAIL = 'dieter.probst@edu.teko.ch'
+
+Wir wollen als naechstes ein einfaches Spiel programmieren.
+Gegeben sind Haufen mit Steinen.
+- 2 Spieler entfernen abwechselnd ein oder mehrere Steine von einem der Haufen.
+- Wer den letzten Haufen abr&auml;umt hat gewonnen.
+
+Schreiben 3 FUnktionen, speichere diese in nim.py ab.
+Teile auf. Jede Gruppe schreibt eine Funtion
+
+Frage nach Zug:
+def ask_for_move():
+    '''fragt von welchem Haufer  wieviele Steine
+       weggenommen werden sollen
+       gibt ein Tuple move = (Haufen, Anzahl Steine zurueck)
+    '''
+    heap = input('Von welchem Haufen?')
+    n = input('Wieviele?')
+    move = (int(heap) - 1, int(n))
+    return move
+
+heaps = [3, 4, 5, 6]
+
+def show(heaps):
+    '''heaps: list (Liste mit Anzahl Steinen)
+       stellt die Anzahl Steine textlich dar
+       z.B. heap([2, 1, 4]) gibt Folgendes aus:
+       1) **
+       2) *
+       3) ****
+    '''
+    i = 0
+    for head in heaps:
+        i = i + 1
+        line = '*' * head
+        mark = str(i) + ') '
+        print(mark + line)
+
+def count(heaps):
+    '''gibt die Summe der Listenelemente von heaps
+       zuruck
+       heaps: list[int]
+    '''
+    tot = 0
+    for heap in heaps:
+        tot = tot + heap
+    return tot
+
+
+
+NIM
+
+if-then-else
+
+def sign(n):
+    '''returns the sign of the number n'''
+    if n < 0:
+        return -1
+    elif n > 0:
+        return 1
+    else:
+        return 0  
+
+def fizzbuzz(n):
+    if  n % 5 == 0 and n % 3 ==0:
+        return 'fizzbuzz'
+    elif n % 5 == 0:
+        return 'buzz'
+    elif n % 3 == 0:
+        return 'fizz'
+    else:
+        return str(n)
+
+i = 0
+for _ in ' ' * 30:
+    i = i + 1
+    print(fizzbuzz(i), end=', ')
