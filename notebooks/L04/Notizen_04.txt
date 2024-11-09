@@ -167,11 +167,9 @@ NIM
 
 Neu: range-Funktion, 
 Indexing und Slicing.
-Der Unpacking-Operator *
-
-Vorschau:
-Typen und ihre Methoden
-str.format(text_with_placeolders, *placeholders)
+Format und Platzhalter str.format
+fstring = '|{}|{:5.1f}0|'
+Der Unpacking-Operator *, Tabelle formatiert ausgeben, variadic Functions
 
 Kontrollfragen:
 
