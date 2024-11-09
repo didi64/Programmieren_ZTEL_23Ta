@@ -1,0 +1,179 @@
+Mache Gruppen:
+Marco + Steve
+Mike + Eric
+Antonio
+=============
+Tiago 
+Jean?
+
+
+
+Weiter mit Lektion3: While, Module, NIM, Kontrollfragen03A
+
+Repetition:
+Typen:
+int, float, str, bool, tuple, list
+
+- nur Liste ist modifizierbar!
+- str, tuple und list in iteralbe, 
+  kann mit For-Loop darueber iterieren.
+  die Funktion len liefert die Laenge, Anzahl Elemente
+- kann mit items[i] auf das ite Element zugreifen.
+
+Guess number, Vorschau While
+
+
+While: potentialle Endloschleifen!
+======
+i = 0
+n = 3
+
+while i < n:
+    print(i)
+    i = i + 1
+
+while True:
+    print(i)
+    i = i + 1
+    if i >= n:
+        break
+
+done = False
+while not done:
+    print(i)
+    i = i + 1
+    if i >= n:
+        done = True
+
+
+While
+=====
+# direkte Bedingung
+
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+z = int(input(question))
+
+while x * y != z:
+    print('falsch')
+    z = int(input(question))
+print('korrekt')
+
+# Hilfsvariable
+
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+done = False
+
+while not done:
+    z = int(input(question))
+    if z == x * y:
+        print('korrekt')
+        done = True
+    else:
+        print('falsch')
+
+# Ausbrechen
+
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+
+while True:
+    z = int(input(question))
+    if z == x * y:
+        break
+    print('falsch')
+print('korrekt')    
+
+Module
+======
+zuerst: jeder schreibt eine Funktionen und definiert eine Variable
+in einem File mythings.py
+
+%%file functions.py
+PIN = 123
+
+%%writefile -a
+def length(s):
+    '''gibt die Laenge des Wortes s zurueck
+       s: str
+    '''
+    i = 0
+    for _ in s:
+        i = i + 1
+    return i
+
+import mythings
+mythings.PIN
+mythings.length('hallo')
+
+
+Wir wollen als naechstes ein einfaches Spiel programmieren.
+Gegeben sind Haufen mit Steinen.
+- 2 Spieler entfernen abwechselnd ein oder mehrere Steine von einem der Haufen.
+- Wer den letzten Haufen abr&auml;umt hat gewonnen.
+
+Schreiben 3 Funktionen, speichere diese in nim.py ab.
+Marco + Steve: ask_for_move
+Mike+Eric: show
+Antonio: count
+
+Module (kurz gemeinsam, dann alleine weiter)
+
+Frage nach Zug:
+def ask_for_move():
+    '''fragt von welchem Haufer  wieviele Steine
+       weggenommen werden sollen
+       gibt ein Tuple move = (Haufen, Anzahl Steine zurueck)
+    '''
+    heap = input('Von welchem Haufen?')
+    n = input('Wieviele?')
+    move = (int(heap) - 1, int(n))
+    return move
+
+heaps = [3, 4, 5, 6]
+
+def show(heaps):
+    '''heaps: list (Liste mit Anzahl Steinen)
+       stellt die Anzahl Steine textlich dar
+       z.B. heap([2, 1, 4]) gibt Folgendes aus:
+       1) **
+       2) *
+       3) ****
+    '''
+    i = 0
+    for head in heaps:
+        i = i + 1
+        line = '*' * head
+        mark = str(i) + ') '
+        print(mark + line)
+
+def count(heaps):
+    '''gibt die Summe der Listenelemente von heaps
+       zuruck
+       heaps: list[int]
+    '''
+    tot = 0
+    for heap in heaps:
+        tot = tot + heap
+    return tot
+
+erstelle File nim.py mit diesen 3 Funktionen
+
+NIM
+
+Neu: range-Funktion, 
+Indexing und Slicing.
+Der Unpacking-Operator *
+
+Vorschau:
+Typen und ihre Methoden
+str.format(text_with_placeolders, *placeholders)
+
+Kontrollfragen:
+
+
+
