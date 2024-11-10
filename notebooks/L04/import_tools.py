@@ -7,9 +7,9 @@ def add(path):
     '''
     if path not in sys.path:
         sys.path = [path] + sys.path
-        print(path, ' zu sys.path hinzugefuegt')
+        print(path, 'zu sys.path hinzugefuegt')
     else:
-        print(path, ' ist bereits in sys.path')
+        print(path, 'ist bereits in sys.path')
 
 
 def remove(path):
@@ -25,4 +25,4 @@ def remove(path):
         if p != path:
             syspath = syspath + [p]
     sys.path = syspath
-    print(path, 'removed from sys.path!')
+    print(path, 'aus sys.path entfernt')
