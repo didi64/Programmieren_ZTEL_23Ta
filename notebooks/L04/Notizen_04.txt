@@ -93,8 +93,7 @@ print('korrekt')
 
 Module
 ======
-zuerst: jeder schreibt eine Funktionen und definiert eine Variable
-in einem File mythings.py
+Vorschau:
 
 %%file mythings.py
 PIN = 123
@@ -123,9 +122,13 @@ sys.path
 
 Copy to modules Folder.
 ------
-Funktionen_schreiben, Kontrollfragen_02A
+Sammle Funktionen in Modul myfunctions.py aus
+L02/ Funktionen_schreiben, Kontrollfragen_02A
 
+fuege DOcStrings ein
+importiere und teste die Funktionen!
 -----
+
 Wir wollen als naechstes ein einfaches Spiel programmieren.
 Gegeben sind Haufen mit Steinen.
 - 2 Spieler entfernen abwechselnd ein oder mehrere Steine von einem der Haufen.
@@ -136,7 +139,13 @@ Marco + Steve: ask_for_move
 Mike+Eric: show
 Antonio: count
 
-Module (kurz gemeinsam, dann alleine weiter)
+Module (gemeinsam)
+
+Schreiben 3 Funktionen, speichere diese in nim.py ab.
+Marco + Steve: ask_for_move
+Mike+Eric: show
+Antonio: count
+
 
 Frage nach Zug:
 def ask_for_move():
@@ -180,11 +189,64 @@ erstelle File nim.py mit diesen 3 Funktionen
 
 NIM
 
-Neu: range-Funktion, 
+range
+=====
+range(3)
+tuple(range(3))
+for i in range(3):
+    print(i)
+
+Loesungen:
+nbrs = (1, 5, 9)
+sum(nbrs)
+
+even_nbrs = tuple(range(2, 101, 2))
+sum(even_nbrs)
+
+odd_nbrs = tuple(range(1, 100, 2))
+sum(odd_nbrs)
+
+def total(numbers):
+    tot = 0
+    for n in numbers:
+        tot = tot + n
+    return tot
+
+total(even_nbrs)
+total(odd_nbrs)
+
 Indexing und Slicing.
-Format und Platzhalter str.format
+====================
+ung_words = []
+for word in words:
+    if word[-3:] == 'ung':
+        ung_words = ung_words + [word]
+ung_words
+
+Format und Platzhalter, str.format
+==================================
+fstring = 'Artikel: {}, Preis {}'
+str.format(fstring, 'Velo', 1999.99)
+
+str. + tab vom Typ str bereitgestelletn Funktionen/Methoden.
+str.format verhaelet sich genau wie eine Funktion aus sagen wir einem Modul str
+
+Fuege Format-Spezifikationen hinau :<10 :5.2f
+
+->schaue Notebook an
+
+Loesungen
 fstring = '|{}|{:5.1f}0|'
+
 Der Unpacking-Operator *, Tabelle formatiert ausgeben, variadic Functions
+=========================
+
+print(1, 2, 3)
+
+args = (1, 2, 3)
+print(args) # Tuple ausgeben
+print(*args)  #auspacken
+
 
 Kontrollfragen:
 
