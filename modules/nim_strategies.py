@@ -20,6 +20,8 @@ def ask_compi(heaps):
             move = (i, heap - n)
             show_query(move)
             return move
+
+    # no winning move: remove one from first non-empty heap
     i = -1
     for heap in heaps:
         i = i + 1
