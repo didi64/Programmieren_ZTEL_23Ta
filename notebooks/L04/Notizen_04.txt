@@ -6,7 +6,14 @@ Antonio
 Tiago 
 Jean?
 
+Files for me:
+notizen_04.ipynb
+nim.py
 
+Aufraeumen
+Delete  While_Loops Module NIM Kontrollfragen03
+Rest in L03 verschieben.
+update 4
 
 Weiter mit Lektion3: While, Module, NIM, Kontrollfragen03A
 
@@ -24,7 +31,71 @@ int, float, str, bool, tuple, list
 notizen.ipynb
 Guess number, Vorschau While
 
+==
+# Basic Types
+n = 2
+x = 3.14159265359
+s = 'hallo'
+artist = ('Amy', 'Winehous')
+artists = [('Bob', 'Dylan'),  artist]
+items = (n, x, s, artist, artists)
 
+artists[1]
+artists[1][0]
+for item in items:
+    print(type(item), item)
+--
+1/10 + 2/10 == 3/10
+epsilon = 10 ** -10
+epsilon
+abs(1/10 + 2/10 - 3/10)
+abs(1/10 + 2/10 - 3/10) < epsilon  # 1/10 + 2/10 ist (fast) gleich 3/10
+
+# Input, Typumwandlung, Vorschau Modul
+import random
+x = random.randint(1, 10)
+y = random.randint(1, 10)
+x, y
+
+question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
+ans = input(question)
+n = int(ans)
+n == x * y
+
+# if then else
+secret = random.randint(1, 10)
+secret
+
+guess = 9
+if guess == secret:
+    print('richtig')
+else:
+    print('falsch')
+
+guess = 9
+if guess == secret:
+    print('richtig')
+elif guess < secret:
+    print('zu klein')
+else:
+    print('zu gross')
+
+def eval_guess(guess, secret):
+    if guess == secret:
+        print('richtig')
+    elif guess < secret:
+        print('zu klein')
+    else:
+        print('zu gross')
+    return guess == secret
+
+secret = random.randint(1, 10)
+guess = int(input('Zahl:'))
+while eval_guess(guess, secret):
+    guess = int(input('Zahl:'))
+
+
+==
 While: potentialle Endloschleifen!
 Synopsis While:
 i = 0
@@ -47,6 +118,11 @@ while not done:
     if i >= n:
         done = True
 
+
+secret = random.randint(1, 10)
+guess = int(input('Zahl:'))
+while eval_guess(guess, secret):
+    guess = int(input('Zahl:'))
 
 While
 =====
@@ -120,12 +196,12 @@ sys.path
 
 %load $students.__file__
 
-Copy to modules Folder.
+Copy to Folder Modules.
 ------
 Sammle Funktionen in Modul myfunctions.py aus
 L02/ Funktionen_schreiben, Kontrollfragen_02A
 
-fuege DOcStrings ein
+fuege Doc-Strings ein
 importiere und teste die Funktionen!
 -----
 
@@ -189,6 +265,8 @@ erstelle File nim.py mit diesen 3 Funktionen
 
 NIM
 
+KontrollfragenA:
+
 range
 =====
 range(3)
@@ -212,11 +290,12 @@ def total(numbers):
         tot = tot + n
     return tot
 
-total(even_nbrs)
-total(odd_nbrs)
+total(even_nbrs) == sum(even_nbrs)
+total(odd_nbrs) == sum(odd_nbrs)
 
 Indexing und Slicing.
 ====================
+Loesung:
 ung_words = []
 for word in words:
     if word[-3:] == 'ung':
@@ -245,10 +324,7 @@ print(1, 2, 3)
 
 args = (1, 2, 3)
 print(args) # Tuple ausgeben
-print(*args)  #auspacken
-
-
-Kontrollfragen:
+print(*args)  # auspacken
 
 
 
