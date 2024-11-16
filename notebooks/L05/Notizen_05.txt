@@ -1,0 +1,236 @@
+Mache Gruppen:
+Marco + Steve
+Mike + Eric
+Antonio
+=============
+Tiago 
+Jean?
+
+Files for me:
+notizen_05.ipynb
+
+
+Aufraeumen
+Delete  
+Rest in L04 verschieben.
+update 5
+
+
+Repetition anhand der Kontrollfragen.
+
+Repetition range
+# Range
+
+stop = 10
+for i in range(stop):
+    print(i, end=', ')
+print('\n' + '-'* 50)
+
+start = 2
+for i in range(start, stop):
+    print(i, end=', ')
+print('\n' + '-'* 50)
+
+step = 3
+for i in range(start, stop, step):
+    print(i, end=', ')
+print('\n' + '-'* 50)
+
+# gerade Zahlen von 2 bis und mit 100
+even_nbrs = tuple(range(2, 101, 2))
+even_nbrs[0], even_nbrs[-1]
+
+# ungerade Zahlen von 1 bis  100
+odd_nbrs = tuple(range(1, 100, 2))
+odd_nbrs[0], odd_nbrs[-1]
+
+sum(even_nbrs), sum(odd_nbrs)
+
+def total(numbers):
+    tot = 0
+    for n in numbers:
+        tot = tot + n
+    return tot
+
+total(even_nbrs) == sum(even_nbrs), \
+total(odd_nbrs) == sum(odd_nbrs)
+
+Indexing and Slicing:
+# Indexing
+numbers = tuple(range(100))
+numbers[0], numbers[1], numbers[-1], numbers[-2]
+
+start = 3
+stop = 10
+numbers[start:stop]
+
+step = 10
+numbers[start:99:step]
+
+# Fehlt step ist step=1
+# fehlt start und/oder stop wir der entsprechende 
+# Index eingesetzt (0 oder Laenge des Tuples/Liste)
+numbers = tuple(range(10))
+numbers[::-1]
+
+word = 'foo'
+word[::-1]
+
+Indexing and Slicing:
+Loesung:
+words = ['Übung', 'Haus', 'Atmung', 'Begrüssung', 'Hund', 'Ehrung', 'Einigung','Endung']
+ung_words = []
+for word in words:
+    if word[-3:] == 'ung':
+        ung_words = ung_words + [word]
+ung_words
+
+Review: break und continue in For- und Whileschleifen
+
+# Index suchen
+char = 'd'
+word = 'index'
+i = 0
+for c in word:
+    if c == 'd':
+        break
+    i = i + 1
+i, word[i]
+
+
+# alle Vorkommen finden
+word = 'abracadabra'
+char = 'a'
+indices = ()
+   
+i = -1
+for c in word:
+    i = i + 1  
+    if c != char:
+        continue
+    indices = indices + (i,)
+
+indices
+
+for i in indices:
+    print(word[i], end = ', ')
+
+
+FOr und WHile schleifen bis for Aufgabe:
+
+def eval_guess(guess, secret):
+    '''returns a tuple (ok, i),
+       ok is guess == secret, and i is -1,0 or 1 depending on whether
+       guess is too small, correct or too big
+       guess: int
+       secret: int
+    '''
+    if guess == secret:
+        return (True, 0)
+    if guess < secret:
+        return (False, -1)
+    if guess > secret:
+       return (False, 1)
+
+comments = ['richtig', 'zu gross', 'zu klein']
+comments[-1]
+
+secret = 3
+guess = 1
+comments = ['richtig', 'zu gross', 'zu klein']
+ok, i = eval_guess(guess, secret)
+ok, comments[i]
+
+secret = 3
+comments = ['richtig', 'zu gross', 'zu klein']
+while True:
+    guess = int(input('Zahl:'))
+    ok, i = eval_guess(guess, secret)
+    print(comments[i])
+    if ok:
+        break
+
+def next_guess(guess, evaluation, lower, upper):
+    ''' returns a triple (next_guess, lower, upper)
+            so that lower <= secret <= upper
+        guess: int
+        evaluation: -1 (too small) or 1 (too big)
+        lower: int (lower <= secret)
+        upper: int (secret <= upper)
+    '''
+    if evaluation == 1:
+        upper = guess - 1
+    else:
+        lower = guess + 1
+    n = (lower + upper) // 2
+    return n, lower, upper
+
+lower, upper = 0, 10
+secret = 2
+guess = 7
+
+ok, e = eval_guess(guess, secret)
+if not ok:
+    guess, lower, upper = next_guess(guess, e, lower, upper)
+ok, guess, lower, upper 
+
+import random
+lower = 0 
+upper = 1000
+secret = random.randint(lower, upper)
+comments = ['richtig', 'zu gross', 'zu klein']
+
+guess = (lower + upper) // 2
+attempts = 0
+while True:
+    attempts = attempts + 1
+    ok, e = eval_guess(guess, secret)
+    msg = str.format('{} ist {}', guess, comments[e])
+    print(msg)
+    if ok:
+        print('Versuche:', attempts)
+        break
+    guess, lower, upper = next_guess(guess, e, lower, upper)
+
+
+Coding range by hand (another time)
+
+
+
+
+
+
+
+
+
+Format und Platzhalter, str.format
+==================================
+fstring = 'Artikel: {}, Preis {}'
+str.format(fstring, 'Velo', 1999.99)
+
+
+str.format verhaelt sich genau wie eine Funktion aus einem Modul str
+
+Fuege Format-Spezifikationen hinzu 
+{:<10}, {:^10}, {:>10}
+{:5.2f}
+{:05.2f}
+fstring = 'Artikel: {:<10}, Preis {:10.2f}'
+print(str.format(fstring, 'Velo', 1999.99))
+print(str.format(fstring, 'Skateboard', 499.99))
+->schaue Notebook an
+
+Loesungen
+fstring = '|{}|{:5.1f}0|'
+
+Der Unpacking-Operator *, Tabelle formatiert ausgeben, variadic Functions
+=========================
+
+print(1, 2, 3)
+
+args = (1, 2, 3)
+print(args) # Tuple ausgeben
+print(*args)  # auspacken
+
+
+

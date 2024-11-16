@@ -11,7 +11,7 @@ notizen_04.ipynb
 nim.py
 
 Aufraeumen
-Delete  While_Loops Module NIM Kontrollfragen03
+Delete  While_Loops Module NIM Kontrollfragen03*
 Rest in L03 verschieben.
 update 4
 
@@ -32,39 +32,43 @@ notizen.ipynb
 Guess number, Vorschau While
 
 ==
-# Basic Types
-n = 2
-x = 3.14159265359
-s = 'hallo'
+# Typle/ List
 artist = ('Amy', 'Winehous')
-artists = [('Bob', 'Dylan'),  artist]
-items = (n, x, s, artist, artists)
+type(artist)
 
-artists[1]
-artists[1][0]
-for item in items:
-    print(type(item), item)
+artist[0]
+fname, lname = artist
+print(fname, lname)
+
+artists = [('Bob', 'Dylan')]
+len(artists)
+type(artists)
+artists[0][0]
+
+artists = artists + [artist]
+len(artists)
+fname, lname = artists[1]
+print(fname, lname)
 --
+
 1/10 + 2/10 == 3/10
 epsilon = 10 ** -10
 epsilon
 abs(1/10 + 2/10 - 3/10)
 abs(1/10 + 2/10 - 3/10) < epsilon  # 1/10 + 2/10 ist (fast) gleich 3/10
 
-# Input, Typumwandlung, Vorschau Modul
-import random
-x = random.randint(1, 10)
-y = random.randint(1, 10)
-x, y
+# Input, Typumwandlung
+x = 2
+y = 3
 
 question = 'Wieviel ist ' + str(x) + ' Mal ' + str(y) + '?'
 ans = input(question)
-n = int(ans)
+# n = int(ans)
 n == x * y
 
 # if then else
-secret = random.randint(1, 10)
-secret
+secret = 7
+
 
 guess = 9
 if guess == secret:
@@ -89,13 +93,7 @@ def eval_guess(guess, secret):
         print('zu gross')
     return guess == secret
 
-secret = random.randint(1, 10)
-guess = int(input('Zahl:'))
-while eval_guess(guess, secret):
-    guess = int(input('Zahl:'))
-
-
-==
+==Vorschau:
 While: potentialle Endloschleifen!
 Synopsis While:
 i = 0
@@ -118,6 +116,9 @@ while not done:
     if i >= n:
         done = True
 
+
+import random
+random.randint(1, 10)
 
 secret = random.randint(1, 10)
 guess = int(input('Zahl:'))
@@ -292,39 +293,4 @@ def total(numbers):
 
 total(even_nbrs) == sum(even_nbrs)
 total(odd_nbrs) == sum(odd_nbrs)
-
-Indexing und Slicing.
-====================
-Loesung:
-ung_words = []
-for word in words:
-    if word[-3:] == 'ung':
-        ung_words = ung_words + [word]
-ung_words
-
-Format und Platzhalter, str.format
-==================================
-fstring = 'Artikel: {}, Preis {}'
-str.format(fstring, 'Velo', 1999.99)
-
-str. + tab vom Typ str bereitgestelletn Funktionen/Methoden.
-str.format verhaelet sich genau wie eine Funktion aus sagen wir einem Modul str
-
-Fuege Format-Spezifikationen hinau :<10 :5.2f
-
-->schaue Notebook an
-
-Loesungen
-fstring = '|{}|{:5.1f}0|'
-
-Der Unpacking-Operator *, Tabelle formatiert ausgeben, variadic Functions
-=========================
-
-print(1, 2, 3)
-
-args = (1, 2, 3)
-print(args) # Tuple ausgeben
-print(*args)  # auspacken
-
-
 

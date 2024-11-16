@@ -1,9 +1,19 @@
-def length(s):
-    '''gibt die Laenge des Wortes s zurueck
-       s: str
+def count_to(n):
+    '''gibt die Zahlen 0,1,...,n-1 aus
+       n: int
     '''
     i = 0
-    for _ in s:
+    for _ in ' ' * n:
+        print(i, end=', ')
+        i = i + 1
+
+
+def length(word):
+    '''gibt die Laenge des Worts word zurueck
+       word: str
+    '''
+    i = 0
+    for _ in word:
         i = i + 1
     return i
 
@@ -22,12 +32,12 @@ def factorial(n):
     '''returns n!
        n: int
     '''   
-    resultat = 1
+    res = 1
     i = 0
     for _ in ' ' * n:
         i = i + 1
-        resultat = resultat * i
-    return resultat
+        res = res * i
+    return res
 
 
 def sum_upto(n):
