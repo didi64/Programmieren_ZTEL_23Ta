@@ -1,3 +1,13 @@
+def total(numbers):
+    '''returns the sum of numbers
+       number list[int|float]
+    '''
+    tot = 0
+    for n in numbers:
+        tot = tot + n
+    return tot
+
+
 def bisect(words, subword):
     '''returns the tuples words_with, words_without
        words_with contains all words from words that contain subword
@@ -13,16 +23,6 @@ def bisect(words, subword):
             words_without += (word,)
             
     return words_with, words_without
-
-
-def total(numbers):
-    '''returns the sum of numbers
-       number list[int|float]
-    '''
-    tot = 0
-    for n in numbers:
-        tot = tot + n
-    return tot
 
 
 def find_first(word, char):

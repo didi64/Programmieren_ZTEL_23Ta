@@ -6,18 +6,25 @@ Antonio
 Tiago 
 Jean?
 
-Files for me:
-notizen_05.ipynb
+Aufraeumen: Verschiebe was wir behandelt haben nach L04 
+dann update 5, overwrite y
 
+Letztes Mal: 
+- Whileschleifen: z.B. nach Input fragen bis Input ok
+- Module: .py File mit Pythoen Code aus em wir importieren koennen.
+- NIM: Spiel: 
+  While-Loop, 
+  Spieler fragen, von welchem Haufen
+  wieviele Steine entfernt werden sollen,
+  dan Steine entfernen.
+- range
+  range(5)
 
-Aufraeumen
-Delete  
-Rest in L04 verschieben.
-update 5
-
-
-Repetition anhand der Kontrollfragen.
-
+for i in range(3):
+    print(i)
+0 in range(3)
+3 in range(3)
+2 in range(3)
 Repetition range
 # Range
 
@@ -55,6 +62,10 @@ def total(numbers):
 total(even_nbrs) == sum(even_nbrs), \
 total(odd_nbrs) == sum(odd_nbrs)
 
+Nim_revisited und Ask for Move
+
+Repetition anhand der Kontrollfragen.
+
 Indexing and Slicing:
 # Indexing
 numbers = tuple(range(100))
@@ -85,7 +96,29 @@ for word in words:
         ung_words = ung_words + [word]
 ung_words
 
-Review: break und continue in For- und Whileschleifen
+Format und Platzhalter, str.format
+==================================
+fstring = 'Artikel: {}, Preis {}'
+str.format(fstring, 'Velo', 1999.99)
+
+
+str.format verhaelt sich genau wie eine Funktion aus einem Modul str
+
+Fuege Format-Spezifikationen hinzu 
+{:<10}, {:^10}, {:>10}
+{:5.2f}
+{:05.2f}
+fstring = 'Artikel: {:<10}, Preis {:10.2f}'
+print(str.format(fstring, 'Velo', 1999.99))
+print(str.format(fstring, 'Skateboard', 499.99))
+->schaue Notebook an
+
+Loesungen
+fstring = '|{}|{:5.1f}0|'
+
+Forschleifen Nachtrag break und continue, mehrere Schleifenvariabeln.
+
+For + break statt while (sicherer)
 
 # Index suchen
 char = 'd'
@@ -97,6 +130,7 @@ for c in word:
     i = i + 1
 i, word[i]
 
+continue nicht interessante Faelle ignorieren
 
 # alle Vorkommen finden
 word = 'abracadabra'
@@ -116,7 +150,8 @@ for i in indices:
     print(word[i], end = ', ')
 
 
-FOr und WHile schleifen bis for Aufgabe:
+For und WHile schleifen bis for Aufgabe:
+========================================
 
 def eval_guess(guess, secret):
     '''returns a tuple (ok, i),
@@ -196,33 +231,6 @@ while True:
 Coding range by hand (another time)
 
 
-
-
-
-
-
-
-
-Format und Platzhalter, str.format
-==================================
-fstring = 'Artikel: {}, Preis {}'
-str.format(fstring, 'Velo', 1999.99)
-
-
-str.format verhaelt sich genau wie eine Funktion aus einem Modul str
-
-Fuege Format-Spezifikationen hinzu 
-{:<10}, {:^10}, {:>10}
-{:5.2f}
-{:05.2f}
-fstring = 'Artikel: {:<10}, Preis {:10.2f}'
-print(str.format(fstring, 'Velo', 1999.99))
-print(str.format(fstring, 'Skateboard', 499.99))
-->schaue Notebook an
-
-Loesungen
-fstring = '|{}|{:5.1f}0|'
-
 Der Unpacking-Operator *, Tabelle formatiert ausgeben, variadic Functions
 =========================
 
@@ -233,4 +241,4 @@ print(args) # Tuple ausgeben
 print(*args)  # auspacken
 
 
-
+enumerate und zip
