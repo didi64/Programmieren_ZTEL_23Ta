@@ -115,4 +115,28 @@ def next_guess(guess, evaluation, lower, upper):
     else:
         lower = guess + 1
     n = (lower + upper) // 2
-    return n, lower, upper        
+    return n, lower, upper      
+
+
+def myrange(*args):
+    '''own implementation of the range function
+       returns tuple(range(*args))
+    '''
+    start = 0
+    step = 1
+    if len(args) == 1:
+        stop, = args
+    elif len(args) == 2:
+        start, stop =  args
+    elif len(args) == 3:  
+        start, stop, step =  args
+    else:
+        raise Exception('at most 3 arguments expected')    
+
+    items = ()
+    sign = (-1)**(step < 0)
+    i = start
+    while sign*i < sign*stop:
+        items = items + (i,)
+        i = i + step
+    return items

@@ -3,5 +3,5 @@
 2:Errors.ipynb Variabelverzeichnis.ipynb Var_Konventionen.ipynb Stringliterale.ipynb Funktionen_I.ipynb Funktionen_schreiben.ipynb Kontrollfragen_02.ipynb
 02: Kontrollfragen_02A.ipynb
 3:print_und_input.ipynb Basic_Types_I.ipynb Basic_Types_II.ipynb if_then_else.ipynb While_Loops.ipynb Module.ipynb NIM.ipynb Kontrollfragen03.ipynb
-4:While_Loops.ipynb Module.ipynb NIM.ipynb range.ipynb Indexing_und_Slicing_I.ipynb Format_und_Platzhalter.ipynb Unpacking_Operator_*.ipynb import_tools.py 
-5:NIM_revisited.ipynb Ask_for_move.ipynb Kontrollfragen03.ipynb Kontrollfragen03A.ipynb students.py L02_functions.py
+4:While_Loops.ipynb Module.ipynb NIM.ipynb range.ipynb import_tools.py 
+5:NIM_revisited.ipynb Ask_for_move.ipynb Kontrollfragen03A.ipynb students.py L02_functions.py L05_functions.py Indexing_und_Slicing_I.ipynb Format_und_Platzhalter.ipynb For_und_While_Loops.ipynb Unpacking_Operator.ipynb

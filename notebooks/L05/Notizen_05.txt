@@ -233,12 +233,29 @@ Coding range by hand (another time)
 
 Der Unpacking-Operator *, Tabelle formatiert ausgeben, variadic Functions
 =========================
-
+Vorschau:
 print(1, 2, 3)
 
 args = (1, 2, 3)
 print(args) # Tuple ausgeben
 print(*args)  # auspacken
 
+fstring = 'Artikel: {:<10}, Preis {:10.2f}'
+print(str.format(fstring, 'Velo', 1999.99))
+print(str.format(fstring, 'Skateboard', 499.99))
+
+product = ('Velo', 1999.99)
+str.format(fstring, *product)
+
+products = [('Velo', 1999.99), ('Skateboard', 499.99)]
+for product in products:
+    print(str.format(fstring, *product))
+
+
+Notebook: erklaere bereits
+Eigene Implementation der range Funktion:
+
+Fehler erzeugen
+raise Exception('at most 3 arguments expected') 
 
 enumerate und zip
