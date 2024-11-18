@@ -18,6 +18,8 @@
 16 PA
 17 Projectvorstellung
 18
+in work
+ln -s .src src 
 
 Nachtraege: Fstrings mit {}
 
