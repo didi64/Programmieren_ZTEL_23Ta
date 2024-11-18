@@ -20,7 +20,7 @@
 18
 
 Nachtraege: Fstrings mit {}
-
+fstring = '{{}}
 
 Neue Kontrollfragen:
 range, sliceing, format
@@ -50,74 +50,33 @@ Letztes Mal:
   wieviele Steine entfernt werden sollen,
   dann Steine entfernen.
 
-secret = 3
-guess = int(input('Zahl?'))
-while secret != guess:
-    guess = int(input('Neuer Versuch. Zahl?'))
-print('richtig')  
 
-secret = 3
-guess = int(input('Zahl?'))
-while True:
-    if guess == secret:
-        break
-    guess = int(input('Neuer Versuch. Zahl?'))
-print('richtig') 
 
-Will bald auf NIM zurueckkommen, will aber mit range
-beginnen.
-
-# range, Ersatz fuer
-i = 0
-for _ in ' ' * 3:
-    print(i)
-    # mehr
-    i = i + 1
+- range
+  range(5)
 
 for i in range(3):
     print(i)
-    # mehr
-
 0 in range(3)
 3 in range(3)
 2 in range(3)
 Repetition range
 # Range
 
-start = 2
 stop = 10
-step = 3
-
 for i in range(stop):
     print(i, end=', ')
 print('\n' + '-'* 50)
 
+start = 2
 for i in range(start, stop):
     print(i, end=', ')
 print('\n' + '-'* 50)
 
+step = 3
 for i in range(start, stop, step):
     print(i, end=', ')
 print('\n' + '-'* 50)
-
-Lasse Aufgaben zu range Loesen:
-
-nbr = (2, 4, 6)
-tot = 0
-for n in numbers:
-        tot = tot + n
-tot
-
-macht function daraus!
-
-def total(numbers):
-    '''returns the sum of numbers
-       number list[int|float]
-    '''
-    tot = 0
-    for n in numbers:
-        tot = tot + n
-    return tot
 
 # gerade Zahlen von 2 bis und mit 100
 even_nbrs = tuple(range(2, 101, 2))
@@ -192,9 +151,7 @@ print(str.format(fstring, 'Skateboard', 499.99))
 Loesungen
 fstring = '|{}|{:5.1f}0|'
 
-For- und Whileschleifen. continue, For mit mehreren Schleifenvariabeln.
-Typische Aufgaben, die mit Schleifen geloest werden:
-find_first, find_all, remove and replace elements in a tuple/string/list
+Forschleifen Nachtrag break und continue, mehrere Schleifenvariabeln.
 
 For + break statt while (sicherer)
 
@@ -208,7 +165,7 @@ for c in word:
     i = i + 1
 i, word[i]
 
-continue: nicht interessante Faelle ignorieren
+continue nicht interessante Faelle ignorieren
 
 # alle Vorkommen finden
 word = 'abracadabra'
@@ -282,11 +239,10 @@ lower, upper = 0, 10
 secret = 2
 guess = 7
 
-
-
-guess, lower, upper = next_guess(guess, e, lower, upper)
-_, e = eval_guess(guess, secret)
-guess, lower, upper 
+ok, e = eval_guess(guess, secret)
+if not ok:
+    guess, lower, upper = next_guess(guess, e, lower, upper)
+ok, guess, lower, upper 
 
 import random
 lower = 0 
