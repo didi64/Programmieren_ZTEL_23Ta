@@ -340,3 +340,8 @@ Fehler erzeugen
 raise Exception('at most 3 arguments expected') 
 
 Kontrollfragen_05A
+
+zip_und_enumerate.ipynb
+Variabeln_Objekte_Referenzen.ipynb
+Typen_Methoden.ipynb 
+plus_gleich.ipynb
