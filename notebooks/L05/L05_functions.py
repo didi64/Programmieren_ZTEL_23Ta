@@ -131,7 +131,7 @@ def myrange(*args):
     elif len(args) == 3:  
         start, stop, step =  args
     else:
-        raise Exception('at most 3 arguments expected')    
+        raise Exception('at most 3 arguments expected')
 
     items = ()
     sign = (-1)**(step < 0)
