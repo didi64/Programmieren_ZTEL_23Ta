@@ -21,7 +21,7 @@ def bisect(words, subword):
             words_with += (word,)
         else:
             words_without += (word,)
-            
+
     return words_with, words_without
 
 
@@ -36,7 +36,7 @@ def find_first(word, char):
     for c in word:
         if c == char:
             break
-        i = i + 1  
+        i = i + 1
 
     if i == len(word):
         i = -1
@@ -53,7 +53,7 @@ def find_all(word, char):
     indices = ()
     i = -1
     for c in word:
-        i = i + 1  
+        i = i + 1
         if c != char:
             continue
         indices = indices + (i,)

@@ -4,9 +4,9 @@
 04
 05 For, While Platzhalterstrings
 06 Methods, enum, zip
-07 Dicts, Files List.comp.
-08 sorting
-09 Class, Automaton 16.12.
+07 Automaton 16.12.
+08 Dicts, Files sorting
+09 Class,  16.12.
 
 10 Repetition. 06.1.
 11 Test, 13.1. Canvas, Widgets
@@ -19,25 +19,23 @@
 17 Projectvorstellung
 18
 
+Damit Bilder gefunden werden:
+/home/studi/work$ ln -s .src/images images
 
-
-
-Aufraeumen: Verschiebe was wir behandelt haben nach L04 
-dann update 5, overwrite y
+Aufraeumen: Verschiebe was wir behandelt haben nach L05
+dann update 6, overwrite y
 
 Letztes Mal: 
 - range, slicenotation, Platzhalterstings und Formatierungsspezifikationen
 - While-Loop, 
  
-Loesungen
-fstring = '|{}|{:5.1f}0|'
 
 Kontrollfragen_05A
-range, slice, Platzhalter
-einige Standardprobleme mit Funktionen programmieren, 
-maxlen fuer  Ausgabe der Tabelle in 10) benoetigt.
+  range, slice, Platzhalter
+  einige Standardprobleme mit Funktionen programmieren, 
+  maxlen fuer  Ausgabe der Tabelle in 10) benoetigt.
 
-For und While schleifen bis for Aufgabe:
+For und While, Aufgabe:
 ========================================
 
 def eval_guess(guess, secret):
@@ -104,8 +102,6 @@ while True:
     guess, lower, upper = next_guess(guess, e, lower, upper)
 
 
-Kontrollfragen_05A
-
 Der Unpacking-Operator *, Teil II, variadic Functions Coding range by hand 
 =========================
 
@@ -125,6 +121,104 @@ def f(*args):
         ...
     else:
         raise Exception('at most 3 arguments expected')
-
-Notebook: erklaere bereits
+    # Ausgabe von start, stop, step
+Notebook: 
 Eigene Implementation der range Funktion:
+
+
+Variabeln, Objekte, Referenzen
+Gehe langsam gemeinsam durch, 
+Listenrefs auf Pythontutor.
+
+
+Type_Methoden
+
+list.append()
+numbers = [1,2,3]
+numbers.append(4)
+numbers
+
+numbers.pop()
+
+liste_mit_listen
+
+enumerate und zip
+
+word = 'abc'
+enumerate(word)
+
+tuple(enumerate(word))
+
+nbrs = (1, 2, 3)
+zip(numbers, word)
+
+tuple(zip(numbers, word))
+
+n = 3
+for i in range(3):
+    print(i)
+    if i == n:
+        break
+else:
+    print('Schleife wurde  NICHT vorzeitig verlassen')
+
+n = 2
+
+i = 0
+while i < 3:
+    print(i)
+    if i == n:
+        break
+    i = i + 1
+else:
+    print('Schleife wurde  NICHT vorzeitig verlassen')
+
+Loesung Aufg 2
+
+s = 'abcdefgh'
+n = len(s)
+list(zip(s, range(n)))
+
+def find_all(word, char):
+    indices = ()
+    i = -1
+    for c in word:
+        i = i + 1
+        if c != char:
+            continue
+        indices = indices + (i,)
+    return indices
+
+def find_all(word, char):
+    indices = ()
+    for i, c in enumerate(word):
+        if c != char:
+            continue
+        indices = indices + (i,)
+    return indices
+
+def find_all(word, char):
+    indices = ()
+    i = -1
+    for c in word:
+        i = i + 1
+        if c != char:
+            continue
+        indices = indices + (i,)
+    return indices
+
+def find_all(word, char):
+    indices = ()
+    for i, c in enumerate(word):
+        if c != char:
+            continue
+        indices = indices + (i,)
+    return indices
+
+Cheatsheet
+  eigene Implementationen einiger Stringmethoden
+  eigene Implementationen einiger Listmethoden
+
+Notebookfinder
+
+Kontrollfragen_06
