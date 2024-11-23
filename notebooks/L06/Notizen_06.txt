@@ -132,6 +132,13 @@ Listenrefs auf Pythontutor.
 
 
 Type_Methoden
+read Docstring of str.join: 
+
+s = ' und '
+words = ['Haus', 'Hof', 'Kind']
+s.join(words)
+
+The string whose method is called ...
 
 list.append()
 numbers = [1,2,3]
@@ -141,8 +148,11 @@ numbers
 numbers.pop()
 
 liste_mit_listen
+================
 
-enumerate und zip
+
+
+enumerate und zip und for/while else
 
 word = 'abc'
 enumerate(word)
