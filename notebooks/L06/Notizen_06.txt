@@ -30,9 +30,23 @@ Letztes Mal:
 - While-Loop, 
 -----
 Plan:
-
 Variablen speichern keine Werte, sondern die Speicheradresse eines Objekts.
 Typen und ihre Methoden, Typen sind eigentlich Klassen.
+Kontrollfragen 5
+ skip while 2. Teil
+Errors
+Unpacking II, var-funktions
+
+Variabeln, Python-Tutor
++=
+Typen und Methoden
+Listen mit Listen
+enum_zip
+
+Kontrollfragen 6
+Stringmethoden, Listenmethoden (Codebeispiele)
+==============
+Start:
 
 fmt = 'x={}, y={}'
 str.format(fmt, 2, 3)
