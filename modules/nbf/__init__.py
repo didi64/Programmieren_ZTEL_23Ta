@@ -7,7 +7,7 @@ from .controller import Controller
 
 def run(root=None):
     if root is None:
-        root = '/home/studi/work'
+        root = '/home/studi/venvs/python3.13/work'
     if root.isnumeric():
         n = int(root)
         root = os.path.join(os.curdir, *[os.pardir]*n)
