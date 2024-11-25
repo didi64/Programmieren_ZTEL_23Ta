@@ -22,12 +22,13 @@
 Damit Bilder gefunden werden: send via chat
 /home/studi/work$ ln -s .src/images images
 
-Aufraeumen: Verschiebe was wir behandelt haben nach L05
-dann update 6, overwrite y
+Aufraeumen: Verschiebe alles nach L05
+dann update 6
 
 Letztes Mal: 
-- range, slicenotation, Platzhalterstings und Formatierungsspezifikationen
+- range, slicenotation, Platzhalterstrings und Formatierungsspezifikationen
 - While-Loop, 
+
 -----
 Plan:
 Variablen speichern keine Werte, sondern die Speicheradresse eines Objekts.
@@ -47,13 +48,6 @@ Kontrollfragen 6
 Stringmethoden, Listenmethoden (Codebeispiele)
 ==============
 Start:
-
-fmt = 'x={}, y={}'
-str.format(fmt, 2, 3)
-
-fmt.format(2, 3)
-
-
 Kontrollfragen_05A
   range, slice, Platzhalter
   einige Standardprobleme mit Funktionen programmieren, 
@@ -75,7 +69,7 @@ Kontrollfragen_05A
 9) unklar gestellt.
 10) wie Breit ist 1.Spalte mit Namen? laenger Namen +3
 
-For und While, Aufgabe:
+For und While, Aufgabe: (skip)
 ========================================
 
 
@@ -198,6 +192,11 @@ read Docstring of str.join:
 s = ' und '
 words = ['Haus', 'Hof', 'Kind']
 s.join(words)
+
+fmt = 'x={}, y={}'
+str.format(fmt, 2, 3)
+
+fmt.format(2, 3)
 
 s = 'foo'
 len(s)
