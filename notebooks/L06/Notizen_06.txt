@@ -123,10 +123,21 @@ while True:
     guess, lower, upper = next_guess(guess, e, lower, upper)
 
 
+Errors_und_Exceptions
+=====================
+
+Fehler ausloesen: Fehlermeldung ausgegen, Programmausfuehrung sofort beenden.
+Wieso: schlimmeres verhindern: undefiniertes Verhalten, versteckte Fehler.
+Kann Fehler abfaangen und behandeln. Ev. spaeter.
+im Moment: 'let it crash!' als Fehlerbehandlungsmethode.
+
+raise TypeError('String als Argument erwartet')
+raise Exception('etwas ging schief')
+
 Der Unpacking-Operator *, Teil II, variadic Functions Coding range by hand 
 =========================
 
-Wie selber eine FUnktion wie print schreiben, die 
+Wie selber eine Funktion wie print schreiben, die 
 variable Anzahl von Argumenten nimmt.
 
 def f(*args):
