@@ -19,7 +19,7 @@
 17 Projectvorstellung
 18
 
-Damit Bilder gefunden werden:
+Damit Bilder gefunden werden: send via chat
 /home/studi/work$ ln -s .src/images images
 
 Aufraeumen: Verschiebe was wir behandelt haben nach L05
@@ -28,23 +28,49 @@ dann update 6, overwrite y
 Letztes Mal: 
 - range, slicenotation, Platzhalterstings und Formatierungsspezifikationen
 - While-Loop, 
- 
+-----
+Plan:
+
+Variablen speichern keine Werte, sondern die Speicheradresse eines Objekts.
+Typen und ihre Methoden, Typen sind eigentlich Klassen.
+
+fmt = 'x={}, y={}'
+str.format(fmt, 2, 3)
+
+fmt.format(2, 3)
+
 
 Kontrollfragen_05A
   range, slice, Platzhalter
   einige Standardprobleme mit Funktionen programmieren, 
   maxlen fuer  Ausgabe der Tabelle in 10) benoetigt.
 
+1) len(range(...) # 11, replace empy slots in slices by 0 11
+2) s[start:stop:step]
+4) bruch = str.format('{}/{}', 3, 7)
+   bruch
+
+   fstring = '{} = {}'
+   str.format(fstring, bruch, 3/7)
+
+   fstring = '{:<4} = {:6.3f}'
+5) maxlen, hilfsfunktion fuer weitere AUfgaben.
+6) einfaches Bsp. zu continue
+7,8,9) find_first, find_al, replace: ganz typische Aufgaben 
+       7) fuer break
+9) unklar gestellt.
+10) wie Breit ist 1.Spalte mit Namen? laenger Namen +3
+
 For und While, Aufgabe:
 ========================================
 
+
+# Codes. 0: richtig, 1: zu gross, -1: zu klein 
+comments = ['richtig', 'zu gross', 'zu klein']
+comments[-1]
+
+copy from L05_functions
 def eval_guess(guess, secret):
-    '''returns a tuple (ok, i),
-       ok is guess == secret, and i is -1,0 or 1 depending on whether
-       guess is too small, correct or too big
-       guess: int
-       secret: int
-    '''
     if guess == secret:
         return (True, 0)
     if guess < secret:
@@ -52,22 +78,17 @@ def eval_guess(guess, secret):
     if guess > secret:
        return (False, 1)
 
-Trick:
-comments = ['richtig', 'zu gross', 'zu klein']
-comments[-1]
-
 secret = 3
 guess = 1
-comments = ['richtig', 'zu gross', 'zu klein']
 ok, i = eval_guess(guess, secret)
 ok, comments[i]
 
-
+# aufgerufen mit falschem guess mit eval (1, -1)
 def next_guess(guess, evaluation, lower, upper):
     # neue Grenzen bestimmen
-    if evaluation == 1:
+    if evaluation == 1:  # zu gross
         upper = guess - 1
-    else:
+    else: # zu klein
         lower = guess + 1
     # neuer Guess in der Mitte von lower und upper
     n = (lower + upper) // 2
@@ -105,11 +126,24 @@ while True:
 Der Unpacking-Operator *, Teil II, variadic Functions Coding range by hand 
 =========================
 
+Wie selber eine FUnktion wie print schreiben, die 
+variable Anzahl von Argumenten nimmt.
+
 def f(*args):
-    print('Anzahl Argumente: {}'.format(len(arg)))
+    print('Anzahl Argumente: {}'.format(len(args)))
     print(*args)
 
-Eigene Implementation der range Funktion:
+def f(*args, x):
+    print('Anzahl Argumente: {}'.format(len(args)))
+    print(*args)
+    print(x)
+
+
+Funktion wie range:
+f(stop)
+f(start,stop)
+f(start, stop, step)
+
 def f(*args):
     start = 0
     step = 1
@@ -130,6 +164,8 @@ Variabeln, Objekte, Referenzen
 Gehe langsam gemeinsam durch, 
 Listenrefs auf Pythontutor.
 
+plus_gleich
+-----------
 
 Type_Methoden
 read Docstring of str.join: 
@@ -138,7 +174,29 @@ s = ' und '
 words = ['Haus', 'Hof', 'Kind']
 s.join(words)
 
+s = 'foo'
+len(s)
+
+str.__len__(s)
+
+t = 'bar'
+s + t
+
+str.__add__(s, t)
+
 The string whose method is called ...
+
+ask ChatGPT: 
+Ich lerne Python.
+Kannst du mir anhand eines Beispiels die Stringmethode '' erklaeren.
+
+Tiago: join
+Eric: split
+Antonio: strip, lstrip, rstrip
+Mike: find and index
+Marko: replace
+====================
+
 
 list.append()
 numbers = [1,2,3]
@@ -149,8 +207,6 @@ numbers.pop()
 
 liste_mit_listen
 ================
-
-
 
 enumerate und zip und for/while else
 
@@ -229,6 +285,34 @@ Cheatsheet
   eigene Implementationen einiger Stringmethoden
   eigene Implementationen einiger Listmethoden
 
-Notebookfinder
+
 
 Kontrollfragen_06
+1) Copy: deep or shallow. deep is im allg. schwierig.
+         copy is shallow copy
+
+nbrs = [1, 2, 3]
+x = [nbrs]
+y = x.copy()
+
+x is y, x == y
+x[0] is y[0]
+
+x[0][0] = 10
+y[0][1] = 20
+x, y
+
+# visualize on python tutor
+
+2,3) Frage mit Listen: 
+     wird Liste modifiziert?
+     wird neue Liste zurueckgegeben?
+
+   wie x = x + y, x += y
+   
+4, 5) same thing, Listen vs Tuple
+6, 7) split, join, strip, (rstrip, lstrip)
+8) zip, Fehler ausloesen,
+
+
+notebookfinder
