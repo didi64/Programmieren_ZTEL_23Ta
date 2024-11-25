@@ -7,7 +7,7 @@ from .controller import Controller
 
 def run(root=None):
     if root is None:
-        root = '/home/probst/Projects/JupyterNotebooks'
+        root = '/home/studi/work'
     if root.isnumeric():
         n = int(root)
         root = os.path.join(os.curdir, *[os.pardir]*n)
