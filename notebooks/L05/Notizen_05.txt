@@ -23,7 +23,7 @@ Ohne f(*arg) funktionen definieren
 17 Projectvorstellung
 18
 in work
-ln -s .src src 
+ln -s .src/images images 
 
 Nachtraege: Fstrings mit {}
 

@@ -19,15 +19,18 @@
 17 Projectvorstellung
 18
 
-Damit Bilder gefunden werden: send via chat
-/home/studi/work$ ln -s .src/images images
+Damit Bilder gefunden werden: 
+studi@...:~/work$ ln -s .src/images images
 
-Aufraeumen: Verschiebe alles nach L05
+Aufraeumen: Verschiebe alles ausser students.py nach L05
+
 dann update 6
+
+
 
 Letztes Mal: 
 - range, slicenotation, Platzhalterstrings und Formatierungsspezifikationen
-- While-Loop, 
+- For-While-Loop, break continue
 
 -----
 Plan:
@@ -163,18 +166,27 @@ f(stop)
 f(start,stop)
 f(start, stop, step)
 
+start = 0
+    stop = 4
+    step = 1
+    
+    msg = str.format('start={}, stop={}, step={}', start, stop, step)
+    print(msg)
+
 def f(*args):
     start = 0
     step = 1
     if len(args) == 1:
-        stop, = args
+        stop = args[0]
     elif len(args) == 2:
         ...
     elif len(args) == 3:  
         ...
     else:
+        print()
         raise Exception('at most 3 arguments expected')
-    # Ausgabe von start, stop, step
+    msg = str.format('start={}, stop={}, step={}', start, stop, step)
+    print(msg)
 Notebook: 
 Eigene Implementation der range Funktion:
 
@@ -214,11 +226,11 @@ ask ChatGPT:
 Ich lerne Python.
 Kannst du mir anhand eines Beispiels die Stringmethode '' erklaeren.
 
-Tiago: join
+Tiago:  find
 Eric: split
 Antonio: strip, lstrip, rstrip
-Mike: find and index
-Marko: replace
+#Mike: find and index
+Marko: index
 ====================
 
 
@@ -340,3 +352,24 @@ x, y
 
 
 notebookfinder
+
+
+
+Problem: ist kein Problem, nur row war schon geanedert, bez. Aenderung nicht sichtbar!
+rows = []
+rows.append(row)
+rows.append(row.copy())
+rows[0][0] = 'X'
+rows
+
+
+Mike nicht da
+mitte Liste von Listen
+
+spielfeld Beispiel mit Python Tutor
+deep and shallow.
+
+dann zip enumerate
+
+NOtebookfinder und Code schreiben lassen
+

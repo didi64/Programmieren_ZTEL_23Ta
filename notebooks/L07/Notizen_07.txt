@@ -1,0 +1,181 @@
+01
+02
+03
+04
+05 For, While Platzhalterstrings
+06 Methods, Listen Listen mit Listen
+07 enum, zip, sorted, files, Listcomp
+08 Dicts, Sets, eigene Klassen
+09 Automaton
+
+
+10 Repetition. 06.1.
+11 Test, 13.1. Class, Canvas, Widgets
+12 Callbacks, 
+13 Games, Projectarbeit infos, Themen fixieren.
+
+
+14 PA 17.2.
+15 PA
+16 PA
+17 Projektvorstellung
+18 Abschluss/ Feedback Projektarbeiten.
+
+wie mit den Bildern
+
+studi$...~/work$ ln -s .src/data data
+Dataverzeichnis sichtbar machen
+
+verschiebe scrabble.py in modules
+was mit ortschaften.csv, bez. .src/data/PLZO_CSV_LV95.csv
+
+aufgehoert bei Listen von Listen, zip-enumerate noch offen. Komme sehr bald darauf zuruck
+Zuerst aber ...
+
+Intro to Listcomp.
+Typen haben methoden str. + tab
+
+text = '''
+for, bar ,
+
+baz
+'''
+text
+
+words = text.split(',')
+words
+
+clean_words = []
+for word in words:
+    word = word.strip()
+    clean_words.append(word)
+clean_words
+
+[word.strip() for word in words]
+
+[word.strip() for word in words if 'f' not in word]
+
+-> Notebook Listcomprehension
+
+Nachtrag Listen
+
+row = [' '] * 7  # [' '] + [' '] ... +  [' ']
+row
+
+board = [row] * 6  # 6-Mal gleiche Liste
+board
+
+board[0] is board[-1]
+
+board[0][0] = 'X'  # gleicher Effekt wie board[1][0] = 'X'
+board
+
+board = [row.copy() for _ in range(6)]
+board[0][0] = 'X'
+board
+
+board = [row[:] for _ in range(6)]
+board[0][0] = 'X'
+board
+
+Listen_Nachtrag mit pythontutor
+intro gemeinsam dann Pythontutor.
+Beobachtet sehr genau wie was dargestellt wird. Fragt!
+
+Listen_mit Listen
+
+s = 'xyz'
+tuple(enumerate(s))
+for i, c in enumerate(s):
+    print(i, c)
+
+
+r = 'abc'
+s = 'xyz'
+tuple(zip(r, s))
+for x, y in zip(r, s):
+    print(x, y)
+
+for i in range(3):
+    print(i, end=',')
+    break
+else:
+    print('kein break!')
+
+for i in range(3):
+    print(i, end=',')
+    # break
+else:
+    print('kein break!')
+
+zip_enumerate_else
+===================
+
+Kontrollfragen_06A
+----
+Files
+
+Iterables_sortieren
+Mengen
+Ortschaften_CH
+Kontrollfragen_07A
+---------------------------------------------------------
+
+Files:
+=====
+
+lines = '''\
+blab\
+blab
+bla
+'''
+
+fn = 'test.txt'
+with open(fn, 'w') as f:
+    f.writelines(lines)
+
+with open(fn, 'r') as f:
+    lines = f.readlines()
+lines
+
+lines = ['1.Zeile', '2.Zeile']
+with open(fn, 'w') as f:
+    for line in lines:
+        f.write(line + '\n')
+
+
+def max_col_width(rows, col):
+    length = 0
+    for row in rows:
+        length = max(length, len(row[col]))
+    return length
+
+
+Spaeter mehr zu Mengen und sorted (wie kann man eigenes Sortierkriterium festlegen?)
+Fuer Orschaften brauchen wir aber nur dies:
+
+words = ['dann', 'bald','aber', 'ende', 'dann']
+words_sorted = sorted(words)
+list(set(words_sorted))
+
+sorted(set(words))
+
+
+
+Ortschaften
+=============
+Oeffne .csv  in Jupyterlab, waehle ; als Separator.
+
+!head ../../data/PLZO_CSV_LV95.csv
+!tail ../../data/PLZO_CSV_LV95.csv
+
+Loesungen
+
+orte_dot = [ort for ort in orte if '.' in ort]
+orte_dot[:10]
+
+orte_slash = [ort for ort in orte if '/' in ort]
+orte_slash
+
+orte_berg = [ort for ort in orte if 'berg' in ort.lower()]
+orte_berg[:10], orte_berg[-10:]
