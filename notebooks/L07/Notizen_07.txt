@@ -21,10 +21,10 @@
 17 Projektvorstellung 10.3.
 18 Abschluss/ Feedback Projektarbeiten. 17.3
 
-wie mit den Bildern
+wie mit den Bildern: Dataverzeichnis sichtbar machen
 
-studi$...~/work$ ln -s .src/data data
-Dataverzeichnis sichtbar machen
+studi$...~/work$ 
+ln -s .src/data data
 
 
 aufgehoert bei Listen von Listen, zip-enumerate noch offen. 
