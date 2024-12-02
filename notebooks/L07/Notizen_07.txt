@@ -1,25 +1,25 @@
-01
-02
-03
-04
-05 For, While Platzhalterstrings
+01 Intro, Docker und Jupyterlab Installieren
+02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
+03 Basic Types, if-then-else
+04 Module While-Loops
+05 break und continue, Platzhalterstrings
 06 Methods, Listen Listen mit Listen
-07 enum, zip, sorted, files, Listcomp
-08 Dicts, Sets, eigene Klassen
-09 Automaton
+07 enum, zip, sorted, Files, Listcomp, Sets
+08 Dicts, Automat 9.12
+09 Canvas, Callbacks, Widgets 16.12
 
 
 10 Repetition. 06.1.
-11 Test, 13.1. Class, Canvas, Widgets
-12 Callbacks, 
-13 Games, Projectarbeit infos, Themen fixieren.
+11 Test, 13.1. Klassen, 
+12 Callbacks, 20.1
+13 Games, Projectarbeit infos, Themen fixieren. 27.1.
 
 
 14 PA 17.2.
-15 PA
-16 PA
-17 Projektvorstellung
-18 Abschluss/ Feedback Projektarbeiten.
+15 PA 24.2
+16 PA 3.3
+17 Projektvorstellung 10.3.
+18 Abschluss/ Feedback Projektarbeiten. 17.3
 
 wie mit den Bildern
 
@@ -27,75 +27,27 @@ studi$...~/work$ ln -s .src/data data
 Dataverzeichnis sichtbar machen
 
 verschiebe scrabble.py in modules
-was mit ortschaften.csv, bez. .src/data/PLZO_CSV_LV95.csv
 
-aufgehoert bei Listen von Listen, zip-enumerate noch offen. Komme sehr bald darauf zuruck
+
+aufgehoert bei Listen von Listen, zip-enumerate noch offen. 
+Komme sehr bald darauf zuruck
 Zuerst aber ...
 
-Intro to Listcomp.
-Typen haben methoden str. + tab
-
-text = '''
-for, bar ,
-
-baz
-'''
-text
-
-words = text.split(',')
-words
-
-clean_words = []
-for word in words:
-    word = word.strip()
-    clean_words.append(word)
-clean_words
-
-[word.strip() for word in words]
-
-[word.strip() for word in words if 'f' not in word]
-
--> Notebook Listcomprehension
-
-Nachtrag Listen
-
-row = [' '] * 7  # [' '] + [' '] ... +  [' ']
-row
-
-board = [row] * 6  # 6-Mal gleiche Liste
-board
-
-board[0] is board[-1]
-
-board[0][0] = 'X'  # gleicher Effekt wie board[1][0] = 'X'
-board
-
-board = [row.copy() for _ in range(6)]
-board[0][0] = 'X'
-board
-
-board = [row[:] for _ in range(6)]
-board[0][0] = 'X'
-board
-
-Listen_Nachtrag mit pythontutor
-intro gemeinsam dann Pythontutor.
-Beobachtet sehr genau wie was dargestellt wird. Fragt!
-
-Listen_mit Listen
-
+# enumerate
 s = 'xyz'
 tuple(enumerate(s))
 for i, c in enumerate(s):
     print(i, c)
 
-
-r = 'abc'
+#zip
+r = 'abcd'
 s = 'xyz'
 tuple(zip(r, s))
 for x, y in zip(r, s):
     print(x, y)
 
+
+# else mit loops
 for i in range(3):
     print(i, end=',')
     break
@@ -111,14 +63,170 @@ else:
 zip_enumerate_else
 ===================
 
+Loesung Aufg 2
+s = 'abcdefgh'
+# fix
+list(zip(range(len(s)), s))
+
+Loesung Aufg 1
+copy paste Funktionen in dieses Notebook,
+
+def find_first(word, char):
+    i = 0
+    for c in word:
+        if c == char:
+            break
+        i = i + 1
+
+    if i == len(word):
+        i = -1
+    return i
+
+def find_first(word, char):
+    
+    for i, c in enumerte(word):
+        if c == char:
+            break
+     
+
+    if i == len(word):
+        i = -1
+    return i
+
+def find_first(word, char):
+    for i, c in enumerate(word):
+        if c == char:
+            break
+    else:
+        i = -1
+    return i
+
+
+def find_all(word, char):
+    indices = ()
+    i = -1
+    for c in word:
+        i = i + 1
+        if c != char:
+            continue
+        indices = indices + (i,)
+    return indices
+
+def find_all(word, char):
+    indices = ()
+    for i, c in enumerate(word):
+        if c != char:
+            continue
+        indices = indices + (i,)
+    return indices
+
+
+Intro to Listcomp.
+recall: Typen haben methoden 
+
+str. + tab
+s = 'foo'
+
+Stringmethoden machen etwas mit einem String!
+Erstes Argument einer Stringmethode muss ein Objekt von Typ String sein!
+
+str.upper(s) 
+
+# Stringmethode direct auf String anwenden
+s.upper()
+
+text = '''
+for, bar ,
+
+baz
+'''
+text
+
+words = text.split(',')
+words
+
+words[1]
+words[1].strip()
+
+# Motiviere Listcomp
+
+
+clean_words = []
+Iteriere ueber worte in der Liste words,
+entferne umgebenden WHitespace, fuege bereinigtes Word zur Liste hinzu.
+
+# str.strip
+# list.append
+
+
+Warte 5 Min.
+
+clean_words = []
+for word in words:
+    word = word.strip()
+    clean_words.append(word)
+clean_words
+
+# kompakter
+clean_words = []
+for word in words:
+    clean_words.append(word.strip())
+clean_words
+
+# noch kompakter
+[word.strip() for word in words]
+
+# nur ueber ausgewaehlte Listenel. iterieren
+[word.strip() for word in words if 'f' not in word]
+
+-> Notebook Listcomprehension
+
+
+Nachtrag Listen
+
+row = [' '] * 7  # [' '] + [' '] ... +  [' ']
+row
+
+# 6-Mal gleiche Liste
+board = [row] * 6 
+board
+
+board[0] is board[-1]
+
+board[0][0] = 'X'  # gleicher Effekt wie board[1][0] = 'X'
+board
+
+# 6 versch. Listen
+board = [row.copy() for _ in range(6)]
+board[0][0] = 'X'
+board
+
+board = [row[:] for _ in range(6)]
+board[0][0] = 'X'
+board
+
+Listen_Nachtrag mit pythontutor
+intro gemeinsam dann Pythontutor.
+Beobachtet sehr genau wie was dargestellt wird. Fragt!
+
+
+Loesung:
+# board_saved = board.copy()
+board_saved = [row.copy() for row in board]
+
+Listen_mit Listen
+
 Kontrollfragen_06A
 ----
-Files
+1 #4 
+def copy4(items):
+    return [item for item in items] 
 
-Iterables_sortieren
-Mengen
-Ortschaften_CH
-Kontrollfragen_07A
+# 3)
+def lower(words):
+    return [word.lower() for word in words] 
+
+# 7 kompakter:' '.join(s.split())
 ---------------------------------------------------------
 
 Files:
@@ -144,22 +252,24 @@ with open(fn, 'w') as f:
         f.write(line + '\n')
 
 
-def max_col_width(rows, col):
-    length = 0
-    for row in rows:
-        length = max(length, len(row[col]))
-    return length
+Files
+
+Vorbereitung Ortschaften:
 
 
 Spaeter mehr zu Mengen und sorted (wie kann man eigenes Sortierkriterium festlegen?)
-Fuer Orschaften brauchen wir aber nur dies:
+Fuer Ortschaften brauchen wir aber nur dies:
 
 words = ['dann', 'bald','aber', 'ende', 'dann']
 words_sorted = sorted(words)
-list(set(words_sorted))
+
+distinct_words = set(words)
+distinct_words
+
+list(distinct_words)
 
 sorted(set(words))
-
+move scrabble.py nach modules
 
 
 Ortschaften
@@ -179,3 +289,8 @@ orte_slash
 
 orte_berg = [ort for ort in orte if 'berg' in ort.lower()]
 orte_berg[:10], orte_berg[-10:]
+
+
+Mengen
+Iterables_sortieren
+move scrabble.py nach modules
