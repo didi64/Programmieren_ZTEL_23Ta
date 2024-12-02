@@ -45,6 +45,15 @@ for x, y in zip(r, s):
     print(x, y)
 
 
+x = 1
+y = 1
+if x == y:
+    print('x gleich y')
+else:
+    print('x und y sind verschieden')
+
+
+
 # else mit loops
 for i in range(3):
     print(i, end=',')
@@ -58,10 +67,20 @@ for i in range(3):
 else:
     print('kein break!')
 
+# macht aehnliches Beispiel mit While-Loop:
+i = 0
+while i < 3:
+    i += 1
+    #break
+else:
+    print('no break')
+
+
 zip_enumerate_else
 ===================
+gehe zu AUfgaben: kopiere Funktionen zum verbessern
 
-Loesung Aufg 2
+Loesung Aufg 2 (mit Fehler)
 s = 'abcdefgh'
 # fix
 list(zip(range(len(s)), s))
