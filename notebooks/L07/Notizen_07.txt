@@ -1,3 +1,5 @@
+ohne Kontrollfragen 6,7, ohne Mengen und sorted.
+
 01 Intro, Docker und Jupyterlab Installieren
 02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
 03 Basic Types, if-then-else

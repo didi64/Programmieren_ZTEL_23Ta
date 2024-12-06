@@ -1,0 +1,188 @@
+Liebe Studierende,
+
+am Montag werden wir uns nochmals der Funktion sorted zuwenden, die es uns erlaubt,
+Iterables zu sortieren. Dabei koennen wir eigene Sortierkriterien angeben.
+
+Dann werden wir Dictionaries anschauen (einen der wichtigsten Datentypen ueberhaupt) und einige typische Probleme betrachten, die man mit Hilfe eines Dictionary loesen sollte. Dazu gehoeren das Erstellen von count-dicts und occurrence-dicts:
+Der count-dict zum Wort 'abakadabra' ist 
+{'a': 5, 'b': 2, 'k': 1, 'd': 1, 'r': 1}
+
+der occurrence-dict
+{'a': [0, 2, 4, 6, 9], 'b': [1, 7], 'k': [3], 'd': [5], 'r': [8]}.
+
+
+Beste Gruesse und ein schoenes WE,
+Dieter
+
+
+
+Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
+
+01 Intro, Docker und Jupyterlab Installieren
+02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
+03 Basic Types, if-then-else
+04 Module While-Loops
+05 break und continue, Platzhalterstrings
+06 Methods, Listen Listen mit Listen
+07 enum, zip, sorted, Files, Listcomp, Sets
+08 Dicts, Automat 9.12
+09 Canvas, Callbacks, Widgets 16.12
+
+
+10 Repetition. 06.1.
+11 Test, 13.1. Klassen, 
+12 Callbacks, 20.1
+13 Games, Projectarbeit infos, Themen fixieren. 27.1.
+
+
+14 PA 17.2.
+15 PA 24.2
+16 PA 3.3
+17 Projektvorstellung 10.3.
+18 Abschluss/ Feedback Projektarbeiten. 17.3
+
+Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
+
+Heute:
+Kontrollfragen_06a, 07A
+--
+Mengen, sorted
+Dictionaries
+Fallunterscheidung
+reversed, if-else-Ausdruecke
+
+Ortschaften_CH08
+Cards
+
+------------------------------------------------
+
+
+Ternary Ausdruecke, any und all -> Cheatsheet.
+x = 1 if 'x' in word else -1
+
+Kontrollfragen
+
+Dictionaries
+
+Kontrollfragen_06A: Inhaltliche Repetition:
+
+1) Liste kopieren
+
+xs = list(range(5))
+
+ys = [x for x in xs]
+zs = xs[:]
+ws = xs.copy()
+
+2)
+words = ['foo', 'bar', 'baz']
+[w.capitalize() for w in words]
+[w.upper() for i, w in enumerate(words) if i != 1]
+
+3) words aendern:
+for i, w in enumerate(words):
+    words[i]=w[::-1]
+words
+
+4) 
+words += ['asdf', 'aga']
+words
+
+words + ['asdf', 'aga']
+words
+
+words.extend(['asdf', 'aga'])
+words
+
+6,7) genau 1 Leerzeichen zw. Worten und nirgends sonst!
+s = [' asdf  df asdfas  asf  asfasdf  ']
+# s.split()
+' '.join(s.split())
+---------------------------------------------------------
+Kontrollfragen_07A Inhaltlich,
+max, laengste Woerter
+2) # erstelle Liste mit den Woertern dieser Laenge
+max_len = max(len(word) for word in words)
+# laengste Woerter
+[word for word in words if len(word) == max_len]
+
+3)
+['{}-Mal'.format(str(i)) for i in range(1, 10)]
+header = ','.join('{}-Mal'.format(str(i)) for i in range(1, 10))
+4)
+[str(i*7) for i in range(1, 10)]
+','.join(str(i*7) for i in range(1, 10))
+
+def make_row(n):
+    return ','.join(str(i*n) for i in range(1, 10))
+
+rows = [make_row(n) for n in range(2, 10)]
+table = [row + '\n' for row in [header] + rows]
+
+fn = 'mult_table.csv'
+with open(fn, 'w') as f:
+    f.writelines(table)
+
+with open(fn, 'r') as f:
+    lines = [line.strip() for line in f]
+
+fmt = '{:>6}' * 9
+header = fmt.format(*lines[0].split(','))
+print(header)
+
+for line in lines[1:]:
+    print(fmt.format(*line.split(',')))
+---------------------------------------------------------------------
+
+Mengen:
+xs = (1, 2, 3)
+ys = (3, 4, 5)
+set(xs) | set(ys)  # Verein
+set(xs) & set(ys)  # Schnitt
+
+sorted: key
+
+Ab Personen Beispiel:
+lambdas:
+square = lambda x: x*x
+
+Fuer Aufgabe: kopiere scrabble.py in den Ordner Modules
+from scrabble import buchstabenwert
+buchstabenwert('a')
+buchstabenwert('A')
+
+def wortwert(word):
+    return sum(buchstabenwert(c) for c in word)
+wortwert('hallo')
+
+words = ['foo', 'bar', 'baz']
+ww = [wortwert(w) for w in words]
+ww
+
+words = ['foo', 'bar', 'baza']
+sorted(words, key=wortwert, reverse=True)
+sorted(words, key=lamba x: (wortwert(x), x), reverse=True)
+============
+Ortschaften_CH_L8, Hauptsaechlich wie mit File/grossem Datansatz arbeiten
+
+Brauche auch diese str-Methoden
+str.isalpha()
+str.isupper()
+str.count()
+
+braucht bereits Dictionaries, aber nur Folgendes:
+
+from kz_kt import d
+list(d)
+for k in d:
+    print(k)
+d['BE']
+
+Ortschaftsnamen:
+- behalte nur echte Ortschaften,
+- entferne Kantonskuerzel und Gemeinde/Kantonsnamen aus Ortsnamen.
+
+Verweise auf orte_helpers.py 
+Gehe dann gemeinsam durch Notebook Ortschaften_CH_L8
+
+
