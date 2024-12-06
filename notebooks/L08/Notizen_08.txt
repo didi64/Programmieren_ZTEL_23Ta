@@ -1,21 +1,3 @@
-Liebe Studierende,
-
-am Montag werden wir uns nochmals der Funktion sorted zuwenden, die es uns erlaubt,
-Iterables zu sortieren. Dabei koennen wir eigene Sortierkriterien angeben.
-
-Dann werden wir Dictionaries anschauen (einen der wichtigsten Datentypen ueberhaupt) und einige typische Probleme betrachten, die man mit Hilfe eines Dictionary loesen sollte. Dazu gehoeren das Erstellen von count-dicts und occurrence-dicts:
-Der count-dict zum Wort 'abakadabra' ist 
-{'a': 5, 'b': 2, 'k': 1, 'd': 1, 'r': 1}
-
-der occurrence-dict
-{'a': [0, 2, 4, 6, 9], 'b': [1, 7], 'k': [3], 'd': [5], 'r': [8]}.
-
-
-Beste Gruesse und ein schoenes WE,
-Dieter
-
-
-
 Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
 
 01 Intro, Docker und Jupyterlab Installieren
@@ -170,6 +152,11 @@ str.isalpha()
 str.isupper()
 str.count()
 
+any-all
+
+xs = [2, 4, 6, 7]
+any(x % 2 == 1 for x in xs)
+
 braucht bereits Dictionaries, aber nur Folgendes:
 
 from kz_kt import d
@@ -185,4 +172,134 @@ Ortschaftsnamen:
 Verweise auf orte_helpers.py 
 Gehe dann gemeinsam durch Notebook Ortschaften_CH_L8
 
+Dictionaries
+=============
+
+if-else-Ausdruecke, reversed:
+kleine Nachtrage, aufgenommen ins Cheatcheat, ebenso wie any, all
+
+Fallunterscheidung mit dict, kurz
+============================
+
+
+gemeinsam cards.py analysieren;
+Zweck: Funktionen bereitstellen um Karten aus gemischtem Deck zu ziehen,
+erkennen was fuer eine Pokerhand gezogen wurde,
+Zufallsexperiment durchfuhren und zaehlen, wie haeufig die einzelnen Haende sind.
+
+Gehe kurz durch Cards.ipynb
+
+
+
+>imports und Konstanten definieren
+>Diskutiere alle Variabeln, ihren Typ unz Zweck
+
+import random
+
+
+VALUE = 0
+SUIT = 1
+SUITS = '♥♠♦♣'
+VALUES = ('2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A')
+
+VALUE_RANK = {v: i for i, v in enumerate(VALUES)}
+RANK_VALUE = {v: k for k, v in VALUE_RANK.items()}
+
+STRAIGHTS = ('2345A',) + tuple(''.join(VALUES[i:i+5]) for i in range(9))
+HANDTYPES = ['11111', '2111', '221', '311', 'straight',
+             'flush', '32', '41', 'straightflush']
+HANDTYPE_RANK = {t: i for i, t in enumerate(HANDTYPES)}
+
+HANDNAMES = ['high card', 'one pair', 'two pairs', 'triple', 'straight',
+             'flush', 'fullhouse', 'four of a kind', 'straightflush']
+HANDTYPE_NAME = dict(zip(HANDTYPES, HANDNAMES))
+--
+stelle einfache Befehle/Funktionen bereit um
+Karten zu ziehen -> Hand
+Hand zu analysieren. Was haben wir gezogen? Fullhouse, 2 Pairs, ...
+
+def new_deck(shuffle=True):
+    deck = [value+suit for suit in SUITS for value in VALUES]
+    if shuffle:
+        random.shuffle(deck)
+    return deck
+
+
+def draw(deck, n=1):
+    n = min(n, len(deck))
+    cards = tuple(deck.pop() for _ in range(n))
+    return cards
+
+
+def get_values(hand):
+    values = [card[VALUE] for card in hand]
+    return values
+
+
+def get_suits(hand):
+    suits = [card[SUIT] for card in hand]
+    return suits
+----
+
+def is_flush(hand):
+    return len(set(get_suits(hand))) == 1
+
+
+def is_straight(hand):
+    values = get_values(hand)
+    values = sorted(values, key=lambda x: VALUES.index(x))
+    return ''.join(values) in STRAIGHTS
+
+------
+
+def vals2ranks(vals):
+    return tuple(VALUE_RANK[v] for v in vals)
+
+
+def count_dict(items):
+    d = {}
+    for item in items:
+        d[item] = d.get(item, 0) + 1
+    return d
+
+
+def sort_ranks(ranks):
+    cd = count_dict(ranks)
+    return sorted(ranks, key=lambda x: (cd[x], x), reverse=True)
+
+-------------
+def handtype(hand):
+    sf = 'straight' * is_straight(hand) + 'flush' * is_flush(hand)
+    if sf:
+        return sf
+
+    values = get_values(hand)
+    counts = count_dict(values).values()
+    counts = sorted(counts, reverse=True)
+    return ''.join(str(x) for x in counts)
+
+
+def handrank(hand):
+    t = handtype(hand)
+    return HANDTYPE_RANK[t]
+
+
+def handname(hand):
+    t = handtype(hand)
+    return HANDTYPE_NAME[t]
+-----------------
+def tiebreaker(hand):
+    ranks = vals2ranks(get_values(hand))
+    return sort_ranks(ranks)
+
+
+def rank_hands(hand1, hand2):
+    v1, v2 = ((handrank(h), tiebreaker(h)) for h in (hand1, hand2))
+    if v1 > v2:
+        return 1
+    elif v1 == v2:
+        return 0
+    else:
+        return -1
+-----------------
 
