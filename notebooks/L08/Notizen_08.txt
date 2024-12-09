@@ -45,9 +45,9 @@ Dictionaries
 --------------------
 
 
-Kontrollfragen_06A: Inhaltliche Repetition:
+Inhaltliche Repetition der Kontrollfragen_06A:
 
-1) Liste kopieren
+1) Liste kopieren, + vs +=, [String]-Methoden
 
 xs = list(range(5)) #  Frage Plenum? 3 gute Antworten
 ys = xs # kein Kopie!
@@ -90,7 +90,7 @@ words
 words.extend(['asdf', 'aga'])
 words
 
-6,7) 
+6, 7) 
 Die Stringmethoden split und joine
 genau 1 Leerzeichen zw. Worten und nirgends sonst!
 s = [' asdf  df asdfas  asf  asfasdf  ']
@@ -98,7 +98,9 @@ s = [' asdf  df asdfas  asf  asfasdf  ']
 ' '.join(s.split())
 --------------------------------------------------------
 Kontrollfragen_07A Inhaltlich,
+List-Comprehension, Stringmethoden split, join
 max, laengste Woerter
+
 2) # erstelle Liste mit den Woertern dieser Laenge
 [len(word) for word in words]
 
@@ -156,25 +158,63 @@ print(header)
 for line in lines[1:]:
     print(fmt.format(*line.split(',')))
 ---------------------------------------------------------------------
-Was nicht gemacht letztes Mal Mengen und wie sortiere mit
+Was nicht gemacht letztes Mal: Mengen, Sortiere mit
 eigenem Sortierkriterium! Lambas
 --------
 Mengen:
-xs = (1, 2, 3)
+xs = (1, 2, 3, 2, 1)
 ys = (3, 4, 5)
+
+set(1,2,3)  # not working!
+set(xs)
 set(xs) | set(ys)  # Verein
 set(xs) & set(ys)  # Schnitt
+xs - ys
 
-sorted: key
+xs = set(range(5))
+xs.remove(3)
+xs
 
-Ab Personen Beispiel:
+xs.add(6)
+xs
+
+--------
+
+Iterables sortieren:sorted: key
+sorted([-2,1,3], reverse=True)
+
+Listenelement sortierwert zuordnet
+def f(n):
+    return abs(n)
+sorted([-2,1,3], reverse=True)
+
 lambdas:
 square = lambda x: x*x
+add = lambda x, y: x+y
 
-Fuer Aufgabe: kopiere scrabble.py in den Ordner Modules
+
+(Fuer Aufgabe: kopiere scrabble.py in den Ordner modules)
 from scrabble import buchstabenwert
 buchstabenwert('a')
 buchstabenwert('A')
+
+chr(65)
+abc = [chr(65+i) for i in range(26)]
+abc = ''.join(chr(65+i) for i in range(26))
+abc
+
+d = {}
+for c in abc:
+    v = buchstabenwert(c)
+    d.setdefault(v, []).append(c)
+d
+
+d.items()
+sorted(d.items())
+dict(sorted(d.items()))
+
+
+Ab Personen Beispiel:
 
 def wortwert(word):
     return sum(buchstabenwert(c) for c in word)
@@ -189,6 +229,98 @@ sorted(words, key=wortwert, reverse=True)
 sorted(words, key=lamba x: (wortwert(x), x), reverse=True)
 ============
 
+====================skip
+Ortschaften_CH_L8, Hauptsaechlich wie mit File/grossem Datansatz arbeiten
+
+Brauche auch diese str-Methoden
+str.isalpha()
+str.isupper()
+str.count()
+
+any-all
+
+xs = [2, 4, 6, 7]
+any(x % 2 == 1 for x in xs)
+
+braucht bereits Dictionaries, aber nur Folgendes:
+
+from kz_kt import d
+list(d)
+for k in d:
+    print(k)
+d['BE']
+
+Ortschaftsnamen:
+- behalte nur echte Ortschaften,
+- entferne Kantonskuerzel und Gemeinde/Kantonsnamen aus Ortsnamen.
+
+Verweise auf orte_helpers.py 
+Gehe dann gemeinsam durch Notebook Ortschaften_CH_L8
+
+Dictionaries
+=============
+chr(65)
+
+abc = [chr(65+i) for i in range(26)]
+abc = ''.join(chr(65+i) for i in range(26))
+abc
+
+
+Zurueck zu Iterable Sortiern scrabble.py
+from scrabble import buchstabenwert
+
+dictionary mit Key Zahl, Wert ist Liste, mit BUchstaben ,die diesen Wert Haben,
+sortiere.
+
+d = {}
+for c in abc:
+    v = buchstabenwert(c)
+    d.setdefault(v, []).append(c)
+d
+
+d.items()
+sorted(d.items())
+dict(sorted(d.items()))
+----
+
+
+
+
+
+
+
+
+---
+any, all, siehe Cheetsheat:
+if-else-Ausdruecke,  reversed:
+kleine Nachtraege, aufgenommen ins Cheatcheat, ebenso wie any, all
+
+peek with reversed
+
+def peek(d, n=2):
+    if n >= 0:
+        keys = []
+        for i, key in enumerate(d):
+            if i == n:
+                break
+            keys.append(key)
+    else:
+        keys = []
+        for i, key in enumerate(reversed(d)):
+            if i == -n:
+                break
+            keys.append(key) 
+        keys = keys[::-1]
+    return {k: d[k] for k in keys}
+---
+
+
+
+gemeinsam cards.py analysieren;
+Zweck: Funktionen bereitstellen um Karten aus gemischtem Deck zu ziehen,
+erkennen was fuer eine Pokerhand gezogen wurde,
+Zufallsexperiment durchfuhren und zaehlen, wie haeufig die einzelnen Haende sind.
+------------------------
 7 Listcomprehesion
 Lead with:
 Pokerhand: Was ist es? pair, pairs, trips, quad, fullhouse
@@ -225,58 +357,6 @@ SUIT = 1
 [card[RANK] for card in hand]
 [card[SUIT] for card in hand]
 -------------------
-
-
-
-
-
-
-
-
-
-
-
-====================
-Ortschaften_CH_L8, Hauptsaechlich wie mit File/grossem Datansatz arbeiten
-
-Brauche auch diese str-Methoden
-str.isalpha()
-str.isupper()
-str.count()
-
-any-all
-
-xs = [2, 4, 6, 7]
-any(x % 2 == 1 for x in xs)
-
-braucht bereits Dictionaries, aber nur Folgendes:
-
-from kz_kt import d
-list(d)
-for k in d:
-    print(k)
-d['BE']
-
-Ortschaftsnamen:
-- behalte nur echte Ortschaften,
-- entferne Kantonskuerzel und Gemeinde/Kantonsnamen aus Ortsnamen.
-
-Verweise auf orte_helpers.py 
-Gehe dann gemeinsam durch Notebook Ortschaften_CH_L8
-
-Dictionaries
-=============
-
-if-else-Ausdruecke, reversed:
-kleine Nachtraege, aufgenommen ins Cheatcheat, ebenso wie any, all
-
-
-
-gemeinsam cards.py analysieren;
-Zweck: Funktionen bereitstellen um Karten aus gemischtem Deck zu ziehen,
-erkennen was fuer eine Pokerhand gezogen wurde,
-Zufallsexperiment durchfuhren und zaehlen, wie haeufig die einzelnen Haende sind.
-
 Gehe kurz durch Cards.ipynb
 
 
@@ -392,4 +472,18 @@ def rank_hands(hand1, hand2):
     else:
         return -1
 -----------------
+
+Kontrollfragen 8
+
+import random
+
+n = randint(1,6)
+wurf = [randint(1,6) for _ in range(5)]
+
+wurdbild:
+
+fall kein straight:
+
+count_dict(d) absteigend nach Keys sortieren,
+Keys aneinanderreihen
 
