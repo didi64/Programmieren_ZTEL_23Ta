@@ -1,5 +1,3 @@
-Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
-
 01 Intro, Docker und Jupyterlab Installieren
 02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
 03 Basic Types, if-then-else
@@ -7,8 +5,8 @@ Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
 05 break und continue, Platzhalterstrings
 06 Methods, Listen Listen mit Listen
 07 enum, zip, sorted, Files, Listcomp, Sets
-08 Dicts, Automat 9.12
-09 Canvas, Callbacks, Widgets 16.12
+08 Dicts, if expressions any, all
+09 Canvas, Callbacks, Widgets 16.12, Automat 9.12
 
 
 10 Repetition. 06.1.
@@ -23,7 +21,9 @@ Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
 17 Projektvorstellung 10.3.
 18 Abschluss/ Feedback Projektarbeiten. 17.3
 
-Letztes Mal: ohne Kontrollfragen 6,7, ohne Mengen und sorted.
+Letztes Mal: 
+Listcomprehesion und Files
+ohne Kontrollfragen 6,7, ohne Mengen und sorted.
 
 Heute:
 Kontrollfragen_06a, 07A
@@ -36,10 +36,6 @@ reversed, if-else-Ausdruecke
 Ortschaften_CH08
 Cards
 
-------------------------------------------------
-Lead with:
-Pokerhand: Was ist es? pair, pairs, trips, quad, fullhouse
-
 Ternary Ausdruecke, any und all -> Cheatsheet.
 x = 1 if 'x' in word else -1
 
@@ -47,27 +43,44 @@ Kontrollfragen
 
 Dictionaries
 --------------------
+
+
 Kontrollfragen_06A: Inhaltliche Repetition:
 
 1) Liste kopieren
 
-xs = list(range(5))
+xs = list(range(5)) #  Frage Plenum? 3 gute Antworten
+ys = xs # kein Kopie!
 
-ys = [x for x in xs]
-zs = xs[:]
-ws = xs.copy()
+ys.clear()
+xs
+
+xs = list(range(5))
+ys = xs[:]
+ys.clear()
+xs
+
+zs = xs.copy()
+ws = [x for x in xs]
+
 
 2)
+str.upper('foo')
+'foo'.upper()
+
 words = ['foo', 'bar', 'baz']
 [w.capitalize() for w in words]
 [w.upper() for i, w in enumerate(words) if i != 1]
 
-3) words aendern:
+
+tuple(enumerate(words))
+
+3) Liste words aendern:
 for i, w in enumerate(words):
     words[i]=w[::-1]
 words
 
-4) 
+4) # Listen +=,  +
 words += ['asdf', 'aga']
 words
 
@@ -77,22 +90,34 @@ words
 words.extend(['asdf', 'aga'])
 words
 
-6,7) genau 1 Leerzeichen zw. Worten und nirgends sonst!
+6,7) 
+Die Stringmethoden split und joine
+genau 1 Leerzeichen zw. Worten und nirgends sonst!
 s = [' asdf  df asdfas  asf  asfasdf  ']
 # s.split()
 ' '.join(s.split())
----------------------------------------------------------
+--------------------------------------------------------
 Kontrollfragen_07A Inhaltlich,
 max, laengste Woerter
 2) # erstelle Liste mit den Woertern dieser Laenge
+[len(word) for word in words]
+
 max_len = max(len(word) for word in words)
 # laengste Woerter
 [word for word in words if len(word) == max_len]
 
-3)
-['{}-Mal'.format(str(i)) for i in range(1, 10)]
+3) # Tabellenheader using join.
+i=4
+'{}-Mal'.format(i)
+
+['{}-Mal'.format(i) for i in range(1, 10)]
 header = ','.join('{}-Mal'.format(str(i)) for i in range(1, 10))
-4)
+
+4) kommaseparierte Liste mit Werten
+[i for i in range(1, 10)]
+','.join(i for i in range(1, 10))  # Muss keine Liste machen Iterator tuts auch
+                                   # was geht schief, wie korrigieren?
+
 [str(i*7) for i in range(1, 10)]
 ','.join(str(i*7) for i in range(1, 10))
 
@@ -100,24 +125,40 @@ def make_row(n):
     return ','.join(str(i*n) for i in range(1, 10))
 
 rows = [make_row(n) for n in range(2, 10)]
+
+# tabelle: Heder hinzufuegen, Zeilen um \n ergaenzen
 table = [row + '\n' for row in [header] + rows]
+
+# File lesen und schreiben
 
 fn = 'mult_table.csv'
 with open(fn, 'w') as f:
     f.writelines(table)
 
+--
 with open(fn, 'r') as f:
     lines = [line.strip() for line in f]
 
+# Tabelle formatiert ausgeben: 
+# 
+line = lines[7]
+line
+items = line.split(',')
+items
+len(items)
+
 fmt = '{:>6}' * 9
+fmt
+
 header = fmt.format(*lines[0].split(','))
 print(header)
 
 for line in lines[1:]:
     print(fmt.format(*line.split(',')))
 ---------------------------------------------------------------------
-Funktion verbessern: Testing
--------------------
+Was nicht gemacht letztes Mal Mengen und wie sortiere mit
+eigenem Sortierkriterium!
+--------
 Mengen:
 xs = (1, 2, 3)
 ys = (3, 4, 5)
@@ -147,6 +188,55 @@ words = ['foo', 'bar', 'baza']
 sorted(words, key=wortwert, reverse=True)
 sorted(words, key=lamba x: (wortwert(x), x), reverse=True)
 ============
+
+7 Listcomprehesion
+Lead with:
+Pokerhand: Was ist es? pair, pairs, trips, quad, fullhouse
+
+cards = ['6H', 'KH']
+
+SUITS = 'HSDC' # hearts, spades diamond, clubs
+VALUES = '23456789TJQKA'
+
+deck = [value+suit for suit in SUITS for value in VALUES]
+deck[-13:]
+
+hand = [deck.pop() for _ in range(5)]
+hand
+
+def new_deck():
+    return [value+suit for suit in SUITS for value in VALUES]
+
+def draw(deck, n=5):
+    return [deck.pop() for _ in range(5)]
+
+draw(deck)
+
+import random
+
+items = [1,2,3,4,5]
+
+random.shouffle(items)
+items
+
+RANK=0
+SUIT = 1
+
+[card[RANK] for card in hand]
+[card[SUIT] for card in hand]
+-------------------
+
+
+
+
+
+
+
+
+
+
+
+====================
 Ortschaften_CH_L8, Hauptsaechlich wie mit File/grossem Datansatz arbeiten
 
 Brauche auch diese str-Methoden
@@ -178,10 +268,8 @@ Dictionaries
 =============
 
 if-else-Ausdruecke, reversed:
-kleine Nachtrage, aufgenommen ins Cheatcheat, ebenso wie any, all
+kleine Nachtraege, aufgenommen ins Cheatcheat, ebenso wie any, all
 
-Fallunterscheidung mit dict, kurz
-============================
 
 
 gemeinsam cards.py analysieren;

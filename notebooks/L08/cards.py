@@ -4,7 +4,7 @@ import random
 VALUE = 0
 SUIT = 1
 SUITS = '♥♠♦♣'
-VALUES = ('2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A')
+VALUES = '23456789TJQKA'
 
 VALUE_RANK = {v: i for i, v in enumerate(VALUES)}
 RANK_VALUE = {v: k for k, v in VALUE_RANK.items()}
