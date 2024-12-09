@@ -14,8 +14,8 @@ HANDTYPES = ['11111', '2111', '221', '311', 'straight',
              'flush', '32', '41', 'straightflush']
 HANDTYPE_RANK = {t: i for i, t in enumerate(HANDTYPES)}
 
-HANDNAMES = ['high card', 'one pair', 'two pairs', 'triple', 'straight',
-             'flush', 'fullhouse', 'four of a kind', 'straightflush']
+HANDNAMES = ['high card', 'pair', 'pairs', 'trips', 'straight',
+             'flush', 'fullhouse', 'quads', 'straightflush']
 HANDTYPE_NAME = dict(zip(HANDTYPES, HANDNAMES))
 
 

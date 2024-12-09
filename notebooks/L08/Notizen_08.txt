@@ -37,7 +37,8 @@ Ortschaften_CH08
 Cards
 
 ------------------------------------------------
-
+Lead with:
+Pokerhand: Was ist es? pair, pairs, trips, quad, fullhouse
 
 Ternary Ausdruecke, any und all -> Cheatsheet.
 x = 1 if 'x' in word else -1
@@ -45,7 +46,7 @@ x = 1 if 'x' in word else -1
 Kontrollfragen
 
 Dictionaries
-
+--------------------
 Kontrollfragen_06A: Inhaltliche Repetition:
 
 1) Liste kopieren
@@ -115,7 +116,8 @@ print(header)
 for line in lines[1:]:
     print(fmt.format(*line.split(',')))
 ---------------------------------------------------------------------
-
+Funktion verbessern: Testing
+-------------------
 Mengen:
 xs = (1, 2, 3)
 ys = (3, 4, 5)
