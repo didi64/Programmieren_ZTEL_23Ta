@@ -157,7 +157,7 @@ for line in lines[1:]:
     print(fmt.format(*line.split(',')))
 ---------------------------------------------------------------------
 Was nicht gemacht letztes Mal Mengen und wie sortiere mit
-eigenem Sortierkriterium!
+eigenem Sortierkriterium! Lambas
 --------
 Mengen:
 xs = (1, 2, 3)
