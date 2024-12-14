@@ -7,4 +7,5 @@
 5:Kontrollfragen_05.ipynb NIM_revisited.ipynb Ask_for_move.ipynb Kontrollfragen03A.ipynb students.py L02_functions.py L05_functions.py Indexing_und_Slicing_I.ipynb Format_und_Platzhalter.ipynb For_und_While_Loops.ipynb Unpacking_Operator.ipynb
 6:Variabeln_Objekte_Referenzen.ipynb plus_gleich.ipynb Typen_Methoden.ipynb Liste_mit_Listen.ipynb zip_und_enumerate.ipynb Cheatsheet.ipynb Stringmethoden.ipynb Listenmethoden.ipynb Errors_and_Exception.ipynb Kontrollfragen_06.ipynb Loesungen_06 Kontrollfragen_05A.ipynb 
 7:Listcomprehension.ipynb Loesungen_07 Listen_Nachtrag.ipynb Files.ipynb Ortschaften_CH.ipynb Mengen.ipynb Iterables_sortieren.ipynb scrabble.py CheatSheet.ipynb Kontrollfragen_07.ipynb  
-8:Cheatsheet.ipynb Dictionaries.ipynb kz_kt.py Loesungen_08 if_else_Ausdruecke.ipynb reversed.ipynb Cards.ipynb cards.py
+8:Cheatsheet.ipynb Dictionaries.ipynb kz_kt.py Loesungen_08 if_else_Ausdruecke.ipynb reversed.ipynb Cards.ipynb cards.py  
+9:Cheatsheet.ipynb Dictionaries_ein_und_auspacken.ipynb Fallunterscheidung_mit_dict.ipynb letterfrequencies.py Loesungen_09 notebookfinder.ipynb Sortieralgos_Testing.ipynb Sprachdetektion.ipynb text_1.txt text_2.txt Uebungen
