@@ -1,18 +1,18 @@
 import random
 
 
-VALUE = 0
+RANK = 0
 SUIT = 1
 SUITS = '♥♠♦♣'
-VALUES = '23456789TJQKA'
+RANKS = '23456789TJQKA'
 
-VALUE_RANK = {v: i for i, v in enumerate(VALUES)}
-RANK_VALUE = {v: k for k, v in VALUE_RANK.items()}
+IDX_RANK = {idx: r for idx, r in enumerate(RANKS)}
+RANK_IDX = {r: idx for idx, r in IDX_RANK.items()}
 
-STRAIGHTS = ('2345A',) + tuple(''.join(VALUES[i:i+5]) for i in range(9))
+STRAIGHTS = ('2345A',) + tuple(''.join(RANKS[i:i+5]) for i in range(9))
 HANDTYPES = ['11111', '2111', '221', '311', 'straight',
              'flush', '32', '41', 'straightflush']
-HANDTYPE_RANK = {t: i for i, t in enumerate(HANDTYPES)}
+HANDTYPE_IDX = {t: idx for idx, t in enumerate(HANDTYPES)}
 
 HANDNAMES = ['high card', 'pair', 'pairs', 'trips', 'straight',
              'flush', 'fullhouse', 'quads', 'straightflush']
@@ -20,7 +20,7 @@ HANDTYPE_NAME = dict(zip(HANDTYPES, HANDNAMES))
 
 
 def new_deck(shuffle=True):
-    deck = [value+suit for suit in SUITS for value in VALUES]
+    deck = [rank+suit for suit in SUITS for rank in RANKS]
     if shuffle:
         random.shuffle(deck)
     return deck
@@ -32,9 +32,9 @@ def draw(deck, n=1):
     return cards
 
 
-def get_values(hand):
-    values = [card[VALUE] for card in hand]
-    return values
+def get_ranks(hand):
+    ranks = [card[RANK] for card in hand]
+    return ranks
 
 
 def get_suits(hand):
@@ -47,13 +47,9 @@ def is_flush(hand):
 
 
 def is_straight(hand):
-    values = get_values(hand)
-    values = sorted(values, key=lambda x: VALUES.index(x))
-    return ''.join(values) in STRAIGHTS
-
-
-def vals2ranks(vals):
-    return tuple(VALUE_RANK[v] for v in vals)
+    ranks = get_ranks(hand)
+    ranks = sorted(ranks, key=lambda x: RANK_IDX[x])
+    return ''.join(ranks) in STRAIGHTS
 
 
 def count_dict(items):
@@ -63,9 +59,9 @@ def count_dict(items):
     return d
 
 
-def sort_ranks(ranks):
-    cd = count_dict(ranks)
-    return sorted(ranks, key=lambda x: (cd[x], x), reverse=True)
+def sort_idxs(idxs):
+    cd = count_dict(idxs)
+    return sorted(idxs, key=lambda x: (cd[x], x), reverse=True)
 
 
 def handtype(hand):
@@ -73,15 +69,15 @@ def handtype(hand):
     if sf:
         return sf
 
-    values = get_values(hand)
-    counts = count_dict(values).values()
+    ranks = get_ranks(hand)
+    counts = count_dict(ranks).values()
     counts = sorted(counts, reverse=True)
     return ''.join(str(x) for x in counts)
 
 
 def handrank(hand):
     t = handtype(hand)
-    return HANDTYPE_RANK[t]
+    return HANDTYPE_IDX[t]
 
 
 def handname(hand):
@@ -90,8 +86,8 @@ def handname(hand):
 
 
 def tiebreaker(hand):
-    ranks = vals2ranks(get_values(hand))
-    return sort_ranks(ranks)
+    idxs = [RANK_IDX[r] for r in get_ranks(hand)]
+    return sort_idxs(idxs)
 
 
 def rank_hands(hand1, hand2):

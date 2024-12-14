@@ -1,0 +1,94 @@
+recycle cards, orte_helpers als kleinere Uebungen
+
+dict auspacken!
+def f(*args, **kwargs):
+benamste Platzhalter
+
+
+
+Cheatsheet: Typo bei Mengen: pop(i=-1) statt pop().
+Die pop Methode von set nimmt im Gegensatz zur pop Methode vonn list
+kein Argument!
+
+
+L08 nun in Aufgabe Cards verwurstet. Code geaendert!
+serach replace RANK->IDX 
+IDX je kleiner Index, desto schlechter die Karte,
+Rank: 2,T,Q,A nicht Rank im Sinne was besser!
+Cards.ipynb
+cards.py
+
+
+
+
+
+Exkurs zu Sortieralgorigthmen (nicht Pruefungsstoff?)
+
+insert sort:
+Fange mit leerer Liste an.
+Fuege jedes Element der zu sortierenden Liste an der richtigen Stelle ein.
+
+bubble sort:
+zeige Wiki-Page Animation. nach 1. Durchgang ist
+groesstes Element am Schluss, also braucht man nun nur noch die
+um 1 verkuerzte Liste zu sortieren!
+
+quicksort: divide and conquer, rekursiv.
+
+-------------------
+Funktion verbessern:
+beachte: Argumente sind nicht wie bei range!
+Ziel: test 1 und 2 werden erfuellt! 
+---
+Kontrollfragen 8
+1a,b,c) Dict erstellen, explizit, aus key-value Paaren, mit dict-comp
+2) Dict umdrehen: a) bijektive, b,c) alle Urbilder, Liste weglassen, falls nur ein Element
+3) dict sortieren: nach keys, nach values!
+auch moeglich: sorted(en_de.items(), key=lambda x: x[::-1])
+4) peek(d, n)
+it = en_de.items()
+it
+
+it=reversed(it)
+it
+
+tuple(It)
+
+5) count_dict!
+6) occurence_dict!
+7) wuerfeln: [random.randint(1, 6) for _ in range(n)]!
+8) is_straight: nur 2 Moeglichkeiten: 1,2,3,4,5 oder 2,3,4,5,6
+                5 versch. Zahlen, 6 oder 1 fehlt.
+9) Wurfbild
+10) Zufallsexperiment!
+---------------
+
+Fallunterscheidung mit Dict
+type_fun dict. ev global:
+falls neuer type hinzukommt,neue fun in dict hinzufuegen.
+if-elif-else Blcok reduziert auf einen dict-lookup!!
+    
+-----
+
+Sprachdetektion
+----------------------
+
+
+Ein-un und auspacken, benamste Platzhalter.
+---
+
+Sortieren mit Umlauten
+
+-----
+
+notebookfinder (finde Beispiele)
+
+
+
+
+Ortsnamensliste erstellen.
+Cards
+
+Groessere AUfgaben fuer spaeter:
+etwas aus cards.py machen
+Labyrith, fuer Sportferien.

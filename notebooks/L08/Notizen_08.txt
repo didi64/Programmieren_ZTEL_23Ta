@@ -47,7 +47,33 @@ Dictionaries
 
 Inhaltliche Repetition der Kontrollfragen_06A:
 
-1) Liste kopieren, + vs +=, [String]-Methoden
+1) Liste kopieren, + vs +=, neue Liste vs Liste aendern
+[String]-Methoden, str.upper('foo')
+
+x = [1]
+x + x
+
+x
+
+x += x
+x
+
+#aendern
+x[1] = 0
+
+str.upper('foo')
+'foo'.upper()
+
+x.append(3)
+x
+
+x.pop()
+x
+
+x.clear()
+x
+==================
+
 
 xs = list(range(5)) #  Frage Plenum? 3 gute Antworten
 ys = xs # kein Kopie!
