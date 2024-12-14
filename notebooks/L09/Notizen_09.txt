@@ -1,3 +1,8 @@
+
+Cheatsheet: Enthaelt nun das ganzen Pruefungsstoff!
+Im Detail besprechen!
+
+
 recycle cards, orte_helpers als kleinere Uebungen
 
 dict auspacken!
@@ -5,25 +10,26 @@ def f(*args, **kwargs):
 benamste Platzhalter
 
 
-
 Cheatsheet: Typo bei Mengen: pop(i=-1) statt pop().
 Die pop Methode von set nimmt im Gegensatz zur pop Methode vonn list
 kein Argument!
 
 
-L08 nun in Aufgabe Cards verwurstet. Code geaendert!
-serach replace RANK->IDX 
+L08 cards.py. Ignorieren oder loeschen. 
+Code geaendert! search replace RANK->IDX 
 IDX je kleiner Index, desto schlechter die Karte,
 Rank: 2,T,Q,A nicht Rank im Sinne was besser!
 Cards.ipynb
 cards.py
 
 
+- Exkurs zu Sortieralgorigthmen und testbasierter Entwicklung.
+- Repetieren Dictionary anhand der Kontrollfragen und sehen
+weitere typische Anwendungen, wie das Erkennen der Sprache eines Textes anhand der relativen Buchstabenhaeufigkeiten.
+- Tool zum Suchen nach Notebooks
+- Pruefungstoff festlegen.
 
-
-
-Exkurs zu Sortieralgorigthmen (nicht Pruefungsstoff?)
-
+---------
 insert sort:
 Fange mit leerer Liste an.
 Fuege jedes Element der zu sortierenden Liste an der richtigen Stelle ein.
@@ -35,10 +41,6 @@ um 1 verkuerzte Liste zu sortieren!
 
 quicksort: divide and conquer, rekursiv.
 
--------------------
-Funktion verbessern:
-beachte: Argumente sind nicht wie bei range!
-Ziel: test 1 und 2 werden erfuellt! 
 ---
 Kontrollfragen 8
 1a,b,c) Dict erstellen, explizit, aus key-value Paaren, mit dict-comp
@@ -74,21 +76,13 @@ Sprachdetektion
 ----------------------
 
 
-Ein-un und auspacken, benamste Platzhalter.
+Ein- und und auspacken, benamste Platzhalter.
 ---
-
-Sortieren mit Umlauten
-
------
 
 notebookfinder (finde Beispiele)
 
+---
 
+Uebungen durchgehen.
+Sagen, was alles da zu finden ist.
 
-
-Ortsnamensliste erstellen.
-Cards
-
-Groessere AUfgaben fuer spaeter:
-etwas aus cards.py machen
-Labyrith, fuer Sportferien.
