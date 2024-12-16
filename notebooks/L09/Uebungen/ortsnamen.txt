@@ -8,7 +8,6 @@ Aathal-Seegräben
 Aawangen
 Abländschen
 Abtwil
-Abtwil
 Achseten
 Aclens
 Acquarossa
@@ -21,9 +20,6 @@ Adliswil
 Aedermannsdorf
 Aefligen
 Aegerten
-Aesch
-Aesch
-Aesch
 Aesch
 Aeschau
 Aeschi
@@ -74,7 +70,6 @@ Alpthal
 Alt St. Johann
 Altbüron
 Altdorf
-Altdorf
 Alten
 Altendorf
 Altenrhein
@@ -103,7 +98,6 @@ Andelfingen
 Andermatt
 Andhausen
 Andiast
-Andwil
 Andwil
 Anglikon
 Anières
@@ -139,7 +133,6 @@ Arnegg
 Arnex-sur-Nyon
 Arnex-sur-Orbe
 Arni
-Arni
 Arogno
 Arolla
 Arosa
@@ -162,8 +155,6 @@ Attelwil
 Attikon
 Attinghausen
 Attiswil
-Au
-Au
 Au
 Aubonne
 Auboranges
@@ -196,7 +187,6 @@ Ayer
 Azmoos
 Aïre
 Baar
-Baar
 Bachenbülach
 Bachs
 Bad Ragaz
@@ -223,7 +213,6 @@ Bannwil
 Barbengo
 Barberêche
 Bargen
-Bargen
 Barmelweid
 Barzheim
 Basadingen
@@ -245,7 +234,6 @@ Bedretto
 Beggingen
 Begnins
 Beinwil
-Beinwil
 Beinwil am See
 Belalp
 Belfaux
@@ -264,13 +252,10 @@ Belpberg
 Belprahon
 Benglen
 Benken
-Benken
 Bennau
 Bennwil
 Benzenschwil
 Bercher
-Berg
-Berg
 Berg
 Berg am Irchel
 Bergdietikon
@@ -288,7 +273,6 @@ Bernhardzell
 Berolle
 Beromünster
 Berschis
-Bertschikon
 Bertschikon
 Berzona
 Besazio
@@ -311,7 +295,6 @@ Bex
 Biasca
 Biberen
 Biberist
-Bibern
 Bibern
 Biberstein
 Bichelsee
@@ -489,9 +472,6 @@ Buchen im Prättigau
 Buchillon
 Buchrain
 Buchs
-Buchs
-Buchs
-Buchs
 Buckten
 Buhwil
 Buix
@@ -513,7 +493,6 @@ Buseno
 Bussigny
 Bussigny-sur-Oron
 Bussnang
-Busswil
 Busswil
 Busswil b. Melchnau
 Bussy
@@ -550,12 +529,9 @@ Bülach
 Bünzen
 Bürchen
 Büren
-Büren
 Büren an der Aare
 Büren zum Hof
 Bürgenstock
-Bürglen
-Bürglen
 Bürglen
 Büriswilen
 Büron
@@ -581,7 +557,6 @@ Camorino
 Campascio
 Campello
 Camperio
-Campo
 Campo
 Campocologno
 Campora
@@ -654,7 +629,6 @@ Chandonne
 Chanéaz
 Chapella
 Chapelle
-Chapelle
 Chapelle-sur-Moudon
 Chardonne
 Charmey
@@ -706,7 +680,6 @@ Châtelaine
 Châtelat
 Châtillens
 Châtillon
-Châtillon
 Châtonnaye
 Chénens
 Chéserex
@@ -738,7 +711,6 @@ Collonge-Bellerive
 Collonges
 Cologny
 Colombier
-Colombier
 Comano
 Combremont-le-Grand
 Combremont-le-Petit
@@ -757,7 +729,6 @@ Coppet
 Corban
 Corbeyrier
 Corbières
-Corcelles
 Corcelles
 Corcelles-le-Jorat
 Corcelles-près-Concise
@@ -788,7 +759,6 @@ Cortébert
 Corzoneso
 Cossonay-Ville
 Cottens
-Cottens
 Cotterd
 Courcelon
 Courchapoix
@@ -814,12 +784,10 @@ Couvet
 Cozzo
 Crana
 Crans
-Crans
 Crans-Montana
 Crassier
 Cremin
 Cresciano
-Cressier
 Cressier
 Cries
 Crissier
@@ -832,7 +800,6 @@ Cuarnens
 Cuarny
 Cudrefin
 Cugnasco
-Cugy
 Cugy
 Cully
 Cumbel
@@ -881,7 +848,6 @@ Densbüren
 Derendingen
 Detligen
 Dettighofen
-Dettighofen
 Develier
 Dickbuch
 Dicken
@@ -912,7 +878,6 @@ Domat/Ems
 Dombresson
 Domdidier
 Dommartin
-Dompierre
 Dompierre
 Donat
 Donatyre
@@ -967,14 +932,12 @@ Eclagnens
 Eclépens
 Ecoteaux
 Ecublens
-Ecublens
 Ecuvillens
 Ederswiler
 Edlibach
 Effingen
 Effretikon
 Egerkingen
-Egg
 Egg
 Egg b. Zürich
 Eggenwil
@@ -1035,7 +998,6 @@ Epalinges
 Epautheyres
 Epauvillers
 Ependes
-Ependes
 Epesses
 Epiquerez
 Eppenberg
@@ -1050,7 +1012,6 @@ Erlen
 Erlenbach
 Erlenbach im Simmental
 Erlinsbach
-Erlinsbach
 Ermatingen
 Ermensee
 Ermenswil
@@ -1061,7 +1022,6 @@ Erschwil
 Ersigen
 Erstfeld
 Eschen
-Eschenbach
 Eschenbach
 Eschenz
 Eschert
@@ -1132,7 +1092,6 @@ Feusisberg
 Feutersoey
 Fex
 Fey
-Fey
 Fiaugères
 Fidaz
 Fideris
@@ -1189,7 +1148,6 @@ Fontannen b. Wolhusen
 Fontenais
 Fontnas
 Forch
-Forel
 Forel
 Forel-sur-Lucens
 Formangueires
@@ -1278,7 +1236,6 @@ Gerlikon
 Geroldswil
 Gerolfingen
 Gerra
-Gerra
 Gersau
 Gerzensee
 Geschinen
@@ -1337,7 +1294,6 @@ Gordola
 Gorduno
 Gorgier
 Gossau
-Gossau
 Gossens
 Gossliwil
 Gottlieben
@@ -1362,7 +1318,6 @@ Grandson
 Grandval
 Grandvaux
 Grandvillard
-Granges
 Granges
 Granges-Paccot
 Granges-de-Vesin
@@ -1395,7 +1350,6 @@ Grossaffoltern
 Grossdietwil
 Grosshöchstetten
 Grosswangen
-Grub
 Grub
 Gruben
 Grugnay
@@ -1468,7 +1422,6 @@ Happerswil
 Harenwilen
 Hasle
 Hasle b. Burgdorf
-Haslen
 Haslen
 Hasliberg Goldern
 Hasliberg Hohfluh
@@ -1559,12 +1512,10 @@ Hofen
 Hoffeld
 Hofstatt
 Hofstetten
-Hofstetten
 Hofstetten b. Brienz
 Hohenrain
 Hohentannen
 Hohtenn
-Holderbank
 Holderbank
 Holzhäusern
 Holziken
@@ -1695,7 +1646,6 @@ Kappelen
 Kastanienbaum
 Kaufdorf
 Kefikon
-Kefikon
 Kehrsatz
 Kehrsiten
 Kemptthal
@@ -1708,12 +1658,9 @@ Kienberg
 Kiental
 Kiesen
 Kilchberg
-Kilchberg
 Killwangen
 Kippel
 Kirchberg
-Kirchberg
-Kirchdorf
 Kirchdorf
 Kirchenthurnen
 Kirchleerau
@@ -1788,7 +1735,6 @@ La Cure
 La Côte-aux-Fées
 La Ferrière
 La Forclaz
-La Forclaz
 La Fouly
 La Garde
 La Heutte
@@ -1807,7 +1753,6 @@ La Russille
 La Rösa
 La Sage
 La Sagne
-La Sagne
 La Sarraz
 La Tanne
 La Tine
@@ -1820,6 +1765,7 @@ La Verrerie
 La Vraconnaz
 La Vue-des-Alpes
 Laax
+Laax 2
 Lachen
 Laconnex
 Ladir
@@ -1854,11 +1800,13 @@ Lauerz
 Laufen
 Laufenburg
 Laupen
-Laupen
 Laupersdorf
 Lauperswil
 Laura
 Lausanne
+Lausanne 25
+Lausanne 26
+Lausanne 27
 Lausen
 Lauterbrunnen
 Lauwil
@@ -1906,11 +1854,9 @@ Le Vaud
 Leggia
 Leibstadt
 Leimbach
-Leimbach
 Leimiswil
 Leissigen
 Lenggenwil
-Lengnau
 Lengnau
 Lengwil
 Lenk im Simmental
@@ -1951,7 +1897,6 @@ Les Mayens-de-Sion
 Les Monts-de-Corsier
 Les Monts-de-Pully
 Les Mosses
-Les Moulins
 Les Moulins
 Les Paccots
 Les Planchettes
@@ -2016,7 +1961,6 @@ Loco
 Lodano
 Lodrino
 Lohn
-Lohn
 Lohn-Ammannsegg
 Lohnstorf
 Lommis
@@ -2045,7 +1989,6 @@ Lugano
 Lugnez
 Lugnorre
 Luins
-Lully
 Lully
 Lumbrein
 Lumino
@@ -2102,7 +2045,6 @@ Mairengo
 Maisprach
 Maladers
 Malans
-Malans
 Malix
 Malleray
 Maloja
@@ -2115,7 +2057,6 @@ Mannenbach-Salenstein
 Mannens
 Manno
 Maracon
-Marbach
 Marbach
 Marchissy
 Mariastein
@@ -2155,7 +2096,6 @@ Mauensee
 Maules
 Maur
 Mauraz
-Mauren
 Mauren
 Mayens-de-Chamoson
 Medeglia
@@ -2205,7 +2145,6 @@ Mettlen
 Mettmenstetten
 Metzerlen
 Mex
-Mex
 Meyriez
 Meyrin
 Mezzovico
@@ -2231,7 +2170,6 @@ Moiry
 Molare
 Moleno
 Molinis
-Mollens
 Mollens
 Mollie-Margot
 Mollis
@@ -2266,7 +2204,6 @@ Monte
 Monte Carasso
 Monteggio
 Montenol
-Montet
 Montet
 Montezillon
 Montfaucon
@@ -2317,9 +2254,7 @@ Muntelier
 Muolen
 Muotathal
 Mur
-Mur
 Muralto
-Muraz
 Muraz
 Murg
 Murgenthal
@@ -2341,7 +2276,6 @@ Märwil
 Ménières
 Mézery-près-Donneloye
 Mézières
-Mézières
 Môtier
 Môtiers
 Möhlin
@@ -2355,7 +2289,6 @@ Mötschwil
 Mühlau
 Mühlebach
 Mühleberg
-Mühledorf
 Mühledorf
 Mühlehorn
 Mühlethal
@@ -2371,7 +2304,6 @@ Münchenbuchsee
 Münchenstein
 Münchenwiler
 Münchringen
-Münchwilen
 Münchwilen
 Münsingen
 Münster
@@ -2425,7 +2357,6 @@ Niederdorf
 Niedergampel
 Niedergesteln
 Niederglatt
-Niederglatt
 Niedergösgen
 Niederhasli
 Niederhelfenschwil
@@ -2446,8 +2377,6 @@ Niederuzwil
 Niederwald
 Niederwangen b. Bern
 Niederweningen
-Niederwil
-Niederwil
 Niederwil
 Niederönz
 Niederösch
@@ -2470,7 +2399,6 @@ Nufenen
 Nuglar
 Nunningen
 Nussbaumen
-Nussbaumen
 Nusshof
 Nuvilly
 Nyon
@@ -2491,8 +2419,6 @@ Oberbüren
 Oberbütschel
 Oberdiessbach
 Oberdorf
-Oberdorf
-Oberdorf
 Oberegg
 Oberembrach
 Oberems
@@ -2509,7 +2435,6 @@ Oberhallau
 Oberhasli
 Oberhelfenschwil
 Oberhof
-Oberhofen
 Oberhofen
 Oberhofen am Thunersee
 Oberhünigen
@@ -2546,7 +2471,6 @@ Oberwangen
 Oberwangen b. Bern
 Oberweningen
 Oberwil
-Oberwil
 Oberwil b. Büren
 Oberwil b. Zug
 Oberwil im Simmental
@@ -2575,12 +2499,10 @@ Ohmstal
 Oleyres
 Olivone
 Ollon
-Ollon
 Olsberg
 Olten
 Oltingen
 Onex
-Onnens
 Onnens
 Opfershofen
 Opfertshofen
@@ -2662,7 +2584,6 @@ Pfeffingen
 Pfungen
 Pfyn
 Pfäfers
-Pfäffikon
 Pfäffikon
 Piandera Paese
 Pianezzo
@@ -2775,7 +2696,6 @@ Ranflüh
 Ranzo
 Raperswilen
 Rapperswil
-Rapperswil
 Raron
 Rasa
 Ravoire
@@ -2795,7 +2715,6 @@ Reichenburg
 Reiden
 Reidermoos
 Reigoldswil
-Reinach
 Reinach
 Reisiswil
 Reitnau
@@ -2825,20 +2744,15 @@ Richigen
 Richterswil
 Ricken
 Rickenbach
-Rickenbach
-Rickenbach
 Rickenbach Sulz
-Rickenbach
 Rickenbach b. Schwyz
 Rickenbach b. Wil
 Ricketwil
 Riddes
 Ried
-Ried
 Ried b. Kerzers
 Ried-Brig
 Ried-Mörel
-Rieden
 Rieden
 Riederalp
 Riedern
@@ -2887,7 +2801,6 @@ Rodi-Fiesso
 Roggenburg
 Roggliswil
 Roggwil
-Roggwil
 Rohr b. Olten
 Rohrbach
 Rohrbachgraben
@@ -2900,7 +2813,6 @@ Romanel-sur-Morges
 Romanens
 Romanshorn
 Rombach
-Romont
 Romont
 Romoos
 Rona
@@ -2917,7 +2829,6 @@ Rossa
 Rossemaison
 Rossenges
 Rossens
-Rossens
 Rosshäusern
 Rossinière
 Rossrüti
@@ -2933,7 +2844,6 @@ Rothwald
 Rotkreuz
 Rottenschwil
 Rougemont
-Roveredo
 Roveredo
 Rovio
 Rovray
@@ -2990,7 +2900,6 @@ Rüschegg Heubach
 Rüschlikon
 Rüthi
 Rüti
-Rüti
 Rüti b. Büren
 Rüti b. Lyssach
 Rüti b. Riggisberg
@@ -3003,7 +2912,6 @@ S. Antonino
 S. Antonio
 S. Benedetg
 S. Bernardino
-S. Carlo
 S. Carlo
 S. Nazzaro
 S. Pietro
@@ -3054,7 +2962,6 @@ Sattel
 Saubraz
 Saulcy
 Saules
-Saules
 Savagnier
 Savigny
 Savièse
@@ -3095,7 +3002,6 @@ Schinznach Bad
 Schinznach Dorf
 Schlans
 Schlatt
-Schlatt
 Schlattingen
 Schleinikon
 Schleitheim
@@ -3111,7 +3017,6 @@ Schmidrüti
 Schmidshof
 Schmiedrued
 Schmitten
-Schmitten
 Schnaus
 Schneisingen
 Schnottwil
@@ -3122,11 +3027,8 @@ Schupfart
 Schwaderloch
 Schwadernau
 Schwanden
-Schwanden
 Schwanden b. Brienz
 Schwanden im Emmental
-Schwarzenbach
-Schwarzenbach
 Schwarzenbach
 Schwarzenberg
 Schwarzenburg
@@ -3162,11 +3064,9 @@ Scuol
 Sedrun
 Seeberg
 Seedorf
-Seedorf
 Seehof
 Seelisberg
 Seengen
-Seewen
 Seewen
 Seewil
 Seewis Dorf
@@ -3289,7 +3189,6 @@ St-Luc
 St-Légier-La Chiésaz
 St-Léonard
 St-Martin
-St-Martin
 St-Maurice
 St-Oyens
 St-Pierre-de-Clages
@@ -3297,7 +3196,6 @@ St-Prex
 St-Romain
 St-Saphorin
 St-Saphorin-sur-Morges
-St-Sulpice
 St-Sulpice
 St-Séverin
 St-Triphon
@@ -3315,7 +3213,6 @@ St. Margrethenberg
 St. Martin
 St. Moritz
 St. Niklaus
-St. Niklausen
 St. Niklausen
 St. Pantaleon
 St. Pelagiberg
@@ -3335,7 +3232,6 @@ Stadel
 Stadel b. Niederglatt
 Staffelbach
 Stalden
-Stalden
 Staldenried
 Stallikon
 Stampa
@@ -3351,8 +3247,6 @@ Steg
 Steg im Tösstal
 Stehrenberg
 Stein
-Stein
-Stein
 Stein am Rhein
 Steinach
 Steinebrunn
@@ -3366,7 +3260,6 @@ Steinmaur
 Stels
 Sternenberg
 Stetten
-Stetten
 Stettfurt
 Stettlen
 Stierva
@@ -3374,7 +3267,6 @@ Stilli
 Stoos
 Strada
 Strengelbach
-Studen
 Studen
 Stugl/Stuls
 Stäfa
@@ -3389,7 +3281,6 @@ Sugnens
 Suhr
 Sulgen
 Sullens
-Sulz
 Sulz
 Sulzbach
 Sumiswald
@@ -3440,7 +3331,6 @@ Termen
 Territet
 Tersnaus
 Tesserete
-Teufen
 Teufen
 Teufenthal
 Teuffenthal b. Thun
@@ -3673,7 +3563,6 @@ Viganello
 Vignogn
 Vilars
 Villa
-Villa
 Villa Bedretto
 Villa Luganese
 Villaraboud
@@ -3706,7 +3595,6 @@ Villarsiviriaux
 Villarvolard
 Villarzel
 Villaz-St-Pierre
-Villeneuve
 Villeneuve
 Villeret
 Villette
@@ -3761,8 +3649,6 @@ Wahlen b. Laufen
 Wahlendorf
 Walchwil
 Wald
-Wald
-Walde
 Walde
 Waldenburg
 Waldhäusern
@@ -3782,7 +3668,6 @@ Walperswil
 Waltalingen
 Waltensburg/Vuorz
 Waltenschwil
-Walterswil
 Walterswil
 Walzenhausen
 Wangen
@@ -3810,7 +3695,6 @@ Weier im Emmental
 Weinfelden
 Weingarten-Kalthäusern
 Weiningen
-Weiningen
 Weissbad
 Weissenburg
 Weissenstein b. Solothurn
@@ -3830,7 +3714,6 @@ Werthenstein
 Wettingen
 Wettswil
 Wetzikon
-Wetzikon
 Wichtrach
 Widen
 Widnau
@@ -3844,8 +3727,6 @@ Wiggiswil
 Wigoltingen
 Wikon
 Wil
-Wil
-Wil
 Wila
 Wilchingen
 Wildberg
@@ -3853,7 +3734,6 @@ Wildegg
 Wildensbuch
 Wilderswil
 Wildhaus
-Wilen
 Wilen
 Wilen b. Neunforn
 Wilen b. Wil
@@ -3923,7 +3803,6 @@ Zeglingen
 Zeihen
 Zeiningen
 Zell
-Zell
 Zeneggen
 Zermatt
 Zernez
@@ -3955,7 +3834,6 @@ Zumikon
 Zunzgen
 Zuoz
 Zuzgen
-Zuzwil
 Zuzwil
 Zweidlen
 Zweilütschinen

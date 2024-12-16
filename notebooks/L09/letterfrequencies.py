@@ -1,7 +1,7 @@
 '''
-lang_letterfrequencies: dict
-lang_letterfrequencies['de'] and lang_letterfrequencies['en'] are dictionaries.
-Each key is a capital letters. The corresponding value is the frequency of that letter.
+lang_lfd: dict
+lang_lfd['de'] und lang_lfd['en'] sind Dictionaries (letter-frequency dicts).
+Die Schluessel sind Grossbuchstaben, die Werte die relative Haeufigkeit des Buchstabens.
 '''
 
 
@@ -72,7 +72,7 @@ lang_lfd = {'de': _lfd_de,
 def distance(d1, d2):
     '''returns the Euclidian distance between two dictionaries.
        d1 and d2 are assumed to be frequency dicts, where the
-       keys are upper case Letters and the values are floats in [0, 1]
+       keys are upper case letters and the values are floats in [0, 1]
     '''
     residues = ((d1.get(c, 0) - d2.get(c, 0)) ** 2 for c in LETTERS)
     dist = sum(residues) ** 0.5  
