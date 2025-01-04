@@ -9,7 +9,7 @@
 09 Dict, Sortieralgos 16.12
 
 
-10 Repetition. 06.1. Canvas, Callbacks, Widgets 16.12, Automat 9.12
+10 Repetition. 06.1. Automat 9.12
 11 Test, 13.1. Klassen, 
 12 Callbacks, 20.1
 13 Games, Projektarbeit infos, Themen fixieren. 27.1.

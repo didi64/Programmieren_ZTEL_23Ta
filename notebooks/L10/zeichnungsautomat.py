@@ -29,7 +29,7 @@ def make_delta():
         delta[(1, c)] = (1, c)
     return delta
 
-def get_automat_and_dm(**kwargs):
+def get_automat_and_canvas(**kwargs):
     delta = make_delta()
     automat = DEA(delta)
     dm = DrawEnv(automat, **kwargs)  # Drawing-Machine

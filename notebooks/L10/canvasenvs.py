@@ -33,7 +33,7 @@ class DrawEnv(Environment):
     
     def action_handler(self, event, data=None):
         if event != 'state_change':
-            print(event, data)
+            # print(event, data)
             return
         # event == 'state_change'
         old_state = data[0][0]
