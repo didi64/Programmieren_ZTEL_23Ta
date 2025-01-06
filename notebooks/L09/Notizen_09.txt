@@ -207,10 +207,9 @@ empfehle
 - Ortschaften
 - wuerfle
 
-- Handytastatur etwas groessereschwierigere Aufgabe
+- Handytastatur etwas groessere, schwierigere Aufgabe
 
-shorts:
-- erklaere anhand von str_short, test zu jeder Funktion.
+
 
 
 

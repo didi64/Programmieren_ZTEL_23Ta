@@ -1,24 +1,3 @@
-Liebe Studierende,
-
-am Montag werden wir nochmals den Pruefungstoff durchgehen und wir
-werden den Pruefungsablauf inkl. Abgabe durchspielen.
-
-Anschliessend folgt ein kurzer Exkurs zur Steuerung einer Maschine/Geraet mit einem Automaten. Ein 3d-Drucker wird z.B. mit sog. g-Codes gesteuert.
-Mit solchen g-Codes lassen sich der Druckkopf positionieren, die
-Feed-Rate des Filaments festlegen, u.s.w.
-
-Wir werden einen (simulierten) Zeichnungsroboter steuern.
-
-
-Noch einen schoenen Sonntag.
-
-Beste Gruesse
-Dieter
-
-
-
-
-
 Steuerung von Automaten, bez. Steuerung eines Geraetes mit einem Automaten.
 
 Beispiel 3d-Drucker. 
@@ -57,21 +36,35 @@ der an das zu steuernde Geraet weitergeleitet wird.
 17 Projektvorstellung 10.3.
 18 Abschluss/ Feedback Projektarbeiten. 17.3
 
-Pruefung: 
-Nicht listen aendern ueber die man iteriert!
+-
+Gutes neues Jahr!
 
-xs = [1, 2, 3]
-ys = []
-for x in xs:
-    ys.append(x)
-    if x == 1:
-        xs.remove(x)
-    
+Pruefungsstoff durchgehen, Fragen zu den Uebungen aus Lektion
+beantworten und Pruefungsablauf testen.
+----
+Stoff auf Cheatsheet, nochmals ein paar Updates:
+-range, Slicenotation, round, str.ljust, str.rjust
 
-Was ist nun xs, ys ???
-xs, ys
+# beachte
+round(0.5)  # ist integer
+round(0.5, 0)  # ist float
+---
+# str ljust ist neu!
 
-Review:
+s = 'foo'
+s.ljust(10)  # linksbuendig, Laenge mind. 10
+s.rjust(10)  # rechtsbuendig, Laenge mind. 10
+
+gehe nicht im Detail durch.
+Hilfstext sollte euch genug Info liefern
+
+oder sucht passendes Notebook mit %run -m nbf
+  range
+  dict.get
+  dict.setdefault
+  
+--
+--
 int: // und %
 2 / 1 ?
 3 // 2 ?
@@ -90,26 +83,58 @@ Feld mit 8 Spalten und 5 Zeilen
  
 Feldnummer -> x,y-Koordinaten
 
-# Feld mit 8 Spalten und 5 Zeilen
+
+
+SHOW?: transpose a table:
+       list(zip(*table))
+--
+Teste_Pruefungsablauf: Ablauf und Abgabe
+lies 1. Paragraph dann:
+- help(solutions)
+- solutions.ceil(3.3)
+- Kurzaufgaben:
+  1. kein .str.index oder str.find
+     Mit Schleife: i von 0 bis Laenge von s laufen lassen, testen ob i-tes Zeichen Space
+  2. kein str.replace, 
+     muss string auseinandernehmen und neu zusammensetzen 
+
+- Normale Aufgaben
+
+->lasse loesen
+# Aufgabe 1
+x = 4
+y = 3
 ncols = 8
-nrows = 5
 
-# idx aus x, y, ncols und nrows
-x = 3 
-y = 4
-idx = ...
+Bespreche ausfuehrlich die Loesungen.
 
-idx = y*ncols + x
-idx
+def ceil(x):
+    return int(x)
 
-# x, y aus idx und ncols, nrows?
- 
-x = idx % ncols
-y = idx // nrows
-(x, y)
 
-# als Prungungsaufgabe:
-Schreibe eine Funktion
+def ceil(x):
+    return int(x)
+
+---
+Nicht Listen aendern ueber die man iteriert!
+
+xs = [1, 2, 3]
+ys = []
+
+for x in xs:
+    ys.append(x)
+
+    if x == 1:
+        xs.remove(x)
+    
+
+Was ist nun xs, ys ???
+xs, ys
+# scheint ueber den Index iteriert zu werden.
+
+
+Listen/Listcomprehension
+Platzhalterstrings mit Formatierung
 
 def xy2idx(x, y, ncols):
     return y*ncols + x
@@ -119,7 +144,6 @@ def idx2xy(idx, ncols):
     x = idx % ncols
     y = idx // ncols
     return x, y
-
 
 table = [[0] * ncols for _ in range(nrows)]
 table
@@ -147,51 +171,33 @@ lines
 
 s = '\n'.join(lines)
 print(s)
-
----
-# float
-x = 3.14159
-round(x, 3)  # int
-
-fmt = '{:5.3f}'
-fmt.format(x))
-
-# beachte
-round(0.5)  # ist integer
-round(0.5, 0)  # ist float
----
-# str ljust ist neu!
-
-s = 'foo'
-s.ljust(10)  # linksbuendig, Laenge mind. 10
-s.rjust(10)  # rechtsbuendig, Laenge mind. 10
-
 -------
 
 # review sorted
 
 # sortiere nach Absolutwert
 numbers = [-3, 2, -1, 5]
-sorted(numbers, key=lambda x:abs(x))
+sorted(numbers, key=lambda x: abs(x))
 
 WICHTIG
-# Wie sortiert dies und wieso?
-sorted(numbers, key=lambda x:x)
+#  Was passiert hier und wieso?
+sorted(numbers, key=lambda x: x)
 
 # sortiere nach Rang
 name_rang = [('Bob, 1), ('Alice', 2), (Cathy', 3)]
-sorted(numbers, key=lambda x:x[1])
+sorted(numbers, key=lambda x: x[1])
 
 ---------
-Funktionen mit default-Argumenten
+Funktionen mit Default-Argumenten
 Funktionsaufruf: auspacken von Tuple (Positional Arguments)
 Funktionsaufruf: auspacken von Dictionaries (Key-Word Arguments)
 ---------
 Files, strip, split
 ---------
-count_dict, zeige nbf to finc count dict. 
-------
 
+Nachbesprechung Uebungen L09, falls gewuenscht
+
+------
 Steuerung von Automaten, bez. Steuerung eines Geraetes mit einem Automaten.
 
 Beispiel 3d-Drucker. 
@@ -227,9 +233,26 @@ Zeichne Kaffeeautomat.
 
 -> Zeichnungsrobotor I
    kurze Zeichnungsaufgabenm
+T:
+
+word = 'uG-50,0;dG0,75;'
+automat.read(word) 
+
+÷:
+word = 'fblue;ug150,125;C10;g150,75;C10;'
+automat.read(word)  
 
 
+colors = ['red', 'blue', 'yellow', 'teal', 'orange', 'pink']
+size = 25
+fmt = 'f{color};R{size},{size};G{size},0;'
+cmds = [fmt.format(color=color, size=size) for color in colors]
+cmds
 
+canvas.reset()
+automat.read(''.join(cmds))
+
+------
 cmds = [
     'l12',
     'sblue',
@@ -245,3 +268,29 @@ eingabe
 
 -> Zeichnungsrobotor II
    mit Python Programm fuer Zeichnungsroboter erstellen
+
+Nachtrag zu Uebungen
+Shorts:
+
+-Listen
+ flatten
+ closest_to
+
+-str
+ merge_unmerg too hard
+ zip(*words) trick is a bit tough
+
+- set
+  unque, a bit hard
+
+-----------------
+ev noch aus L11
+Callbacks.ipynb
+Output_Widget.ipynb
+NIM_mit_Widgets.ipynb
+
+Callback_Argument_fixieren.ipynb
+Einige_Widgets.ipynb
+
+
+

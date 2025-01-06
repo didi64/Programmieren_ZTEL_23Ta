@@ -1,0 +1,32 @@
+01 Intro, Docker und Jupyterlab Installieren
+02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
+03 Basic Types, if-then-else
+04 Module While-Loops
+05 break und continue, Platzhalterstrings
+06 Methods, Listen Listen mit Listen
+07 enum, zip, sorted, Files, Listcomp, Sets
+08 Dicts, if expressions any, all
+09 Dict, Sortieralgos 16.12
+
+
+10 Repetition. 06.1. Automat 9.12
+11 Test, 13.1. Klassen, 
+12 Callbacks, 20.1
+13 Games, Projektarbeit infos, Themen fixieren. 27.1.
+
+
+14 PA 17.2.
+15 PA 24.2
+16 PA 3.3
+17 Projektvorstellung 10.3.
+18 Abschluss/ Feedback Projektarbeiten. 17.3
+
+
+Widgets:
+- Callbackss
+- Output: gebrauch des Outputwidgets
+- Argument-Fixieren
+- Einige Widgets
+- NIM mit Widgets
+
+Canvas-Widget
