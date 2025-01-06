@@ -83,7 +83,8 @@ Feld mit 8 Spalten und 5 Zeilen
  
 Feldnummer -> x,y-Koordinaten
 
-
+Zuviel orange,rot: 
+File speichern ctr-s, schliessen und wieder oeffnen
 
 SHOW?: transpose a table:
        list(zip(*table))
@@ -292,5 +293,56 @@ NIM_mit_Widgets.ipynb
 Callback_Argument_fixieren.ipynb
 Einige_Widgets.ipynb
 
+CANVAS: Canvas_Intro.ipynb
+
+n= 8
+dw = canvas.width / n
+dh = canvas.height / n
+dw, dh
+
+canvas.fill_rect(2*dw, 4*dh, dw, dh)
+
+# draw circle
+
+x = 71
+y = 28
+
+col = x // dw
+row = y // dh
+col, row
+
+center = ((col+0.5)*dw, (row+0.5)*dh)
+canvas.fill_circle(*center, dw/3)
 
 
+
+def draw_chessboard(canvas, color1='grey', color2='blue'):
+    n = 8  # 8x8 Brett
+    canvas.fill_style = color1
+    canvas.fill_rect(0, 0, canvas.width, canvas.height)
+
+    # Zeichne (ungerade) Felder mit color2
+    canvas.fill_style = color2
+
+    # width und height eines Feldes
+    dw = canvas.width / n
+    dh = canvas.height / n
+
+    for x in range(n):
+        for y in range(n):
+            # zeichen Feld falls x + y gerade
+            if (x + y) % 2 == 0:
+                canvas.fill_rect(x*dw, y*dh, dw, dh)
+
+
+def draw_circle_in_field(x, y):
+    canvas.fill_style = 'black'
+
+    dw = canvas.width / n
+    dh = canvas.height / n
+
+    col = x // dw
+    row = y // dh
+
+    center = ((col+0.5)*dw, (row+0.5)*dh)
+    canvas.fill_circle(*center, dw/3)
