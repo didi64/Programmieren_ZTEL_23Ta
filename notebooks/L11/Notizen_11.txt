@@ -1,3 +1,15 @@
+Pruefung, mache sie einfacher
+
+next: canvas, multicanvas, ohne callbacks
+
+Klassen(just the very very basics!)
+Hanoi ohne Controller
+
+Output Widget
+Canvas Events
+Drawing App
+Hanoi-Controller
+
 01 Intro, Docker und Jupyterlab Installieren
 02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
 03 Basic Types, if-then-else
@@ -20,6 +32,23 @@
 16 PA 3.3
 17 Projektvorstellung 10.3.
 18 Abschluss/ Feedback Projektarbeiten. 17.3
+
+Canvas_Intro
+
+Uebe zu zeichnen, z.B. Flaggen 
+-> Draw_Flags, mit code in draw_flags.py
+
+import draw_flags
+
+draw_flags.draw_CH_flag(canvas, (10, 10), 80)
+draw_flags.draw_BRD_flag(canvas, (110, 10), 80)
+draw_flags.draw_BE_flag(canvas, (210, 10), 80)
+
+MultiCanvas_Intro
+
+from Canvas_Aufgaben_A import draw_circle
+draw_circle(fg, *position.values(), color='red')
+
 
 
 Widgets:

@@ -1,0 +1,161 @@
+State I:
+
+from ipycanvas import MultiCanvas
+from ipywidgets import Output
+
+
+err_out = Output(layout={'border': '1px solid black'})
+---
+
+@err_out.capture()
+def on_mouse_down(x, y):
+    print('on_mouse_down', x, y)
+
+
+@err_out.capture()
+def on_mouse_up(x, y):
+    print('on_mouse_up', x, y)
+
+
+
+# @err_out.capture()
+def on_key_down(key, *flags):
+    #  print('on_key_down', key, flags)
+    print('on_key_down', x, y)
+
+-----
+
+canvas_config = {
+    'width': 300,
+    'height': 200,
+    'layout': {'border': '1px solid black'},
+}
+
+mcanvas = MultiCanvas(2, **canvas_config)
+mcanvas.on_mouse_down(on_mouse_down)
+mcanvas.on_mouse_up(on_mouse_up)
+mcanvas.on_key_down(on_key_down)
+
+bg, fg = mcanvas
+
+# err_out.clear_output()
+display(mcanvas, err_out)
+-------
+
+Stage II:
+---------
+cell 3:
+------
+state = {'pt_clicked': None,
+         'mouse_down': False,
+         }
+
+colors = {'r': 'red',  'o': 'orange', 'b': 'blue'}
+
+@err_out.capture()
+def on_mouse_down(x, y):
+    state['pt_clicked'] = (x, y)
+    state['mouse_down'] = True
+    fg.fill_circle(x, y, radius=10)
+
+check state
+
+
+Stage III
+----------------
+@err_out.capture()
+def on_mouse_up(x, y):
+    state['mouse_down'] = False
+
+    pt_current = (x, y)
+    pt_clicked = state['pt_clicked']
+
+    line = [pt_clicked,  pt_current]
+    bg.stroke_lines(line)
+    fg.clear()
+
+
+@err_out.capture()
+def on_key_down(key, *flags):
+    if key == 'c':
+        bg.clear()
+    elif key in colors:
+        fg.fill_style = colors[key]
+        bg.stroke_style = colors[key]
+    elif key in '123456789':
+        bg.line_width = int(key)
+
+--------
+edits:
+in on_mouse_down
+fg.fill_circle(x, y, radius=bg.line_width/2)
+--------
+
+Stage IV:
+
+state = {'pt_clicked': None,
+         'mouse_down': False,
+         'key_pressed': None,
+         }
+
+
+def on_key_down(key, *flags):
+    if state['mouse_down']:
+        state['key_pressed'] = key
+
+def on_mouse_up(x, y):
+    ...
+    if state['key_pressed'] == 'Escape':
+        pass
+    else:
+        line = [pt_clicked,  pt_current]
+        bg.stroke_lines(line)
+
+    state['key_pressed'] = None
+    fg.clear()
+--
+in on_mouse_up, in states, test each stage
+
+    elif state['key_pressed'] == 'r':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.stroke_rect(*pt_clicked, w, h)
+
+    elif state['key_pressed'] == 'c':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.stroke_circle(*pt_clicked, radius=(w**2+h**2)**.5)
+
+    elif state['key_pressed'] == 'R':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.fill_rect(*pt_clicked, w, h)
+    elif state['key_pressed'] == 'C':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.fill_circle(*pt_clicked, radius=(w**2+h**2)**.5)
+
+---
+in on_key_down
+
+    elif key.lower() in colors:
+        if key.islower():
+            fg.stroke_style = colors[key]
+            bg.stroke_style = colors[key]
+        else:
+            # key = key.lower()
+            fg.fill_style = colors[key]
+            bg.fill_style = colors[key]
+
+--
+in on_mouse_down
+    fg.fill_circle(x, y, radius=bg.line_width/2)
+    fg.stroke_circle(x, y, radius=bg.line_width/2 + 3)
+
+--
+fix errors in on_key_down: 
+
+more colors:
+colors = {'r': 'red',  'o': 'orange', 'b': 'blue', 'g': 'green',
+          'y': 'yellow', 'k': 'black', 'p': 'pink', 't':'teal'}
+
