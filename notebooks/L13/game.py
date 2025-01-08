@@ -1,20 +1,20 @@
 class Game:
-    def __init__(self, ndisks=4):
-        self.ndisks = ndisks
+    def __init__(self):
+        self.ndisks = 4
         self.stacks = None
-        self.callback = lambda *args: print(*args)
-
-    def notify(self, event, data):
-        self.callback(event, data)
+        self.event_handler = lambda *args: print(*args)
 
     def new_game(self):
         self.stacks = [list(range(self.ndisks))[::-1], [], []]
-        self.notify('new_game', self.stacks)
+        self.event_handler('new_game', self.stacks)
 
-    def move_disk(self, i, j):
-        x = self.stacks[i].pop()
-        self.stacks[j].append(x)
-        self.notify('update_stacks', self.stacks)
+    def move_disk(self, src, dst):
+        if (not self.stacks[src] or
+           (self.stacks[dst] and self.stacks[dst][-1] < self.stacks[src][-1])):
+            return
+        disk = self.stacks[src].pop()
+        self.stacks[dst].append(disk)
+        self.event_handler('update_stacks', self.stacks)
 
     def __repr__(self):
         return self.stacks.__repr__()
