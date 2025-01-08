@@ -33,4 +33,4 @@ def remove_callbacks(event_name, obj):
 def remove_all_callbacks(obj):
     '''remove all registered callbacks from a Canvas/MultiCanvas object'''
     for event_name in events:
-        remove_all_callbacks(event_name, obj)
+        remove_callbacks(event_name, obj)
