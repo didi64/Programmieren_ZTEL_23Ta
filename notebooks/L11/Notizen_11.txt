@@ -1,64 +1,3 @@
-### Pr&uuml;fung vom 13. Januar 2025
-
-**Allgemeines**
-- Zeit: 90 Minuten.
-- Hilfsmittel: Unterrichtunterlagen, Notizen, ...
-- **Vorboten** ist die Kommunikation mit anderen Personen in jeglicher Form, Chat-GPT.
-
-**Vorbereitung**
-- Kopiere die Notebooks `Aufgaben1.ipynb` und `Aufgaben2.ipynb` und nenne sie dann `Aufgaben1_<Vorname>_<Nachname>.ipynb`
-  und  `Aufgaben2_<Vorname>_<Nachname>.ipynb`. L&ouml;se die Aufgaben in den kopierten Notebooks.
-
-**Allgemeine Hinweise**
-- Bei manchen Aufgaben ist eine Funktion zu programmieren, die sp&auml;ter verwendet wird. 
-Falls deine Funktion nicht wie gew&uuml;nscht funktioniert, kannst du 
-statt dessen die gleichnamige Funktion aus dem Modul `loesungen` verwenden. 
-- Teste den Code mit den Beispielen aus der Aufgabenstellung.
-- Ist die Implementation einer Funktion verlangen,
-so schreibe zuerst Code, der das Problem l&ouml;st.
-Der sp&auml;tere R&uuml;ckgabewert der Funktion ist in einer 
-Variable (z.B. `result`) zu speichern und am Ende der Zelle auszugeben.
-
-**Abgabe**
-- Kopiere die Notebooks mit deinen L&ouml;sungen in deinen `share`-Ordner.  
-  F&uuml;hre dann in einer Code-Zelle den Befehl `!sync_share` aus, oder 
-  f&uuml;hre im Jupyterlab-Terminal den Befehl `sync_share` aus.  
-  Falls das nicht klappen sollte: Schicke die Notebooks mit deinen L&ouml;sungen per Email an `dieter.probst@edu.teko.ch`.
-
-
-**Viel Erfolg!**
-
-
-
-Liebe Studierende,
-
-am Montag findet der Unterricht vor Ort statt (18:00 - 21:15, Zimmer 05).
-Zuerst schreiben wir die Pruefung (90 Minuten).
-
-Im Anschluss werfen wir einen Blick auf das Canvas-Widget 
-(https://ipycanvas.readthedocs.io/en/latest/basic_usage.html).
-Dieses Widget ermoeglicht es, auf eine Leinwand zu zeichnen.
-Weiter beobachtet das Canvas-Widget Ereignisse wie Mausklicks und Tastendruecke und ermoeglicht es dem Benutzer
-darauf zu reagieren.
-Dies erlaubt z.B. die interaktive Steuerung eines Spiels.
-
-
-Beste Gruesse und ein schoenes WE,
-Dieter
-
-
-Pruefung, mache sie einfacher
-
-next: canvas, multicanvas, ohne callbacks
-
-Klassen(just the very very basics!)
-Hanoi ohne Controller
-
-Output Widget
-Canvas Events
-Drawing App
-Hanoi-Controller
-
 01 Intro, Docker und Jupyterlab Installieren
 02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
 03 Basic Types, if-then-else
@@ -82,7 +21,26 @@ Hanoi-Controller
 17 Projektvorstellung 10.3.
 18 Abschluss/ Feedback Projektarbeiten. 17.3
 
-Canvas_Intro
+
+
+
+cd .src
+git add .
+git commit -m 'pruefung'
+git push
+
+fuer Pruefung:
+update 101
+
+Pruefung allg. Instruktionen.
+Kopiere Notebooks mit Aufgaben,
+falls ihr beim Bearbeiten versehentlich Zellen loescht, habt ihr immer noch das Original.
+
+
+Lektion 11
+Canvas Intro
+
+
 
 Uebe zu zeichnen, z.B. Flaggen 
 -> Draw_Flags, mit code in draw_flags.py
@@ -93,18 +51,49 @@ draw_flags.draw_CH_flag(canvas, (10, 10), 80)
 draw_flags.draw_BRD_flag(canvas, (110, 10), 80)
 draw_flags.draw_BE_flag(canvas, (210, 10), 80)
 
+
+Japan-Flagge
+
+fuelle Leinwand in grau.
+zeichne weisses rechteck im Verhaltnis 5/3 und roter Kreis in der Mitte
+
+def draw_japan_flag(canvas, pos, size):
+   
+    canvas.fill_style = 'gray'
+    canvas.fill_rect(0, 0, canvas.width, canvas.height)
+    x0, y0 = pos
+    canvas.fill_style = 'white'
+    height = size*3/5
+    canvas.fill_rect(x0, y0, size, height)
+
+    center = (x0 + size/2, y0 + height/2)
+    canvas.fill_style = 'red'
+    canvas.fill_circle(*center, radius=height/3)
+    
+
+
+
+ev. zuerst Output_widget
+
 MultiCanvas_Intro
 
 from Canvas_Aufgaben_A import draw_circle
 draw_circle(fg, *position.values(), color='red')
 
+elaborate on Callbacks
 
+from ipywidgets import Output
 
-Widgets:
-- Callbackss
-- Output: gebrauch des Outputwidgets
-- Argument-Fixieren
-- Einige Widgets
-- NIM mit Widgets
+layout = {'border': '1px solid black'}
+out = Output(layout=layout)
 
-Canvas-Widget
+def update_postion(x, y):
+    position['x'] = x
+    position['y'] = y
+    with out:
+        print(x, y)
+
+mcanvas.on_mouse_down(update_postion)
+
+display(mcanvas,out)
+
