@@ -10,3 +10,4 @@
 8:Cheatsheet.ipynb Dictionaries.ipynb kz_kt.py Loesungen_08 if_else_Ausdruecke.ipynb reversed.ipynb Cards.ipynb cards.py  
 9:Cheatsheet.ipynb Dictionaries_ein_und_auspacken.ipynb Fallunterscheidung_mit_dict.ipynb letterfrequencies.py Loesungen_09 notebookfinder.ipynb Sortieralgos_Testing.ipynb Sprachdetektion.ipynb text_1.txt text_2.txt Uebungen Iterables_sortieren_A.ipynb
 10:Automaten.ipynb automatons.py canvasenvs.py Cheatsheet.ipynb generate_cmds.py solutions.pyc Teste_Pruefungsablauf.ipynb zeichnungsautomat.py Zeichnungsroboter_I.ipynb Zeichnungsroboter_II.ipynb Loesungen_10
+11:update_stuff
