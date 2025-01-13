@@ -30,6 +30,5 @@ def start():
 
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 
-src = None
 running = False
 prompt = 'Move ? '

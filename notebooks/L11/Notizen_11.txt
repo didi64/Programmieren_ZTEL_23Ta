@@ -1,3 +1,52 @@
+### Pr&uuml;fung vom 13. Januar 2025
+
+**Allgemeines**
+- Zeit: 90 Minuten.
+- Hilfsmittel: Unterrichtunterlagen, Notizen, ...
+- **Vorboten** ist die Kommunikation mit anderen Personen in jeglicher Form, Chat-GPT.
+
+**Vorbereitung**
+- Kopiere die Notebooks `Aufgaben1.ipynb` und `Aufgaben2.ipynb` und nenne sie dann `Aufgaben1_<Vorname>_<Nachname>.ipynb`
+  und  `Aufgaben2_<Vorname>_<Nachname>.ipynb`. L&ouml;se die Aufgaben in den kopierten Notebooks.
+
+**Allgemeine Hinweise**
+- Bei manchen Aufgaben ist eine Funktion zu programmieren, die sp&auml;ter verwendet wird. 
+Falls deine Funktion nicht wie gew&uuml;nscht funktioniert, kannst du 
+statt dessen die gleichnamige Funktion aus dem Modul `loesungen` verwenden. 
+- Teste den Code mit den Beispielen aus der Aufgabenstellung.
+- Ist die Implementation einer Funktion verlangen,
+so schreibe zuerst Code, der das Problem l&ouml;st.
+Der sp&auml;tere R&uuml;ckgabewert der Funktion ist in einer 
+Variable (z.B. `result`) zu speichern und am Ende der Zelle auszugeben.
+
+**Abgabe**
+- Kopiere die Notebooks mit deinen L&ouml;sungen in deinen `share`-Ordner.  
+  F&uuml;hre dann in einer Code-Zelle den Befehl `!sync_share` aus, oder 
+  f&uuml;hre im Jupyterlab-Terminal den Befehl `sync_share` aus.  
+  Falls das nicht klappen sollte: Schicke die Notebooks mit deinen L&ouml;sungen per Email an `dieter.probst@edu.teko.ch`.
+
+
+**Viel Erfolg!**
+
+
+
+Liebe Studierende,
+
+am Montag findet der Unterricht vor Ort statt (18:00 - 21:15, Zimmer 05).
+Zuerst schreiben wir die Pruefung (90 Minuten).
+
+Im Anschluss werfen wir einen Blick auf das Canvas-Widget 
+(https://ipycanvas.readthedocs.io/en/latest/basic_usage.html).
+Dieses Widget ermoeglicht es, auf eine Leinwand zu zeichnen.
+Weiter beobachtet das Canvas-Widget Ereignisse wie Mausklicks und Tastendruecke und ermoeglicht es dem Benutzer
+darauf zu reagieren.
+Dies erlaubt z.B. die interaktive Steuerung eines Spiels.
+
+
+Beste Gruesse und ein schoenes WE,
+Dieter
+
+
 Pruefung, mache sie einfacher
 
 next: canvas, multicanvas, ohne callbacks
