@@ -2,7 +2,7 @@ State I:
 
 from ipycanvas import MultiCanvas
 from ipywidgets import Output
-
+from IPython.display import display
 
 err_out = Output(layout={'border': '1px solid black'})
 ---
@@ -17,11 +17,11 @@ def on_mouse_up(x, y):
     print('on_mouse_up', x, y)
 
 
-
-# @err_out.capture()
+@err_out.capture()
 def on_key_down(key, *flags):
-    #  print('on_key_down', key, flags)
     print('on_key_down', x, y)
+    #  print('on_key_down', key, flags)
+    
 
 -----
 
@@ -51,6 +51,9 @@ state = {'pt_clicked': None,
          }
 
 colors = {'r': 'red',  'o': 'orange', 'b': 'blue'}
+
+update on_mouse_down
+--------------------
 
 @err_out.capture()
 def on_mouse_down(x, y):
