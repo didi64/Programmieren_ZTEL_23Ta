@@ -27,10 +27,140 @@ Zeige Projekte
 Wordle
 Memory
 Battleship
+Tik-Tak-Toe
+4-gewinnt
+
+Pruefungen Nachbesprechen, bez. Musterloesungen bereitstellen
+
+Multicanvas_A
+Recall, was mir letztes Mal machten.
+lambda x,x f(x,y,foo) nocmals erklaeren.
+
+Drawing App
+-----------
+Vorfuehren, wie wir einfache App entwickeln
+mit Output und Canvas widgets
 
 
-MyWIdgets
+
+widgets_helpers Modul erstellen und inmodules ordner verschieben
+
 Use_Mywidgets
 Einige_Widget
 
-drawing App oder Hanoi?
+drawing App: vorcoden
+
+Hanoi:
+Eventhandlerpattern: Super easy, alles was wir tun: 
+wenn etwas passiert Eventhanlder aufrufen mit Args, der macht dann alles
+
+
+Einige Widgets:
+
+
+
+
+
+
+@err_out.capture()
+def on_mouse_down(x, y):
+    state['pt_clicked'] = (x, y)
+    state['mouse_down'] = True
+    fg.fill_circle(x, y, radius=bg.line_width/2)
+    fg.stroke_circle(x, y, radius=bg.line_width/2 + 3)
+
+
+@err_out.capture()
+def on_mouse_up(x, y):
+    state['mouse_down'] = False
+
+    pt_current = (x, y)
+    pt_clicked = state['pt_clicked']
+
+    if state['key_pressed'] == 'Escape':
+        pass
+    elif state['key_pressed'] == 'r':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.stroke_rect(*pt_clicked, w, h)
+    elif state['key_pressed'] == 'c':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.stroke_circle(*pt_clicked, radius=(w**2+h**2)**.5)
+    elif state['key_pressed'] == 'R':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.fill_rect(*pt_clicked, w, h)
+    elif state['key_pressed'] == 'C':
+        w = pt_current[0] - pt_clicked[0]
+        h = pt_current[1] - pt_clicked[1]
+        bg.fill_circle(*pt_clicked, radius=(w**2+h**2)**.5)
+
+    else:
+        line = [pt_clicked,  pt_current]
+        bg.stroke_lines(line)
+
+    state['key_pressed'] = None
+    fg.clear()
+
+
+@err_out.capture()
+def on_key_down(key, *flags):
+    if state['mouse_down']:
+        state['key_pressed'] = key
+        return
+
+    if key == 'c':
+        bg.clear()
+    elif key.lower() in colors:
+        if key.islower():
+            fg.stroke_style = colors[key]
+            bg.stroke_style = colors[key]
+        else:
+            key = key.lower()
+            fg.fill_style = colors[key]
+            bg.fill_style = colors[key]
+
+    elif key in '123456789':
+        bg.line_width = int(key)
+
+
+Kinderzeichnung:
+
+y,Y (Geld)
+Sonne, Sonnenstrahen
+G 
+Gras
+b,B: Haus dach Tuer,  Fenster 
+
+
+
+Hanoi
+
+### Textliche Darstellung der Stapel in einem Output-Widget
+
+from widgets_helpers import new_output
+
+
+out = new_output()
+
+
+@out.capture(clear_output=True)
+def print_stacks(event, stacks):
+    lines = []
+    for h in range(ndisks):
+        line = ''.join(' '*7 if len(stack) <= h else f'{'*' * (2*stack[h]+1):^7}'
+                       for stack in stacks)
+        lines.append(line)
+    print('\n'.join(lines[::-1]))
+
+
+def show_both(event, data):
+    draw_stacks(event, data)
+    print_stacks(event, data)
+    # print(event, data)  # debug info, show_both wird von on_... aufgerufen,
+                        # output wir nach err_out umgeleitet
+
+needs to be adjusted for the additional canvas parameter
+
+event_handler = show_both
