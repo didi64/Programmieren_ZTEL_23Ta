@@ -32,35 +32,50 @@ Tik-Tak-Toe
 
 Pruefungen Nachbesprechen, bez. Musterloesungen bereitstellen
 
+Projektarbeit:
+
+Max 2 mal gleiches Thema.
+verschiedene Umsetzungen: 
+Z.B. Ti-Tak-Toe: einmal so, einmal anders
+
+Projektinfo:
+
+Demos:
+Jakob, Rene, Wordle Lars, Memory, Battleship
+
+Neue Module, die ev. noch erweitert werden.
+canvas_helpers.py
+und noch zu schreiben widgets_helpers. in Ordner modules kopieren!
+
 Multicanvas_A
+-------------
 Recall, was mir letztes Mal machten.
-lambda x,x f(x,y,foo) nocmals erklaeren.
+lambda x,xy: f(x,y,foo)  erklaeren.
+
+Widgets_Helpers
+---------------
+Modul erstellen und in modules Ordner verschieben
 
 Drawing App
 -----------
 Vorfuehren, wie wir einfache App entwickeln
 mit Output und Canvas widgets
 
-
-
-widgets_helpers Modul erstellen und inmodules ordner verschieben
-
-Use_Mywidgets
-Einige_Widget
-
-drawing App: vorcoden
-
-Hanoi:
+Hanoi: Demo, wie einfaches Spiel erstellen, 
+------
 Eventhandlerpattern: Super easy, alles was wir tun: 
 wenn etwas passiert Eventhanlder aufrufen mit Args, der macht dann alles
 
 
-Einige Widgets:
+Einige_Widget: 
+-------------
+Text, Button, Select, ColorPicker
+Dropdown, RadioButtons, IntSlider
 
 
 
-
-
+Codingsession Drawing App
+===========================
 
 @err_out.capture()
 def on_mouse_down(x, y):
@@ -136,6 +151,8 @@ b,B: Haus dach Tuer,  Fenster
 
 
 Hanoi
+from canvas_helpers import remove_callbacks
+File in Ordner Modules verschieben.
 
 ### Textliche Darstellung der Stapel in einem Output-Widget
 
@@ -164,3 +181,11 @@ def show_both(event, data):
 needs to be adjusted for the additional canvas parameter
 
 event_handler = show_both
+
+---------------
+# das gleiche ohne lambda
+def f(event, data, canvas=canvas):
+    draw_stacks(canvas, event, data)
+
+
+event_handler = f
