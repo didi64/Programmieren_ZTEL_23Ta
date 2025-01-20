@@ -1,3 +1,63 @@
+Tiage: alles perfekt!
+Alfonso: 2. Aufgabe nicht abgegeben, try to recover! rot13 zu gut H->U! 
+
+Mike:  5
+Aufgaben 1: 6,6,4 (H->U), enoded gegooglet kein Bezug zu Teil 1, deshal nur 1 P!
+Aufgaben 2: 6, File genau gleich wie Steve aber nicht getestet!, 0 bei 3, aber dann 4 richtig!?
+
+
+Marko: 5
+Aufgaben 1: [:2], [-2:] fehlt, keine Schleife bei AUsgabe, Funktion rot13() Funktion gegoogelt, kein bezug zu Teil 1 (deshalb nur 3)
+         5+4.5+3 12.5/8
+Aufgaben 2: 6, File nicht, nichts bei3, aber 4 alles i.O ? 18/24
+
+
+Eric: grad ok 4? od 4.5
+Aufgaben1: 2+2 (keine Listen-Comprehension), 6, 3+2,  
+           (Hallo -> Unyyb!, nicht Hnyyb!)  15/18
+Aufgaben 2: 6,0,0,6? 12/24
+27/44 Note 4.
+
+Steve: 3.5 schlecht, ev. 4
+Aufgaben 1: 1. keine Kubikzahlliste, keine Listcomp. 2. Kontrollausgabe ohne For-Schleife, 3. gar nicht
+Aufgaben 2: rumpelstilz ohne While, 2 genau gleich wie Mike aber mit Test, 3 (meine Loesungen gefunden)
+=================
+
+Analyse this code
+Mike:
+   encoded = [
+        rot13[char.lower()].upper() if char.isupper() else rot13[char]
+        if char.lower() in rot13
+        else char
+        for char in klartext
+    ]
+
+Marko: use dict
+def rot13(char):
+    return chr(((ord(char) - ord('a') + 13) % 26) + ord('a'))
+
+------------
+Tiago: git submodule geloescht!
+
+Hi Tiago,
+du hast in deinem share Ordner den Unterordner response geloescht.
+
+Das war ein git submodule.
+Mit folgenden Befehlen im Jupyterlab Terminal 
+kannst du es wieder erstellen:
+
+initials='tf'
+submodule="response_${initials}"
+root="${HOME}/work"
+share_dir="${root}/share_${initials}"
+owner='dpro-prog2425zh'
+token=$(cat "$root/.token_share")
+git -C "$share_dir" submodule add --force "https://${owner}:${token}@github.com/${owner}/${submodule}.git" response
+
+die andern:
+sync_share, dann in Response nachschauen
+
+================================================
 01 Intro, Docker und Jupyterlab Installieren
 02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
 03 Basic Types, if-then-else

@@ -11,4 +11,5 @@
 9:Cheatsheet.ipynb Dictionaries_ein_und_auspacken.ipynb Fallunterscheidung_mit_dict.ipynb letterfrequencies.py Loesungen_09 notebookfinder.ipynb Sortieralgos_Testing.ipynb Sprachdetektion.ipynb text_1.txt text_2.txt Uebungen Iterables_sortieren_A.ipynb
 10:Automaten.ipynb automatons.py canvasenvs.py Cheatsheet.ipynb generate_cmds.py solutions.pyc Teste_Pruefungsablauf.ipynb zeichnungsautomat.py Zeichnungsroboter_I.ipynb Zeichnungsroboter_II.ipynb Loesungen_10
 11: Canvas_Aufgaben_A.py Canvas_Intro.ipynb Draw_Flags.ipynb draw_flags.py MultiCanvas_Intro.ipynb Output_Widget.ipynb
+12:Canvas_Aufgaben_A.py canvas_helpers.py Drawing_App Einige_Widgets.ipynb Info_Projektarbeit.ipynb MultiCanvas_A.ipynb Tuerme_von_Hanoi.ipynb Widget_Helpers.ipynb
 101:Pruefung
