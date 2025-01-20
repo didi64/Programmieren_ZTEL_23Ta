@@ -1,0 +1,33 @@
+Analyse this code
+Mike:
+   encoded = [
+        rot13[char.lower()].upper() if char.isupper() else rot13[char]
+        if char.lower() in rot13
+        else char
+        for char in klartext
+    ]
+
+Marko: use dict
+def rot13(char):
+    return chr(((ord(char) - ord('a') + 13) % 26) + ord('a'))
+
+------------
+Tiago: git submodule geloescht!
+
+Hi Tiago,
+du hast in deinem share Ordner den Unterordner response geloescht.
+
+Das war ein git submodule.
+Mit folgenden Befehlen im Jupyterlab Terminal 
+kannst du es wieder erstellen:
+
+initials='tf'
+submodule="response_${initials}"
+root="${HOME}/work"
+share_dir="${root}/share_${initials}"
+owner='dpro-prog2425zh'
+token=$(cat "$root/.token_share")
+git -C "$share_dir" submodule add --force "https://${owner}:${token}@github.com/${owner}/${submodule}.git" response
+
+die andern:
+sync_share, dann in Response nachschauen
