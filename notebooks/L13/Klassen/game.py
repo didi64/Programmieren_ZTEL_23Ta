@@ -17,4 +17,4 @@ class Game:
         self.event_handler('update_stacks', self.stacks)
 
     def __repr__(self):
-        return self.stacks.__repr__()
+        return str(self.stacks)

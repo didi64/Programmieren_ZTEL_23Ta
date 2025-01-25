@@ -1,5 +1,4 @@
 import warnings
-warnings.filterwarnings('ignore', category=DeprecationWarning)
 from ipywidgets import Output, Text, Button
 from ipycanvas import Canvas, MultiCanvas
 
