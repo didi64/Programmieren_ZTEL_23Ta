@@ -55,7 +55,7 @@ class KeyMouseController:
         elif key in '123':
             dst = int(key) - 1
             self.game.move_disk(self.src, dst)
-        if key == 'n':
+        elif key == 'n':
             self.game.new_game()
         self.src = None
 
@@ -81,10 +81,11 @@ class KeyMouseController:
 class TextController:
     err_out = widgets_helpers.new_output()
 
-    def __init__(self, game, prompt='Your move: '):
+    def __init__(self, game, prompt='', width=None):
         self.game = game
         self.prompt = prompt
-        self.text = widgets_helpers.new_text(value=prompt)
+        layout = None if width is None else {'width': f'{width}px'}
+        self.text = widgets_helpers.new_text(value=prompt, layout=layout)
         self.text.on_submit(self.on_press_enter)
 
     @err_out.capture()

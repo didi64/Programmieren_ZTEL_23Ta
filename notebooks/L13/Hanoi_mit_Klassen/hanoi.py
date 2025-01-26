@@ -1,10 +1,11 @@
 from game import Game
-from view import CanvasView
-from controller import Controller
+from views import CanvasView
+from controllers import KeyMouseController as Controller
 from IPython.display import display
 
 
 game = Game()
 view = CanvasView(game)
 controller = Controller(game, view.canvas)
+game.new_game()
 display(controller)

@@ -31,3 +31,77 @@ git -C "$share_dir" submodule add --force "https://${owner}:${token}@github.com/
 
 die andern:
 sync_share, dann in Response nachschauen
+
+===================================================
+
+Update: loesche Einige_Widgets, gibt ein neues solches FIle!
+
+Wichtigste Widgets
+- alle Callbacks in Output-Widget umleiten durch Dekoration!
+- Text: zeige bei mir Deprecation Warning!
+- Select: observe
+
+widgets_helpers: wieder nach modules kopieren!
+anschauen und testen: Teste_Widgets
+Neu: Text und Button (neben Canvas und MultiCanvas)
+
+Klassen:
+wird Blick auf Beispiele, erklere AUfgaen,
+gehe zurueck zu Klassen_Intro
+
+Klassen: eigene Typen.
+wie list, dict str.
+
+Typ list ist Klasse.
+a = str('foo')
+a.upper()  # Methodenaufruf
+str.upper(a)
+
+bob = Student('bob')
+bob.name
+
+Instanzen haben eigene Attribute, Methoden sind allen Instanzen der Klasse gemein.
+
+auch Canvas ist Klasse
+
+Code strukturienen.
+Klasse eigene Komponente, die sich testen laesst.
+
+vgl. globale Variablen und Funktionen,
+wird rasch unuebersichtlich.
+
+Beispiele
+
+Vector +, * Vergleiche mit Liste und str
+
+
+
+Attribute: technisch auf Funktionen, im normalen Sprachgebrauch, Attribute und Methoden.
+
+Nun Aufaben loesen lassen.
+
+===============================
+
+Hanoi mit Klassen:
+
+Aufgabe: Mauskontrols.
+         Feed moves aus vorhergehender AUfgabe
+
+[(0, 1),
+ (0, 2),
+ (1, 2),
+ (0, 1),
+ (2, 0),
+ (2, 1),
+ (0, 1),
+ (0, 2),
+ (1, 2),
+ (1, 0),
+ (2, 0),
+ (1, 2),
+ (0, 1),
+ (0, 2),
+ (1, 2)]
+
+
+

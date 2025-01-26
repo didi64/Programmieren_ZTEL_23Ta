@@ -2,7 +2,7 @@ class Game:
     def __init__(self):
         self.ndisks = 4
         self.stacks = None
-        self.event_handler = lambda *args: print(*args)
+        self.event_handler = print
 
     def new_game(self):
         self.stacks = [list(range(self.ndisks))[::-1], [], []]
