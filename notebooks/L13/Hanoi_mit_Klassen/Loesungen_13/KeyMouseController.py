@@ -1,6 +1,6 @@
 import widgets_helpers
 from IPython.display import display
-from canvas_callbacks import remove_all_callbacks
+from canvas_helpers import remove_all_callbacks
 
 
 class KeyMouseController:

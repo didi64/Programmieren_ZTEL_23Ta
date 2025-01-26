@@ -1,6 +1,5 @@
 import widgets_helpers
-import canvas_callbacks
-from ipycanvas import Canvas
+import canvas_helpers
 from IPython.display import display
 
 
@@ -18,7 +17,7 @@ class CanvasView:
         self.src = None
 
         self.game.event_handler = self.callback
-        canvas_callbacks.remove_all_callbacks(self.canvas)
+        canvas_helpers.remove_all_callbacks(self.canvas)
         self.canvas.on_key_down(self.on_key_down)
 
     def draw_stack(self, stack, pos):

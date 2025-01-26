@@ -1,16 +1,3 @@
-Liebe Studierende,
-
-am Montag werden wir noch einige weitere Widgets kennenlernen, Textfeld, Selection, Drowdown,...
-
-Dann werden wir einen Blick auf Klassen werfen.
-Wir werden das Spiel 'Tuerme von Hanoi' vom letzten Mal mit Klassen schreiben.
-
-Beste Gruesse und einen schoenen Sonntag Abend,
-Dieter
-
-
-
-
 Analyse this code
 Mike:
    encoded = [
@@ -46,8 +33,15 @@ die andern:
 sync_share, dann in Response nachschauen
 
 ===================================================
+Wort zur Benotung und Pruefung
+
+update 102 (Pruefung Loesungen)
 
 Update: loesche Einige_Widgets, gibt ein neues solches FIle!
+update 13
+
+loesche in Ordner moduls widget_helpers,
+kopiere upgedatetes FIle widget_helpers.py dorthin.
 
 Wichtigste Widgets
 - alle Callbacks in Output-Widget umleiten durch Dekoration!
