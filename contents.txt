@@ -12,4 +12,6 @@
 10:Automaten.ipynb automatons.py canvasenvs.py Cheatsheet.ipynb generate_cmds.py solutions.pyc Teste_Pruefungsablauf.ipynb zeichnungsautomat.py Zeichnungsroboter_I.ipynb Zeichnungsroboter_II.ipynb Loesungen_10
 11: Canvas_Aufgaben_A.py Canvas_Intro.ipynb Draw_Flags.ipynb draw_flags.py MultiCanvas_Intro.ipynb Output_Widget.ipynb
 12:Canvas_Aufgaben_A.py canvas_helpers.py Drawing_App Einige_Widgets.ipynb Info_Projektarbeit.ipynb MultiCanvas_A.ipynb Tuerme_von_Hanoi.ipynb Widget_Helpers.ipynb
+13:Hanoi_mit_Klassen Klassen Teste_Widgets_helpers.ipynb Tuerme_von_Hanoi.ipynb widgets_helpers.py
 101:Pruefung
+102:Pruefung_Loesungen

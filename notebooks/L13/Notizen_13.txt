@@ -1,3 +1,16 @@
+Liebe Studierende,
+
+am Montag werden wir noch einige weitere Widgets kennenlernen, Textfeld, Selection, Drowdown,...
+
+Dann werden wir einen Blick auf Klassen werfen.
+Wir werden das Spiel 'Tuerme von Hanoi' vom letzten Mal mit Klassen schreiben.
+
+Beste Gruesse und einen schoenen Sonntag Abend,
+Dieter
+
+
+
+
 Analyse this code
 Mike:
    encoded = [
@@ -84,24 +97,69 @@ Nun Aufaben loesen lassen.
 
 Hanoi mit Klassen:
 
-Aufgabe: Mauskontrols.
-         Feed moves aus vorhergehender AUfgabe
+gehe nochmals zurueck zu Tuerme von Hanoi
+Eine kleine Aenderung/Korrektur im Notebook von letzten Mal.
 
-[(0, 1),
- (0, 2),
- (1, 2),
- (0, 1),
- (2, 0),
- (2, 1),
- (0, 1),
- (0, 2),
- (1, 2),
- (1, 0),
- (2, 0),
- (1, 2),
- (0, 1),
- (0, 2),
- (1, 2)]
+- event_handler noch einfacher: print um konsistent mit aktuellem Notebook zu sein
+- Fehlerumleitun erst beim Controller, den Callbacks fuer die WIdgets noetig!
+Nicht bei Funktion, die auf Canvas zeichnet!
+(in gewissen Faellen geben Canvas Methoden keine Fehlermeldung, gibt nichts, das wir tun koennten!)
+
+Klassen_mit_Hanoi_I
+Game wie vorher, statt in File Code in Klasse untergebracht.
+View: 
+
+Aufgabe: View: Stackanimiert verschieben
+
+import time
 
 
+moves = [(0, 1), (0, 2), (1, 2), (0, 1), (2, 0), (2, 1), (0, 1),
+         (0, 2), (1, 2), (1, 0), (2, 0), (1, 2), (0, 1), (0, 2), (1, 2)]
 
+
+game.new_game()
+for move in moves:
+    game.move_disk(*move)
+    time.sleep(0.5)
+
+Klassen_mit_Hanoi_II
+
+Controller
+Extra zum Kontroller, callback direkt brauchen
+
+
+File __init__.py markiert dieses Verzeichnis als Verzeichnis mit Modulen.
+
+from Loesungen_13.View_mit_Controller import CanvasView
+
+
+view = CanvasView(game)
+view
+
+Canvas_mit_Integriertem Kontroller
+- add game
+- add src
+
+
+Kontroller erweitern:
+
+from Loesungen_13.KeyMouseController import KeyMouseController
+
+
+controller = KeyMouseController(game, view.canvas)
+game.new_game()
+controller
+
+
+
+auch das geht
+
+from controllers import KeyMouseController
+
+
+controller = KeyMouseController(game, view.canvas)
+controller
+
+Run_Hanoi
+Noch einen Textkontroller
