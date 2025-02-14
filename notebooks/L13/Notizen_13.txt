@@ -11,6 +11,12 @@ Marko: use dict
 def rot13(char):
     return chr(((ord(char) - ord('a') + 13) % 26) + ord('a'))
 
+Alfonso + Eric
+
+def count_dict(numbers):
+    return {num: numbers.count(num) for num in set(numbers)}
+
+ok aber nicht effizient!
 ------------
 Tiago: git submodule geloescht!
 
@@ -33,27 +39,30 @@ die andern:
 sync_share, dann in Response nachschauen
 
 ===================================================
-Wort zur Benotung und Pruefung
-
 update 102 (Pruefung Loesungen)
 
-Update: loesche Einige_Widgets, gibt ein neues solches FIle!
+vor update 
+- (loesche Einige_Widgets, gibt ein neues solches File!)
+  Marco canvas_helper.py (von L12) nach modules kopieren
+
 update 13
 
-loesche in Ordner moduls widget_helpers,
-kopiere upgedatetes FIle widget_helpers.py dorthin.
 
-Wichtigste Widgets
-- alle Callbacks in Output-Widget umleiten durch Dekoration!
+loesche in Ordner moduls widget_helpers,
+kopiere neues widget_helpers.py dorthin.
+
+Einige_Widgets
+
+- Output: alle Callbacks in Output-Widget umleiten, durch Dekoration!
 - Text: zeige bei mir Deprecation Warning!
 - Select: observe
 
-widgets_helpers: wieder nach modules kopieren!
+
 anschauen und testen: Teste_Widgets
 Neu: Text und Button (neben Canvas und MultiCanvas)
 
 Klassen:
-wird Blick auf Beispiele, erklere AUfgaen,
+wird Blick auf Beispiele, erklaere Aufgaben,
 gehe zurueck zu Klassen_Intro
 
 Klassen: eigene Typen.
@@ -86,6 +95,28 @@ Vector +, * Vergleiche mit Liste und str
 Attribute: technisch auf Funktionen, im normalen Sprachgebrauch, Attribute und Methoden.
 
 Nun Aufaben loesen lassen.
+
+# Student
+def get_grades(self):
+    return {subject: sum(grades)/len(grades) for subject, grades in self.grades.items()}
+
+
+# Hanoi
+# in __init__
+self.history = []
+# in move_disk
+self.history.append((src, dst))
+
+# Vektoren
+def __mul__(self, other):
+    if isinstance(other, Vec2d):
+        return self.x * other.x + self.y * other.y
+    else:
+        return Vec2d(other*self.x, other*self.y)
+
+def norm(self):
+    return (self*self) ** 0.5
+
 
 ===============================
 
