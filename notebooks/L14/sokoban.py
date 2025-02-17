@@ -56,6 +56,9 @@ class Sokoban:
         self.pos = pos
 
     def push_box(self, old_pos, move):
+        '''laesst sich die Box an Position old_pos in Richtung move
+           verschieben, wir dies getan und True zurueckgegen
+        '''
         new_pos = self.new_pos(old_pos, move)
         if self.get_field(new_pos) in Sokoban.FREE:
             self.move_piece(old_pos, new_pos)

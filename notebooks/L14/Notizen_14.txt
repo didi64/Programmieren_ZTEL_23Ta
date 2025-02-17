@@ -22,7 +22,7 @@
 17 Projektvorstellung 10.3.
 18 Abschluss/ Feedback Projektarbeiten. 17.3
 
-Zeige Projekte
+
 
 
 
@@ -43,9 +43,6 @@ owner='dpro-prog2425zh'
 token=$(cat "$root/.token_share")
 git -C "$share_dir" submodule add --force "https://${owner}:${token}@github.com/${owner}/${submodule}.git" response
 
-die andern:
-sync_share, dann in Response nachschauen
-
 ==============================
 zeige beispiele zum
 verschieben und greifen von spielsteinen.
@@ -58,11 +55,49 @@ zeige guess number mit Intslider
 Wer macht welches Projekt?
 Jeder gibt kurz Auskunft. Werden dann zu zweit weiteres Vorgehen noch genauer besprechen.
 
-Kurze Repetition Klassen und allgemeines Pattern fuer unser Spiel.
+Muster zeigen. 
+Starten mit einer Spielklasse, die nur
+Spiellogik implementiert.
+
+Fuegen Controller (steuerung) und View hinzu.
+
+Sokoban:
+- ev. schno mehr als Prototyp.
+- ev. noch nicht als Klasse 
+  zuerts einfach Code.
+  Dann als Klasse, ev. mit etwas Hilfe von mir.
+
+Bewusst noch keine graphische View.
+Empfehle mit testversion zu startet, dann graphische View.
+
+Sokoban.ipynb (sokoban.py enthaelt gleicher Code)
+Habe Codezelle in dieses File geschreiben.
+
+- Spielzustand representation zuerst.
+  Konstanten, damit rasch Darstellung geaendert werden kann!
 
 Klasse Game und Klasse View/Controller
 Klasse Game ruft nach jeder Aktion eine Funktion event_handler(event, data) auf,
 welche sich um die Darstellung dieser Aktion, bez. Spielzustand nach dieser Aktion, kuemmert.
+
+
+Controller_for_Mockview:
+- Klasse Game anschauen
+  koennen so eine Gameklasse zum spielen nutzen.
+  Muessen aber alle Methoden von Hand aufrufen.
+  game.new_game()
+  game.move(move)
+
+Aufgabe des Kontrollers:
+Kommande entgegennehmen und an Spielklasse weitergeben.
+Hier: Canvaswidget hoert auf Tastendruecke.
+
+      so organisiert, dass ein einzelner Tastendrueck
+      eine Befehl ausloest.
+      ev. Tasten in Buffer schreiben, und wenn Befehl vollstaenig oder Enter gedrueckt wird,
+      Befehl weiterleiten.
+      Spaeter dann mit Maus und Tastatur.
+
 
 Anhand beispiel. 
 Wie sieht ein einfacher Prototyp aus?
@@ -80,23 +115,5 @@ Rufen wir die move Methode mit game.move auf, erfolgt keine Darstellung.
 
 
 View_for_Mock_Game
-
-
-Sokoban:
-
-
-Sielzustand Matrix, liste von Listen
-
-set_field und get_field (wollen nicht staendig x und y verweschseln
-
-Hilfsfunktionen erlauben besser lesbaren Code.
-Einfacher au testen,
-
-und
-
-Spielzustand:
-Matrix, bez. Liste von Listen.
-X: unzug&angliches Feld
-.: Zielfeld
-b/B: Box (Buchstabe ist gross, falls auf Zielfeld)
-p/P: Spieler (Buchstabe ist gross, falls auf Zielfeld)
+- View ganz einfach, aber schon hilfreich, da 
+  Output an einem Ort bleibt.
