@@ -31,50 +31,23 @@ Mike: Tiktak: board als Tabelle is_tiktak
               take back a move?
 Marko: Hangman, select word to guess, guess_letter, update state
 
-==============================
-zeige beispiele zum
-verschieben und greifen von spielsteinen.
 
-zeige text view und text controller
-zeige test nimm
-zeige guess number mit Intslider
-==================================
 
-Wer macht welches Projekt?
+Projekte, Stand der Dinge?
 Jeder gibt kurz Auskunft. Werden dann zu zweit weiteres Vorgehen noch genauer besprechen.
 
-Muster zeigen. 
-Starten mit einer Spielklasse, die nur
-Spiellogik implementiert.
+Mit allen: Projekt mit mir teilen via share folder und sync_share
 
-Fuegen Controller (steuerung) und View hinzu.
+Bilder und Text:
+Kurz zeigen, wie Bilder platzieren.
+Mehr zu Textalignment , nur ganz kurz
 
-Sokoban:
-- ev. schno mehr als Prototyp.
-- ev. noch nicht als Klasse 
-  zuerts einfach Code.
-  Dann als Klasse, ev. mit etwas Hilfe von mir.
-
-Bewusst noch keine graphische View.
-Empfehle mit testversion zu startet, dann graphische View.
-
-Sokoban.ipynb (sokoban.py enthaelt gleicher Code)
-Habe Codezelle in dieses File geschreiben.
-
-- Spielzustand representation zuerst.
-  Konstanten, damit rasch Darstellung geaendert werden kann!
-
-Klasse Game und Klasse View/Controller
-Klasse Game ruft nach jeder Aktion eine Funktion event_handler(event, data) auf,
-welche sich um die Darstellung dieser Aktion, bez. Spielzustand nach dieser Aktion, kuemmert.
+Stein auf Punkt setzen, wohl nur fuer Tiago interessant, ev. nicht mal.
 
 
-Controller_for_Mockview:
-- Klasse Game anschauen
-  koennen so eine Gameklasse zum spielen nutzen.
-  Muessen aber alle Methoden von Hand aufrufen.
-  game.new_game()
-  game.move(move)
+
+
+
 
 Aufgabe des Kontrollers:
 Kommande entgegennehmen und an Spielklasse weitergeben.
@@ -82,7 +55,7 @@ Hier: Canvaswidget hoert auf Tastendruecke.
 
       so organisiert, dass ein einzelner Tastendrueck
       eine Befehl ausloest.
-      ev. Tasten in Buffer schreiben, und wenn Befehl vollstaenig oder Enter gedrueckt wird,
+      ev. Tasten in Buffer schreiben, und wenn Befehl vollstaendig oder Enter gedrueckt wird,
       Befehl weiterleiten.
       Spaeter dann mit Maus und Tastatur.
 
@@ -91,17 +64,3 @@ Anhand beispiel.
 Wie sieht ein einfacher Prototyp aus?
 Wie koennen wir rasch einen provisorichen Controller mit View schreiben?
 
-
-Beispiel: Sokoban
-https://www.mathsisfun.com/games/sokoban.html
-
-
-Controller_for_Mock_Game
-Controller, ohne view.
-Brauchen trick, um Spielzustand auszugeben, keine View!
-Rufen wir die move Methode mit game.move auf, erfolgt keine Darstellung.
-
-
-View_for_Mock_Game
-- View ganz einfach, aber schon hilfreich, da 
-  Output an einem Ort bleibt.
