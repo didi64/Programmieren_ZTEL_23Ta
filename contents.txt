@@ -14,6 +14,6 @@
 12:Canvas_Aufgaben_A.py canvas_helpers.py Drawing_App Einige_Widgets.ipynb Info_Projektarbeit.ipynb MultiCanvas_A.ipynb Tuerme_von_Hanoi.ipynb Widget_Helpers.ipynb
 13:Hanoi_mit_Klassen Klassen Teste_Widgets_helpers.ipynb Tuerme_von_Hanoi.ipynb widgets_helpers.py Einige_Widgets.ipynb
 14: basic_controller.py Controller_for_Mockgame.ipynb Sokoban.ipynb sokoban.py View_for_Mock_Game.ipynb
-L15: Bilder_und_Text HBox_und_VBox.ipynb Stein_auf_Punkt_setzen 
+15: Bilder_und_Text HBox_und_VBox.ipynb Stein_auf_Punkt_setzen 
 101:Pruefung
 102:Pruefung_Loesungen
