@@ -36,31 +36,22 @@ Marko: Hangman, select word to guess, guess_letter, update state
 Projekte, Stand der Dinge?
 Jeder gibt kurz Auskunft. Werden dann zu zweit weiteres Vorgehen noch genauer besprechen.
 
-Mit allen: Projekt mit mir teilen via share folder und sync_share
+VBox und HBox
 
-Bilder und Text:
+Text und Bilder:
 Kurz zeigen, wie Bilder platzieren.
 Mehr zu Textalignment , nur ganz kurz
 
 Stein auf Punkt setzen, wohl nur fuer Tiago interessant, ev. nicht mal.
 
 
+Mit allen: Projekt mit mir teilen via share folder und 
 
+sync_share
 
+(rm -r share
+ init_share)
 
+Yup, het gfaegt. Merci Tobu
 
-Aufgabe des Kontrollers:
-Kommande entgegennehmen und an Spielklasse weitergeben.
-Hier: Canvaswidget hoert auf Tastendruecke.
-
-      so organisiert, dass ein einzelner Tastendrueck
-      eine Befehl ausloest.
-      ev. Tasten in Buffer schreiben, und wenn Befehl vollstaendig oder Enter gedrueckt wird,
-      Befehl weiterleiten.
-      Spaeter dann mit Maus und Tastatur.
-
-
-Anhand beispiel. 
-Wie sieht ein einfacher Prototyp aus?
-Wie koennen wir rasch einen provisorichen Controller mit View schreiben?
 
