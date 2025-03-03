@@ -1,0 +1,130 @@
+================================================
+01 Intro, Docker und Jupyterlab Installieren
+02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
+03 Basic Types, if-then-else
+04 Module While-Loops
+05 break und continue, Platzhalterstrings
+06 Methods, Listen Listen mit Listen
+07 enum, zip, sorted, Files, Listcomp, Sets
+08 Dicts, if expressions any, all
+09 Dict, Sortieralgos 16.12
+
+
+10 Repetition. 06.1. Automat 9.12
+11 Test, 13.1. Klassen, 
+12 Callbacks, 20.1
+13 Games, Projektarbeit infos, Themen fixieren. 27.1.
+
+
+14 PA 17.2.
+15 PA 24.2
+16 PA 3.3
+17 Projektvorstellung 10.3.
+18 Abschluss/ Feedback Projektarbeiten. 17.3
+
+
+Tiago: Ballteship
+Antonio Dame
+Steve: Shut the Box
+Eric: Blackjack: Deck, hand, handvalue
+Mike: Tiktak: board als Tabelle is_tiktak
+              take back a move?
+Marko: Hangman, select word to guess, guess_letter, update state
+
+---
+Hold_canvas
+
+
+
+Projekte:
+Praesentation vor Ort!?
+Fachgesprachtermine?
+
+Stand der Dinge?
+Jeder gibt kurz Auskunft. Werden dann zu zweit weiteres Vorgehen noch genauer besprechen.
+
+Termine Fachgespraeche (15' Gespraech ueber den Projektcode):
+
+Di/Mi (18./19.3, 25./26.3): 17h-19h
+Do/Fr (20./21.3, 27./28.3): 17h-21h
+
+
+bis Ende Lektion mitteilen, welche Termine euch moglich sind.
+
+
+Reihenfolge: Tiage (Battleship), Marko (Hangman), Antonio (Dame), 
+Mike (TikTak), Steve (shut the box), Eric (Blackjack) 
+
+Tiago: 
+gibt Leute die dringender Hilfe brauchen als du.
+
+Nicht immer alles neu zeichnen.
+2 oder mehr layers
+einzelne Zellen neu zeichnen 
+----------------------------
+
+Marko:
+    ev. zu Beginn, ein paar Buchstaben zufaellig aufdecken
+    Befehle: guess, newgame, ev. hint?
+    versch. Kategorien aus denen Wort gewaehlt wird.
+
+
+to do:
+    Wortauswahl
+    z.b. alles buchstaben als Grossbuchstaben behandeln
+
+--------------------------------
+Antonio (Dame):
+Idee: du sammest Programmiererfahrung!
+Keine Zeile Code ist von dir!
+
+Vorschlag:
+baue meinen Prototyp aus:
+
+kein Schlagzwang
+kann nur einmal vorwaerts schlagen
+ver gegnerische Grundreihe erreicht, gewinnt.
+
+dann ev. mit Schlagzwang,
+kann meherer Steine ueberspringen
+--------------------------------
+
+
+Mike (TikTak):
+
+Funktion, die Spielfeld zeichnen soll
+Bitte selber schreiben!
+
+
+Fixe, zeige Prototyp.
+
+To do:
+- Spiel endet, wenn jemand gewonnen oder remis!
+
+    tiktak_in_main_diag = 'X' == board[0] == board[4] == board[8]
+    tiktak_in_col_i = 'XXX' ==  board[i]+board[i+3]+board[i+6]
+    
+    
+    tiktak_in_row_i = 'XXX' == board[3*i+0]+board[3*i+1]+board[3*i+2]
+
+--------------------------------
+
+Steve (shut the box):
+
+To do:
+- nur Legale Zuege zulassen
+- Zahlen wegnehmen
+- feststellen, ob Spieler ueberhaupt Zahlen umklappen kann
+
+---------------------
+
+Eric (Blackjack):
+
+Prototyp Skizze:
+
+To do:
+- nur legale Zuege zulassen,
+- Gewinner feststellen,
+- Wetten auszahlen
+
+-------------------------------
