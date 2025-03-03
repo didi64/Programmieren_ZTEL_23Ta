@@ -15,6 +15,6 @@
 13:Hanoi_mit_Klassen Klassen Teste_Widgets_helpers.ipynb Tuerme_von_Hanoi.ipynb widgets_helpers.py Einige_Widgets.ipynb
 14:basic_controller.py Controller_for_Mockgame.ipynb Sokoban.ipynb sokoban.py View_for_Mock_Game.ipynb
 15:Text_und_Bilder HBox_und_VBox.ipynb Stein_auf_Punkt_setzen
-L16: HoldCanvas.ipynb
+16: HoldCanvas.ipynb
 101:Pruefung
 102:Pruefung_Loesungen

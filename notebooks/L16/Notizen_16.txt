@@ -34,6 +34,15 @@ Marko: Hangman, select word to guess, guess_letter, update state
 ---
 Hold_canvas
 
+Push sketches:
+mv to reposen folder
+$ git add .
+$ git commit -m '.'
+$ git push
+
+studi: sync_share
+Schaue im Response Folder, Kopiere Notebook woanders hin zum bearbeiten.
+
 
 
 Projekte:
@@ -49,7 +58,7 @@ Di/Mi (18./19.3, 25./26.3): 17h-19h
 Do/Fr (20./21.3, 27./28.3): 17h-21h
 
 
-bis Ende Lektion mitteilen, welche Termine euch moglich sind.
+Bis Ende Lektion mitteilen, welche Termine euch moglich sind.
 
 
 Reihenfolge: Tiage (Battleship), Marko (Hangman), Antonio (Dame), 
