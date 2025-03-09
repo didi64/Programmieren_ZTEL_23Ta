@@ -60,6 +60,16 @@ Do/Fr (20./21.3, 27./28.3): 17h-21h
 
 Bis Ende Lektion mitteilen, welche Termine euch moglich sind.
 
+Fachgespraech:
+Gespraech ueber den Projketcode.
+Aufbau, Design, und Zusammenspiel der verschiedenen Komponenten
+Implementation einiger Funktionen
+Einige technische Details
+Wo und wie wuerde man bestimmte Modifikationen vornehmen.
+
+Idee:
+Wie gut versteht ihr euren Code.
+
 
 Reihenfolge: Tiage (Battleship), Marko (Hangman), Antonio (Dame), 
 Mike (TikTak), Steve (shut the box), Eric (Blackjack) 
