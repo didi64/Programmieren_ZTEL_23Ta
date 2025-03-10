@@ -1,0 +1,175 @@
+https://tekodoz-zuerich.y4ms.net/
+
+================================================
+01 Intro, Docker und Jupyterlab Installieren
+02 Syntax und Semantik-Fehler, Variabeln Funktionen, Minipython mit For
+03 Basic Types, if-then-else
+04 Module While-Loops
+05 break und continue, Platzhalterstrings
+06 Methods, Listen Listen mit Listen
+07 enum, zip, sorted, Files, Listcomp, Sets
+08 Dicts, if expressions any, all
+09 Dict, Sortieralgos 16.12
+
+
+10 Repetition. 06.1. Automat 9.12
+11 Test, 13.1. Klassen, 
+12 Callbacks, 20.1
+13 Games, Projektarbeit infos, Themen fixieren. 27.1.
+
+
+14 PA 17.2.
+15 PA 24.2
+16 PA 3.3
+17 Projektvorstellung 10.3.
+18 Abschluss/ Feedback Projektarbeiten. 17.3
+
+
+
+Habe alle lauffaeehiges Programm schreiben koennen.
+Bin gespannt auf eure Praesentationen.
+
+Lege Zeit fuer Fachgesspreach fest
+
+Tiago: Battleship    17:00
+Antonio: Dame        17:30
+Steve: Shut the Box  18.00
+Eric: Blackjack: Deck, hand, handvalue 18:15
+Mike: Tiktak: board als Tabelle is_tiktak 18:30
+              take back a move?
+Marko: Hangman, select word to guess, guess_letter, update state 18:45
+
+Unterricht start: 19:15
+
+---
+
+Fachgespraech:
+Gespraech ueber den Projketcode.
+Aufbau, Design, und Zusammenspiel der verschiedenen Komponenten
+Implementation einiger Funktionen
+Einige technische Details
+Wo und wie wuerde man bestimmte Modifikationen vornehmen.
+
+Idee:
+Wie gut versteht ihr euren Code.
+
+Neue Notebooks mit update 17
+
+
+Redesign Blackjack
+statt mit While-Loop im Programm soll Spielfluss mit Befehlen/Buttons kontrolliert werden.
+
+Habe mich an einer alten Version von Eric orientiert.
+Spiel wie dort implementiert.
+
+
+Zeiche, wie Blackjack redesigned werden koennte.
+Moechte auch nochmal Reklame machen fuer die Art, wie wir Spiellogik und Kontrollen und Darstellung trennen koennen.
+
+1. Hilfsklassen/Funktionen bereitstellen
+   hier module cards
+   - deck erstellen
+   - handwert ermitteln
+
+zeige Cards, zeige, wie zu gebrauchen
+
+2. Klasse mit Spiellogik
+   Spielfluss wird mit Befehlen vorangetrieben
+   Befehl wird nur ausgefuehrt, falls das regelkonform ist.
+   early return!
+
+
+   Blackjack sollte 21 in anderer Form schlagen, hier noch nicht implementiert
+
+   Zeige, dass man bereitss spielen kann.
+
+3. Klasse mit Spiellogik und event_handler
+   seichern Funktion in einer Variable event_handler.
+   das soll spaeter eine Funktion der View sein, die dann die
+   graphische Darstellung der Spielzustandes updatet
+
+   ab. Handkarten auf Leinwand zeichnen, 
+   dabei nur eine Karte des Dealers zeigen
+
+   zeige, dass die Funktion event_handler jeweils aufgerufen wird,
+   im richtigen Moment, mit den richtigen Argumenten.
+
+   Welche Argumente ist ein Designentscheid.
+   Argumente sollte ein einfaches Update des Spielzustandes ermoeglichen
+
+4. Klasse Controller
+   Wie soll der Spielfluss gesteuert werden.
+   Kontrollelemente werden mit HBox und VBox platziert
+   Fehlermeldungen werden nach err_out umgeleitet (nur waerend der Entwicklungsphase)
+   Missbrauchen eerr_out auch als View, da print-Ausgaben des Eventhandlers ebenfalls
+   nach err_out umgeleitet werden.
+
+   - registrieren
+   - betsize waehlen
+   - Runde starten
+   - hit/stay: ziehen oder Zugrecht an Dealer weitergeben
+
+   Controller vorfuehren.
+
+5. Klasse View fuer Darstellung
+   hier minimal gehalten.
+   zeigen relevante Angaben zum Spielzustand textlich in Output-Widget an
+
+
+Unterrichtsumfrage durchfuehren.
+
+
+
+----------------
+
+Marko:
+    ev. zu Beginn, ein paar Buchstaben zufaellig aufdecken
+    Befehle: guess, newgame, ev. hint?
+    versch. Kategorien aus denen Wort gewaehlt wird.
+
+
+
+--------------------------------
+Antonio (Dame):
+Idee: du sammest Programmiererfahrung!
+Keine Zeile Code ist von dir!
+
+Vorschlag:
+baue meinen Prototyp aus:
+
+kein Schlagzwang
+kann nur einmal vorwaerts schlagen
+ver gegnerische Grundreihe erreicht, gewinnt.
+
+dann ev. mit Schlagzwang,
+kann meherer Steine ueberspringen
+--------------------------------
+
+
+Mike (TikTak):
+Funktion, die Spielfeld zeichnen soll
+
+
+
+Fixe, zeige Prototyp.
+
+
+Steve (shut the box):
+
+To do:
+- nur Legale Zuege zulassen
+- Zahlen wegnehmen
+- feststellen, ob Spieler ueberhaupt Zahlen umklappen kann
+
+---------------------
+
+Eric (Blackjack):
+
+Prototyp Skizze:
+
+To do:
+- nur legale Zuege zulassen,
+- Gewinner feststellen,
+- Wetten auszahlen
+
+-------------------------------

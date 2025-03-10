@@ -21,7 +21,6 @@ class Controller:
         self.intslider.observe(self.update_betsize, names='value')
         self.err_out.clear_output()
         
-        #self.button_register = new_button(description='register')
         self.button_play = new_button(description=f'play ({self.name}, {self.betsize})')
         self.button_play.layout.width = 'auto'
         self.button_hit = new_button(description='hit')

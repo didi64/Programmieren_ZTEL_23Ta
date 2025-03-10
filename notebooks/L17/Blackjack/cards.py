@@ -2,13 +2,13 @@ import random
 
 
 SUITS = '♥♠♦♣'
-VALUES = '23456789TJQKA'
+RANKS = '23456789TJQKA'
 rank_points = {k: int(k) if k in '23456789' else (10 if k in 'TJQK' else 11)
-               for k in VALUES}
+               for k in RANKS}
 
 
 def new_deck(shuffle=True):
-    deck = [value+suit for suit in SUITS for value in VALUES]
+    deck = [value+suit for suit in SUITS for value in RANKS]
     if shuffle:
         random.shuffle(deck)
     return deck
