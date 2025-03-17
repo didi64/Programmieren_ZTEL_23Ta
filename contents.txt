@@ -17,5 +17,6 @@
 15:Text_und_Bilder HBox_und_VBox.ipynb Stein_auf_Punkt_setzen
 16:HoldCanvas.ipynb
 17:Zugang_Unterrichtsbeurteilung.ipynb Blackjack
+18:Blackjack
 101:Pruefung
 102:Pruefung_Loesungen

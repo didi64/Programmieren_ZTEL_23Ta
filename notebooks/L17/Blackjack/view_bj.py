@@ -25,3 +25,5 @@ class View:
 
     def _ipython_display_(self):
         display(self.out)        
+
+

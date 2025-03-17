@@ -1,6 +1,6 @@
 import random
 
-
+IMG_PATH = '/home/studi/work/.src/notebooks/L17/Blackjack/img_cards'
 SUITS = '♥♠♦♣'
 RANKS = '23456789TJQKA'
 rank_points = {k: int(k) if k in '23456789' else (10 if k in 'TJQK' else 11)
@@ -23,3 +23,8 @@ def handwert(hand):
         wert -= 10
         anzahl_asse -= 1
     return wert
+
+
+def card2filename(card):
+    tt = {'♥': 'H', '♠': 'S', '♦': 'D', '♣': 'C'}
+    return IMG_PATH + '/' + card[0] + tt[card[1]] + '.png'

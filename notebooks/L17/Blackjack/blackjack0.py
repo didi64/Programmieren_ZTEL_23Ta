@@ -15,14 +15,12 @@ class BlackJack:
         
         self.deck = cards.new_deck()
         
-
     def register(self, name, bankroll):
         if self.game_on or type(bankroll) is not int:
             return
         self.player = name
         self.bankroll = bankroll
 
-    
     def play(self, betsize=10):
         if self.game_on or (self.betsize > self.bankroll) or self.bankroll <= 0:
             return
@@ -36,7 +34,6 @@ class BlackJack:
             
         self.hand_player[:] = [self.deck.pop() for _ in range(2)]
         self.hand_dealer[:] = [self.deck.pop() for _ in range(2)]
-
 
     def hit(self):
         if not self.game_on:
@@ -58,22 +55,20 @@ class BlackJack:
             
         self._end_play()
 
-    
     def _end_play(self):
         pd = cards.handwert(self.hand_dealer)
         pp = cards.handwert(self.hand_player)
-        if pp > 21:
-            self.result = 0
-        elif pp == pd:
-            self.result = 1
-        else:
+        if pd > 21 or pd < pp <= 21:
             self.result = 2
-        
+        elif pp > 21 or pp < pd:
+            self.result = 0
+        else:
+            self.result = 1
+       
         self.bankroll += self.result*self.betsize
         self.game_on = False
         
-    
     def __repr__(self):
         s = (f'game on: {self.game_on}, result: {self.result}, player: {self.player}, bankroll: {self.bankroll}, ' +
-             f'betsize: {self.betsize}\n{self.hand_player} {self.hand_dealer}')
+             f'betsize: {self.betsize}\nhand player: {self.hand_player}, hand dealer: {self.hand_dealer}')
         return s
