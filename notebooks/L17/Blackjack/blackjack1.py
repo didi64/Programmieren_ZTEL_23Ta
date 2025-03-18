@@ -22,8 +22,6 @@ class BlackJack:
             return
         self.player = name
         self.bankroll = bankroll
-        self.bankroll -= self.betsize
-        
         self.event_handler('register', (self.player, self.bankroll))
 
     def play(self, betsize=10):
@@ -32,6 +30,7 @@ class BlackJack:
             
         self.game_on = True
         self.betsize = betsize
+        self.bankroll -= self.betsize
         
         if len(self.deck) < 20:
             self.deck = cards.new_deck()

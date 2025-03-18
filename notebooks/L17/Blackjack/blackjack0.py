@@ -24,11 +24,10 @@ class BlackJack:
     def play(self, betsize=10):
         if self.game_on or (self.betsize > self.bankroll) or self.bankroll <= 0:
             return
-            
+
         self.game_on = True
         self.betsize = betsize
-        self.bankroll -= self.betsize
-        
+
         if len(self.deck) < 20:
             self.deck = cards.new_deck()
             
